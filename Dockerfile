@@ -108,7 +108,7 @@ CMD ["dramatiq", "src.infrastructure.background.tasks", "--processes", "2", "--t
 # Labels
 # ------------------------------------------------------------------------------
 LABEL org.opencontainers.image.title="EduSynapseOS Backend" \
-      org.opencontainers.image.description="AI-native educational platform backend" \
+      org.opencontainers.image.description="The complete AI education operating system" \
       org.opencontainers.image.vendor="Global Digital Labs" \
       org.opencontainers.image.url="https://gdlabs.io" \
       org.opencontainers.image.source="https://github.com/gdlabs-io/EduSynapseOS" \

@@ -92,7 +92,7 @@ class EduSynapseMCPServer:
         self._mcp = FastMCP(
             name="edusynapse",
             instructions=(
-                "EduSynapseOS MCP Server - An AI-native educational platform. "
+                "EduSynapseOS MCP Server - The complete AI education operating system. "
                 "Use the available tools to search curriculum knowledge, "
                 "get student context, generate questions, evaluate answers, "
                 "and access learning analytics."

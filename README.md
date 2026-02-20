@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">EduSynapseOS</h1>
   <p align="center">
-    AI-native educational platform backend for personalized learning at scale
+    The complete AI education operating system
     <br />
     <a href="docs/architecture.md"><strong>Architecture</strong></a> &middot;
     <a href="docs/deployment.md"><strong>Deployment</strong></a> &middot;
@@ -12,7 +12,7 @@
 
 ---
 
-EduSynapseOS is an open-source, AI-native educational platform backend that delivers personalized learning experiences through dynamic AI tutoring, intelligent practice, and proactive student engagement. Built by [Global Digital Labs](https://gdlabs.io).
+EduSynapseOS is an open-source AI education operating system that delivers personalized learning experiences through dynamic AI tutoring, intelligent practice, and proactive student engagement. Built by [Global Digital Labs](https://gdlabs.io).
 
 ## Key Features
 
