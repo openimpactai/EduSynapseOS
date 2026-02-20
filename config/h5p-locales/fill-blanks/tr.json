@@ -1,0 +1,16 @@
+{
+  "showSolutions": "Cevabı Göster",
+  "tryAgain": "Tekrar Dene",
+  "checkAnswer": "Kontrol Et",
+  "submitAnswer": "Gönder",
+  "notFilledOut": "Lütfen tüm boşlukları doldurun",
+  "correct": "Doğru!",
+  "wrong": "Yanlış",
+  "answeredCorrectly": "doğru cevaplandı",
+  "answeredIncorrectly": "yanlış cevaplandı",
+  "solutionLabel": "Doğru cevap:",
+  "inputLabel": "Boşluk",
+  "inputHasTip": "İpucu mevcut",
+  "tipLabel": "İpucu",
+  "taskDescription": "Boşlukları doldurunuz"
+}

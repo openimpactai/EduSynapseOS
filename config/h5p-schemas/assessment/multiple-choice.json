@@ -1,0 +1,124 @@
+{
+  "library": "H5P.MultiChoice 1.16",
+  "name": "Multiple Choice",
+  "category": "assessment",
+  "description": "Multiple choice questions with feedback for each option. Ideal for knowledge checks and quick assessments.",
+  "supports_media": true,
+  "media_placement": "question",
+
+  "ai_input_format": {
+    "description": "AI should generate an object with a title and an array of questions, each with answers, correct index, explanation, and distractor feedback.",
+    "schema": {
+      "title": "string - Quiz title",
+      "questions": [
+        {
+          "question": "string - The question text",
+          "answers": "array of strings - Answer options (3-5 recommended)",
+          "correctIndex": "number - Zero-based index of the correct answer",
+          "explanation": "string - Why the correct answer is right",
+          "distractorFeedback": "array of strings - Feedback for each wrong answer (in order, excluding correct)",
+          "image_prompt": "string (optional) - Description of an image to illustrate this question",
+          "video_prompt": "string (optional) - Description of a short video clip to illustrate this question",
+          "audio_prompt": "string (optional) - Text to narrate as audio for this question"
+        }
+      ]
+    },
+    "example": {
+      "title": "Photosynthesis Quiz",
+      "questions": [
+        {
+          "question": "What is the primary product of photosynthesis?",
+          "answers": ["Glucose", "Oxygen", "Carbon dioxide", "Water"],
+          "correctIndex": 0,
+          "explanation": "Glucose is the primary product that plants use for energy.",
+          "distractorFeedback": [
+            "Oxygen is a byproduct, not the primary product.",
+            "Carbon dioxide is an input, not a product.",
+            "Water is an input used in the light reactions."
+          ]
+        },
+        {
+          "question": "Where does photosynthesis occur in plant cells?",
+          "answers": ["Chloroplast", "Mitochondria", "Nucleus", "Cell membrane"],
+          "correctIndex": 0,
+          "explanation": "Chloroplasts contain chlorophyll which captures light energy.",
+          "distractorFeedback": [
+            "Mitochondria are for cellular respiration, not photosynthesis.",
+            "The nucleus contains DNA but does not perform photosynthesis.",
+            "The cell membrane controls what enters and exits the cell."
+          ]
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "question": "<p>What is the primary product of photosynthesis?</p>",
+    "answers": [
+      {
+        "text": "<div>Glucose</div>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "chosenFeedback": "<div>Glucose is the primary product that plants use for energy.</div>",
+          "notChosenFeedback": "",
+          "tip": ""
+        }
+      },
+      {
+        "text": "<div>Oxygen</div>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "chosenFeedback": "<div>Oxygen is a byproduct, not the primary product.</div>",
+          "notChosenFeedback": "",
+          "tip": ""
+        }
+      },
+      {
+        "text": "<div>Carbon dioxide</div>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "chosenFeedback": "<div>Carbon dioxide is an input, not a product.</div>",
+          "notChosenFeedback": "",
+          "tip": ""
+        }
+      },
+      {
+        "text": "<div>Water</div>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "chosenFeedback": "<div>Water is an input used in the light reactions.</div>",
+          "notChosenFeedback": "",
+          "tip": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {"from": 0, "to": 50, "feedback": "You need more practice. Review the material and try again."},
+      {"from": 51, "to": 80, "feedback": "Good effort! You're getting there."},
+      {"from": 81, "to": 100, "feedback": "Excellent! You've mastered this content."}
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "auto",
+      "singlePoint": false,
+      "randomAnswers": true,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    }
+  },
+
+  "conversion_notes": {
+    "question_wrapping": "Wrap question text in <p> tags",
+    "answer_wrapping": "Wrap answer options in <div> tags",
+    "correct_marking": "Set correct: true for the answer at correctIndex",
+    "distractor_feedback": "Map distractorFeedback array to chosenFeedback for each wrong answer",
+    "explanation_mapping": "Map explanation to chosenFeedback for the correct answer",
+    "single_question": "Converter uses the first question for H5P.MultiChoice; use QuestionSet for multiple questions"
+  }
+}

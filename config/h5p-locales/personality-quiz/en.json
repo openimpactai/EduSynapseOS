@@ -1,0 +1,13 @@
+{
+  "resultScreen": {
+    "noResultTitle": "No Result",
+    "noResultMessage": "A result could not be determined.",
+    "retakeButtonText": "Retake Quiz"
+  },
+  "l10n": {
+    "nextButtonText": "Next",
+    "prevButtonText": "Previous",
+    "resultsButtonText": "See Results",
+    "progressText": "Question :current of :total"
+  }
+}

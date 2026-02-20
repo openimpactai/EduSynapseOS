@@ -1,0 +1,10 @@
+{
+  "startScreenButtonText": "Commencer",
+  "endScreenButtonText": "Recommencer",
+  "proceedButtonText": "Continuer",
+  "scoreText": "Votre score :",
+  "backButtonText": "Retour",
+  "fullscreenAria": "Plein écran",
+  "replayButtonText": "Rejouer",
+  "defaultEndTitle": "Terminé !"
+}

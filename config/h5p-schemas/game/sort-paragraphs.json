@@ -1,0 +1,57 @@
+{
+  "library": "H5P.SortParagraphs 0.11",
+  "name": "Sort Paragraphs",
+  "category": "game",
+  "description": "Arrange paragraphs in correct order. Great for process ordering, story sequencing, and logical flow exercises.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate paragraphs in correct order",
+    "schema": {
+      "taskDescription": "string - Instructions for the sorting task",
+      "paragraphs": "array of strings - Paragraphs in CORRECT order"
+    },
+    "example": {
+      "taskDescription": "Arrange the steps of photosynthesis in the correct order.",
+      "paragraphs": [
+        "Light energy is absorbed by chlorophyll in the leaves.",
+        "Water molecules are split, releasing oxygen.",
+        "Carbon dioxide from the air enters through stomata.",
+        "The light energy converts CO2 and water into glucose.",
+        "Glucose is used by the plant for energy and growth."
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "<p>Arrange the steps of photosynthesis in the correct order.</p>",
+    "paragraphs": [
+      {"text": "<p>Light energy is absorbed by chlorophyll in the leaves.</p>"},
+      {"text": "<p>Water molecules are split, releasing oxygen.</p>"},
+      {"text": "<p>Carbon dioxide from the air enters through stomata.</p>"},
+      {"text": "<p>The light energy converts CO2 and water into glucose.</p>"},
+      {"text": "<p>Glucose is used by the plant for energy and growth.</p>"}
+    ],
+    "overallFeedback": [
+      {"from": 0, "to": 50, "feedback": "Try again!"},
+      {"from": 51, "to": 80, "feedback": "Almost there!"},
+      {"from": 81, "to": 100, "feedback": "Perfect order!"}
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "scoringMode": "transitions",
+      "applyPenalties": false
+    }
+  },
+
+  "conversion_notes": {
+    "order_preservation": "AI provides paragraphs in CORRECT order - H5P will shuffle for display",
+    "html_wrapping": "Wrap each paragraph in <p> tags",
+    "paragraph_structure": "Each paragraph is an object with 'text' property",
+    "scoring_modes": {
+      "transitions": "Score based on correct adjacent pairs",
+      "positions": "Score based on correct absolute positions"
+    }
+  }
+}

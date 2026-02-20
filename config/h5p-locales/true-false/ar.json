@@ -1,0 +1,17 @@
+{
+  "trueText": "صحيح",
+  "falseText": "خطأ",
+  "score": "حصلت على @score من @total نقطة",
+  "checkAnswer": "تحقق",
+  "submitAnswer": "إرسال",
+  "showSolutionButton": "أظهر الحل",
+  "tryAgain": "أعد المحاولة",
+  "wrongAnswerMessage": "إجابة خاطئة",
+  "correctAnswerMessage": "إجابة صحيحة",
+  "scoreBarLabel": "حصلت على :num من :total نقطة",
+  "a11yCheck": "تحقق من الإجابات.",
+  "a11yShowSolution": "أظهر الحل.",
+  "a11yRetry": "أعد المحاولة.",
+  "correctFeedback": "صحيح!",
+  "wrongFeedbackPrefix": "غير صحيح. الإجابة الصحيحة كانت"
+}

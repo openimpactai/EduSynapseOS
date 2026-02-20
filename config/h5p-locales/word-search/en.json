@@ -1,0 +1,12 @@
+{
+  "checkAnswer": "Check",
+  "tryAgain": "Retry",
+  "showSolution": "Show solution",
+  "found": "found",
+  "notFound": "not found",
+  "solved": "Solved!",
+  "scoreBarLabel": ":num of :total words found",
+  "a11yCheck": "Check your answers",
+  "a11yShowSolution": "Show the solution",
+  "a11yRetry": "Restart the game"
+}

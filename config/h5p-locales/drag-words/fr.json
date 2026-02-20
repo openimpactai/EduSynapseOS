@@ -1,0 +1,21 @@
+{
+  "defaultInstruction": "Glissez les mots dans les espaces corrects.",
+  "checkAnswer": "Vérifier",
+  "submitAnswer": "Soumettre",
+  "tryAgain": "Réessayer",
+  "showSolution": "Afficher la solution",
+  "dropZoneLabel": "Zone de dépôt @index",
+  "emptyLabel": "Zone de dépôt @index est vide",
+  "containsLabel": "Zone de dépôt @index contient",
+  "ariaDraggableLabel": "Élément déplaçable @index sur @count",
+  "tipLabel": "Indice",
+  "correct": "Correct !",
+  "incorrect": "Incorrect",
+  "resetDropTitle": "Réinitialiser",
+  "resetDropDescription": "Réinitialiser l élément à sa position initiale ?",
+  "grabbedLabel": "Élément saisi",
+  "cancelledDraggingLabel": "Glissement annulé",
+  "correctAnswerLabel": "Bonne réponse :",
+  "feedbackHeader": "Commentaire",
+  "scoreBarLabel": "Score : :num sur :total"
+}

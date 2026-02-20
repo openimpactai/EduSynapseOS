@@ -1,0 +1,39 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Spaced Repetition (FSRS) Theory Configuration
+# Based on FSRS-6 algorithm
+
+enabled: true
+weight: 1.0
+
+parameters:
+  # FSRS scheduler settings
+  enable_fuzz: true         # Add randomness to intervals
+  request_retention: 0.9    # Target retention rate (90%)
+  maximum_interval: 365     # Maximum days between reviews
+
+  # Custom FSRS weights (21 parameters)
+  # Leave commented to use FSRS defaults
+  # w:
+  #   - 0.212
+  #   - 1.2931
+  #   - 2.3065
+  #   - 8.2956
+  #   - 6.4133
+  #   - 0.8334
+  #   - 3.0194
+  #   - 0.001
+  #   - 1.8722
+  #   - 0.1666
+  #   - 0.796
+  #   - 1.4835
+  #   - 0.0614
+  #   - 0.2629
+  #   - 1.6483
+  #   - 0.6014
+  #   - 1.8729
+  #   - 0.5425
+  #   - 0.0912
+  #   - 0.0658
+  #   - 0.1542

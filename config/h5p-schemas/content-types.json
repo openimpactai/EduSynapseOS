@@ -1,0 +1,335 @@
+{
+  "version": "1.0.0",
+  "description": "Master list of all supported H5P content types for AI content generation",
+
+  "categories": {
+    "assessment": {
+      "name": "Assessment & Quiz",
+      "description": "Content types for testing and evaluation",
+      "types": ["multiple-choice", "true-false", "fill-blanks", "drag-words", "mark-the-words", "single-choice-set", "essay", "summary", "question-set", "arithmetic-quiz"]
+    },
+    "vocabulary": {
+      "name": "Vocabulary & Memorization",
+      "description": "Content types for learning terms and definitions",
+      "types": ["flashcards", "dialog-cards", "crossword", "find-the-words"]
+    },
+    "learning": {
+      "name": "Learning & Teaching",
+      "description": "Content types for presenting educational material",
+      "types": ["course-presentation", "interactive-book", "accordion", "timeline", "image-hotspots", "branching-scenario", "documentation-tool"]
+    },
+    "game": {
+      "name": "Game-Based Learning",
+      "description": "Interactive games for engagement",
+      "types": ["memory-game", "personality-quiz", "sort-paragraphs", "image-sequencing", "image-pairing"]
+    },
+    "media": {
+      "name": "Media & Visualization",
+      "description": "Charts, diagrams, and visual content",
+      "types": ["chart", "image-juxtaposition", "agamotto", "collage"]
+    }
+  },
+
+  "content_types": {
+    "multiple-choice": {
+      "library": "H5P.MultiChoice 1.16",
+      "name": "Multiple Choice",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["remember", "understand"],
+      "description": "Multiple choice questions with feedback for each option",
+      "requires_media": false,
+      "use_cases": ["Knowledge check", "Quick assessment", "Review quizzes"]
+    },
+    "true-false": {
+      "library": "H5P.TrueFalse 1.8",
+      "name": "True/False",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["remember"],
+      "description": "Simple true or false questions",
+      "requires_media": false,
+      "use_cases": ["Quick check", "Misconception testing"]
+    },
+    "fill-blanks": {
+      "library": "H5P.Blanks 1.14",
+      "name": "Fill in the Blanks",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["apply"],
+      "description": "Text with missing words to fill in",
+      "requires_media": false,
+      "use_cases": ["Vocabulary practice", "Process steps", "Formula practice"]
+    },
+    "drag-words": {
+      "library": "H5P.DragText 1.10",
+      "name": "Drag the Words",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["apply", "analyze"],
+      "description": "Drag words into correct positions in text",
+      "requires_media": false,
+      "use_cases": ["Sentence completion", "Terminology practice"]
+    },
+    "mark-the-words": {
+      "library": "H5P.MarkTheWords 1.11",
+      "name": "Mark the Words",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["analyze"],
+      "description": "Identify and click on specific words in text",
+      "requires_media": false,
+      "use_cases": ["Word type identification", "Term recognition"]
+    },
+    "single-choice-set": {
+      "library": "H5P.SingleChoiceSet 1.11",
+      "name": "Single Choice Set",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["remember", "understand"],
+      "description": "Rapid-fire single choice questions",
+      "requires_media": false,
+      "use_cases": ["Quick drill", "Speed quiz", "Review"]
+    },
+    "essay": {
+      "library": "H5P.Essay 1.5",
+      "name": "Essay",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["create", "evaluate"],
+      "description": "Open-ended writing with keyword-based evaluation",
+      "requires_media": false,
+      "use_cases": ["Written response", "Critical thinking", "Explanation"]
+    },
+    "summary": {
+      "library": "H5P.Summary 1.10",
+      "name": "Summary",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["analyze"],
+      "description": "Select correct statements from options",
+      "requires_media": false,
+      "use_cases": ["Comprehension check", "Key point identification"]
+    },
+    "question-set": {
+      "library": "H5P.QuestionSet 1.20",
+      "name": "Question Set",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["remember", "understand", "apply"],
+      "description": "Composite quiz with multiple question types",
+      "requires_media": false,
+      "use_cases": ["Comprehensive quiz", "Chapter test", "Final assessment"]
+    },
+    "arithmetic-quiz": {
+      "library": "H5P.ArithmeticQuiz 1.1",
+      "name": "Arithmetic Quiz",
+      "category": "assessment",
+      "ai_support": "full",
+      "bloom_levels": ["apply"],
+      "description": "Timed math calculation practice",
+      "requires_media": false,
+      "use_cases": ["Math drill", "Calculation practice"]
+    },
+    "flashcards": {
+      "library": "H5P.Flashcards 1.7",
+      "name": "Flashcards",
+      "category": "vocabulary",
+      "ai_support": "full",
+      "bloom_levels": ["remember"],
+      "description": "Flip cards for term-definition memorization",
+      "requires_media": false,
+      "use_cases": ["Vocabulary learning", "Term memorization", "Quick review"]
+    },
+    "dialog-cards": {
+      "library": "H5P.DialogCards 1.9",
+      "name": "Dialog Cards",
+      "category": "vocabulary",
+      "ai_support": "full",
+      "bloom_levels": ["remember", "understand"],
+      "description": "Flip cards with dialog/conversation format",
+      "requires_media": false,
+      "use_cases": ["Language learning", "Concept introduction", "Q&A format"]
+    },
+    "crossword": {
+      "library": "H5P.Crossword 0.5",
+      "name": "Crossword",
+      "category": "vocabulary",
+      "ai_support": "full",
+      "bloom_levels": ["remember", "apply"],
+      "description": "Interactive crossword puzzle",
+      "requires_media": false,
+      "use_cases": ["Vocabulary review", "Term practice", "Fun learning"]
+    },
+    "find-the-words": {
+      "library": "H5P.FindTheWords 1.4",
+      "name": "Word Search",
+      "category": "vocabulary",
+      "ai_support": "full",
+      "bloom_levels": ["remember"],
+      "description": "Find hidden words in a letter grid",
+      "requires_media": false,
+      "use_cases": ["Vocabulary review", "Spelling practice", "Engagement"]
+    },
+    "course-presentation": {
+      "library": "H5P.CoursePresentation 1.25",
+      "name": "Course Presentation",
+      "category": "learning",
+      "ai_support": "partial",
+      "bloom_levels": ["remember", "understand", "apply"],
+      "description": "Interactive slideshow with embedded activities",
+      "requires_media": true,
+      "use_cases": ["Lesson delivery", "Topic introduction", "Step-by-step teaching"]
+    },
+    "interactive-book": {
+      "library": "H5P.InteractiveBook 1.7",
+      "name": "Interactive Book",
+      "category": "learning",
+      "ai_support": "partial",
+      "bloom_levels": ["remember", "understand", "apply", "analyze"],
+      "description": "Multi-chapter book with embedded activities",
+      "requires_media": true,
+      "use_cases": ["Complete course", "Textbook replacement", "Self-paced learning"]
+    },
+    "accordion": {
+      "library": "H5P.Accordion 1.0",
+      "name": "Accordion",
+      "category": "learning",
+      "ai_support": "full",
+      "bloom_levels": ["remember", "understand"],
+      "description": "Expandable information panels (FAQ style)",
+      "requires_media": false,
+      "use_cases": ["FAQ", "Topic overview", "Reference material"]
+    },
+    "timeline": {
+      "library": "H5P.Timeline 1.1",
+      "name": "Timeline",
+      "category": "learning",
+      "ai_support": "partial",
+      "bloom_levels": ["remember", "understand"],
+      "description": "Interactive chronological timeline",
+      "requires_media": true,
+      "use_cases": ["Historical events", "Process steps", "Biography"]
+    },
+    "image-hotspots": {
+      "library": "H5P.ImageHotspots 1.10",
+      "name": "Image Hotspots",
+      "category": "learning",
+      "ai_support": "partial",
+      "bloom_levels": ["understand"],
+      "description": "Interactive image with clickable information points",
+      "requires_media": true,
+      "use_cases": ["Diagram labeling", "Map exploration", "Visual teaching"]
+    },
+    "branching-scenario": {
+      "library": "H5P.BranchingScenario 1.8",
+      "name": "Branching Scenario",
+      "category": "learning",
+      "ai_support": "partial",
+      "bloom_levels": ["apply", "analyze", "evaluate"],
+      "description": "Decision-based learning with branching paths",
+      "requires_media": true,
+      "use_cases": ["Case studies", "Decision making", "Scenario training"]
+    },
+    "memory-game": {
+      "library": "H5P.MemoryGame 1.3",
+      "name": "Memory Game",
+      "category": "game",
+      "ai_support": "partial",
+      "bloom_levels": ["remember"],
+      "description": "Card matching memory game",
+      "requires_media": true,
+      "use_cases": ["Vocabulary matching", "Visual association", "Fun review"]
+    },
+    "personality-quiz": {
+      "library": "H5P.PersonalityQuiz 1.0",
+      "name": "Personality Quiz",
+      "category": "game",
+      "ai_support": "full",
+      "bloom_levels": ["understand"],
+      "description": "Assessment quiz with personality-type results",
+      "requires_media": false,
+      "use_cases": ["Learning style assessment", "Self-discovery", "Interest profiling"]
+    },
+    "sort-paragraphs": {
+      "library": "H5P.SortParagraphs 0.11",
+      "name": "Sort Paragraphs",
+      "category": "game",
+      "ai_support": "full",
+      "bloom_levels": ["analyze"],
+      "description": "Arrange paragraphs in correct order",
+      "requires_media": false,
+      "use_cases": ["Process ordering", "Story sequencing", "Logical flow"]
+    },
+    "image-sequencing": {
+      "library": "H5P.ImageSequencing 1.1",
+      "name": "Image Sequencing",
+      "category": "game",
+      "ai_support": "partial",
+      "bloom_levels": ["understand", "analyze"],
+      "description": "Arrange images in correct order",
+      "requires_media": true,
+      "use_cases": ["Process visualization", "Story order", "Timeline"]
+    },
+    "chart": {
+      "library": "H5P.Chart 1.2",
+      "name": "Chart",
+      "category": "media",
+      "ai_support": "full",
+      "bloom_levels": ["understand"],
+      "description": "Bar and pie charts for data visualization",
+      "requires_media": false,
+      "use_cases": ["Data presentation", "Statistics", "Comparison"]
+    },
+    "documentation-tool": {
+      "library": "H5P.DocumentationTool 1.8",
+      "name": "Documentation Tool",
+      "category": "learning",
+      "ai_support": "full",
+      "bloom_levels": ["apply", "create"],
+      "description": "Guide students through documentation processes with structured forms",
+      "requires_media": false,
+      "use_cases": ["Lab reports", "Project documentation", "Reflective writing"]
+    },
+    "image-pairing": {
+      "library": "H5P.ImagePair 1.4",
+      "name": "Image Pairing",
+      "category": "game",
+      "ai_support": "partial",
+      "bloom_levels": ["remember", "understand"],
+      "description": "Match pairs of images together",
+      "requires_media": true,
+      "use_cases": ["Visual matching", "Concept association", "Vocabulary with images"]
+    },
+    "image-juxtaposition": {
+      "library": "H5P.ImageJuxtaposition 1.4",
+      "name": "Image Juxtaposition",
+      "category": "media",
+      "ai_support": "partial",
+      "bloom_levels": ["understand", "analyze"],
+      "description": "Compare two images with a slider",
+      "requires_media": true,
+      "use_cases": ["Before/after comparisons", "Historical changes", "Visual analysis"]
+    },
+    "agamotto": {
+      "library": "H5P.Agamotto 1.6",
+      "name": "Agamotto (Image Sequence)",
+      "category": "media",
+      "ai_support": "partial",
+      "bloom_levels": ["understand"],
+      "description": "Slider-based image sequence viewer",
+      "requires_media": true,
+      "use_cases": ["Processes", "Transformations", "Gradual changes"]
+    },
+    "collage": {
+      "library": "H5P.Collage 0.3",
+      "name": "Collage",
+      "category": "media",
+      "ai_support": "partial",
+      "bloom_levels": ["understand"],
+      "description": "Create image collages with multiple layouts",
+      "requires_media": true,
+      "use_cases": ["Visual storytelling", "Image collections", "Photo essays"]
+    }
+  }
+}

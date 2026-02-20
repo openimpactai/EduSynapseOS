@@ -1,0 +1,23 @@
+{
+  "defaultDescription": "Put the paragraphs in the correct order",
+  "l10n": {
+    "checkAnswer": "Check",
+    "tryAgain": "Retry",
+    "showSolution": "Show solution",
+    "up": "Up",
+    "down": "Down",
+    "disabled": "Disabled",
+    "correctAnswer": "Correct answer",
+    "wrongAnswer": "Wrong answer",
+    "feedbackCorrectAnswer": "Congratulations! You sorted correctly.",
+    "scoreBarLabel": ":num of :total paragraphs correct"
+  },
+  "a11y": {
+    "paragraph": "Paragraph",
+    "seenSolution": "Solution seen",
+    "resultExplanation": "Result",
+    "listDescription": "Paragraphs to sort",
+    "listReordered": "List reordered",
+    "instructionsSelected": "Use arrow keys to move"
+  }
+}

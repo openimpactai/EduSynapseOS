@@ -1,0 +1,18 @@
+{
+  "checkAnswerButton": "Comprobar",
+  "submitAnswerButton": "Enviar",
+  "showSolutionButton": "Mostrar solución",
+  "tryAgainButton": "Reintentar",
+  "tipsLabel": "Mostrar pista",
+  "scoreBarLabel": "Puntuación: :num / :total",
+  "tipAvailable": "Pista disponible",
+  "feedbackAvailable": "Retroalimentación disponible",
+  "readFeedback": "Leer retroalimentación",
+  "wrongAnswer": "Respuesta incorrecta",
+  "correctAnswer": "Respuesta correcta",
+  "shouldCheck": "Debería haberse seleccionado",
+  "shouldNotCheck": "No debería haberse seleccionado",
+  "noInput": "Por favor seleccione una respuesta",
+  "correctFeedback": "¡Correcto!",
+  "incorrectFeedback": "Incorrecto. Inténtelo de nuevo."
+}

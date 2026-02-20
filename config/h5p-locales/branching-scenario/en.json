@@ -1,0 +1,10 @@
+{
+  "startScreenButtonText": "Start",
+  "endScreenButtonText": "Restart",
+  "proceedButtonText": "Proceed",
+  "scoreText": "Your score:",
+  "backButtonText": "Back",
+  "fullscreenAria": "Fullscreen",
+  "replayButtonText": "Replay",
+  "defaultEndTitle": "Completed!"
+}

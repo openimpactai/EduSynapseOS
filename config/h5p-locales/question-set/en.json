@@ -1,0 +1,28 @@
+{
+  "texts": {
+    "prevButton": "Previous question",
+    "nextButton": "Next question",
+    "finishButton": "Finish",
+    "submitButton": "Submit",
+    "textualProgress": "Question: @current of @total",
+    "jumpToQuestion": "Question %d of %total",
+    "questionLabel": "Question",
+    "readSpeakerProgress": "Question @current of @total",
+    "unansweredText": "Unanswered",
+    "answeredText": "Answered",
+    "currentQuestionText": "Current question",
+    "navigationLabel": "Questions",
+    "questionSetInstruction": ""
+  },
+  "endGame": {
+    "noResultMessage": "No result",
+    "message": "Your result:",
+    "scoreBarLabel": "Score: :num / :total",
+    "solutionButtonText": "Show solution",
+    "retryButtonText": "Retry",
+    "finishButtonText": "Finish",
+    "submitButtonText": "Submit",
+    "skipButtonText": "Skip video",
+    "startButtonText": "Start Quiz"
+  }
+}

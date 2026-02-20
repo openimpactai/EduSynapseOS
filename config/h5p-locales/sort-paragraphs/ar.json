@@ -1,0 +1,23 @@
+{
+  "defaultDescription": "ضع الفقرات بالترتيب الصحيح",
+  "l10n": {
+    "checkAnswer": "تحقق",
+    "tryAgain": "أعد المحاولة",
+    "showSolution": "أظهر الحل",
+    "up": "أعلى",
+    "down": "أسفل",
+    "disabled": "معطل",
+    "correctAnswer": "إجابة صحيحة",
+    "wrongAnswer": "إجابة خاطئة",
+    "feedbackCorrectAnswer": "تهانينا! لقد رتبت بشكل صحيح.",
+    "scoreBarLabel": ":num من :total فقرة صحيحة"
+  },
+  "a11y": {
+    "paragraph": "فقرة",
+    "seenSolution": "تم عرض الحل",
+    "resultExplanation": "النتيجة",
+    "listDescription": "فقرات للترتيب",
+    "listReordered": "تم إعادة ترتيب القائمة",
+    "instructionsSelected": "استخدم مفاتيح الأسهم للتحريك"
+  }
+}

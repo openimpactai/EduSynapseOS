@@ -1,0 +1,191 @@
+{
+  "library": "H5P.InteractiveBook 1.7",
+  "name": "Interactive Book",
+  "category": "learning",
+  "description": "Multi-chapter book with embedded activities. Ideal for complete courses and self-paced learning modules.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate structured chapter content with embedded interactions",
+    "schema": {
+      "title": "string - Book title",
+      "description": "string - Book description",
+      "cover_image_prompt": "string - Description for cover image generation",
+      "chapters": [
+        {
+          "title": "string - Chapter title",
+          "introduction": "string - Chapter introduction",
+          "sections": [
+            {
+              "type": "string - 'text' | 'quiz' | 'activity' | 'summary'",
+              "title": "string - Section title (optional)",
+              "content": "string - Main content",
+              "embedded_content": {
+                "type": "string - H5P content type",
+                "params": "object - Content-specific params"
+              }
+            }
+          ],
+          "chapter_quiz": {
+            "description": "Optional end-of-chapter quiz",
+            "questions": "array"
+          }
+        }
+      ]
+    },
+    "example": {
+      "title": "Introduction to Cell Biology",
+      "description": "A comprehensive guide to understanding cell structure and function",
+      "chapters": [
+        {
+          "title": "Chapter 1: What is a Cell?",
+          "introduction": "In this chapter, you will learn about the basic unit of life.",
+          "sections": [
+            {
+              "type": "text",
+              "content": "<h2>The Basic Unit of Life</h2><p>Cells are the fundamental building blocks of all living organisms. Every living thing, from the smallest bacterium to the largest whale, is made up of cells.</p>"
+            },
+            {
+              "type": "text",
+              "title": "Types of Cells",
+              "content": "<p>There are two main types of cells:</p><ul><li><strong>Prokaryotic cells</strong> - Simple cells without a nucleus (bacteria)</li><li><strong>Eukaryotic cells</strong> - Complex cells with a nucleus (plants, animals)</li></ul>"
+            },
+            {
+              "type": "activity",
+              "embedded_content": {
+                "type": "dialog-cards",
+                "params": {
+                  "cards": [
+                    {"front": "Prokaryotic Cell", "back": "A simple cell without a membrane-bound nucleus"},
+                    {"front": "Eukaryotic Cell", "back": "A complex cell with a membrane-bound nucleus"}
+                  ]
+                }
+              }
+            },
+            {
+              "type": "quiz",
+              "embedded_content": {
+                "type": "multiple-choice",
+                "params": {
+                  "question": "Which type of cell has a nucleus?",
+                  "answers": ["Eukaryotic", "Prokaryotic"],
+                  "correct_index": 0
+                }
+              }
+            }
+          ],
+          "chapter_quiz": {
+            "questions": [
+              {
+                "type": "true-false",
+                "statement": "All living things are made of cells",
+                "is_true": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Chapter 2: Cell Structure",
+          "introduction": "Learn about the different parts of a cell and their functions.",
+          "sections": [
+            {
+              "type": "text",
+              "content": "<h2>Cell Organelles</h2><p>Cells contain various structures called organelles, each with specific functions.</p>"
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "chapters": [
+      {
+        "title": "Chapter Title",
+        "contents": [
+          {
+            "content": {
+              "library": "H5P.AdvancedText 1.1",
+              "params": {
+                "text": "<p>Chapter content here</p>"
+              },
+              "subContentId": "content-0"
+            }
+          },
+          {
+            "content": {
+              "library": "H5P.MultiChoice 1.16",
+              "params": {
+                "question": "<p>Question text</p>",
+                "answers": []
+              },
+              "subContentId": "content-1"
+            }
+          }
+        ]
+      }
+    ],
+    "showCoverPage": true,
+    "bookCover": {
+      "coverDescription": "Book description",
+      "coverImage": {
+        "path": "path/to/image",
+        "alt": "Cover image"
+      }
+    },
+    "displayProgressBar": true,
+    "displayAccessibilityIndicators": true,
+    "displaySummaryOnComplete": true,
+    "isPageTitleVisible": true,
+    "l10n": {
+      "read": "Read",
+      "displayTOC": "Display table of contents",
+      "hideTOC": "Hide table of contents",
+      "nextPage": "Next page",
+      "previousPage": "Previous page",
+      "chapterProgress": "Page @page of @total",
+      "partProgress": "@current of @total",
+      "chapter": "Chapter",
+      "bookCoverTitle": "Cover",
+      "summary": "Summary",
+      "summaryDescription": "Here you can see an overview of your progress",
+      "yourAnswersAreSubmitted": "Your answers are submitted",
+      "bookProgressLabel": "Book progress",
+      "summaryScoreLabel": "Total score",
+      "submittedScoreLabel": "Submitted answers score",
+      "checkYourProgress": "Check your progress",
+      "confirmSubmitHeader": "Submit your answers",
+      "confirmSubmitBody": "This will submit your answers. You will no longer be able to change them.",
+      "cancelSubmitLabel": "Cancel",
+      "confirmSubmitLabel": "Submit",
+      "submitLabel": "Submit"
+    }
+  },
+
+  "conversion_notes": {
+    "chapter_structure": {
+      "each_chapter": "Contains title and array of content sections",
+      "content_types": "Can embed any H5P content type as section"
+    },
+    "embeddable_content_types": [
+      "H5P.AdvancedText 1.1 - For text content",
+      "H5P.Image 1.1 - For images",
+      "H5P.Video 1.6 - For videos",
+      "H5P.MultiChoice 1.16 - For quizzes",
+      "H5P.TrueFalse 1.8 - For true/false",
+      "H5P.Blanks 1.14 - For fill in blanks",
+      "H5P.DragText 1.10 - For drag words",
+      "H5P.DialogCards 1.9 - For concept cards",
+      "H5P.Accordion 1.0 - For expandable content",
+      "H5P.Summary 1.10 - For summaries"
+    ],
+    "best_practices": [
+      "Start each chapter with introduction text",
+      "Mix content types for engagement",
+      "Add quiz every 3-4 content sections",
+      "End chapter with summary or review quiz",
+      "Keep chapters focused on single topic"
+    ]
+  }
+}

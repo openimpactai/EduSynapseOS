@@ -1,0 +1,32 @@
+{
+  "l10n": {
+    "across": "أفقي",
+    "down": "عمودي",
+    "checkAnswer": "تحقق",
+    "tryAgain": "أعد المحاولة",
+    "showSolution": "أظهر الحل",
+    "couldNotGenerateCrossword": "تعذر إنشاء الكلمات المتقاطعة.",
+    "submitAnswer": "إرسال",
+    "extraClue": "دليل إضافي",
+    "closeWindow": "إغلاق النافذة"
+  },
+  "a11y": {
+    "crosswordGrid": "شبكة الكلمات المتقاطعة",
+    "column": "عمود",
+    "row": "صف",
+    "across": "أفقي",
+    "down": "عمودي",
+    "empty": "فارغ",
+    "resultFor": "النتيجة لـ",
+    "correct": "صحيح",
+    "wrong": "خطأ",
+    "point": "نقطة",
+    "solutionFor": "الحل لـ",
+    "extraClueFor": "دليل إضافي لـ",
+    "letterSeventeen98": "الحرف @letter",
+    "lettersWord": "كلمة من @length أحرف",
+    "check": "تحقق من الإجابات",
+    "showSolution": "أظهر الحل",
+    "retry": "أعد المحاولة"
+  }
+}

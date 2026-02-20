@@ -1,0 +1,13 @@
+{
+  "defaultIntro": "Select the correct statements",
+  "solved": "Completed",
+  "scoreLabel": "Your score",
+  "result": "Result",
+  "correct": "Correct",
+  "incorrect": "Incorrect",
+  "altIncorrect": "Wrong answer",
+  "correctAnswers": "correct answer",
+  "tip": "Tip",
+  "scoreBarLabel": ":num out of :total",
+  "progressText": "Panel :num of :total"
+}

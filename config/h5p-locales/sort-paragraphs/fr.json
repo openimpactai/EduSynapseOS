@@ -1,0 +1,23 @@
+{
+  "defaultDescription": "Mettez les paragraphes dans le bon ordre",
+  "l10n": {
+    "checkAnswer": "Vérifier",
+    "tryAgain": "Réessayer",
+    "showSolution": "Afficher la solution",
+    "up": "Haut",
+    "down": "Bas",
+    "disabled": "Désactivé",
+    "correctAnswer": "Bonne réponse",
+    "wrongAnswer": "Mauvaise réponse",
+    "feedbackCorrectAnswer": "Félicitations ! Vous avez trié correctement.",
+    "scoreBarLabel": ":num sur :total paragraphes corrects"
+  },
+  "a11y": {
+    "paragraph": "Paragraphe",
+    "seenSolution": "Solution vue",
+    "resultExplanation": "Résultat",
+    "listDescription": "Paragraphes à trier",
+    "listReordered": "Liste réordonnée",
+    "instructionsSelected": "Utilisez les touches fléchées pour déplacer"
+  }
+}

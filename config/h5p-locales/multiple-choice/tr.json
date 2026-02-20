@@ -1,0 +1,18 @@
+{
+  "checkAnswerButton": "Kontrol Et",
+  "submitAnswerButton": "Gönder",
+  "showSolutionButton": "Cevabı Göster",
+  "tryAgainButton": "Tekrar Dene",
+  "tipsLabel": "İpucu Göster",
+  "scoreBarLabel": "Skor: :num / :total",
+  "tipAvailable": "İpucu mevcut",
+  "feedbackAvailable": "Geri bildirim mevcut",
+  "readFeedback": "Geri bildirimi oku",
+  "wrongAnswer": "Yanlış cevap",
+  "correctAnswer": "Doğru cevap",
+  "shouldCheck": "Bu cevabı işaretlemelisiniz",
+  "shouldNotCheck": "Bu cevabı işaretlememeliydiniz",
+  "noInput": "Lütfen bir cevap seçin",
+  "correctFeedback": "Doğru!",
+  "incorrectFeedback": "Yanlış. Tekrar deneyin."
+}

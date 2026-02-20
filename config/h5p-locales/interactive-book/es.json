@@ -1,0 +1,27 @@
+{
+  "l10n": {
+    "nextPage": "Página siguiente",
+    "previousPage": "Página anterior",
+    "chapterCompleted": "¡Capítulo completado!",
+    "partCompleted": "@current de @pages completados para este capítulo.",
+    "incompleteChapter": "Capítulo incompleto",
+    "navigateToTop": "Ir al inicio",
+    "markAsFinished": "He terminado este capítulo",
+    "fullscreen": "Pantalla completa",
+    "exitFullscreen": "Salir de pantalla completa",
+    "bookProgressSubtext": "@count de @total",
+    "interactionsProgressSubtext": "@count completados",
+    "submitReport": "Enviar informe",
+    "restartLabel": "Reiniciar",
+    "summaryHeader": "Resumen",
+    "allInteractions": "Todas las interacciones",
+    "yourAnswersTitle": "Tus respuestas",
+    "bookProgress": "Progreso del libro",
+    "interactionsProgress": "Progreso de interacciones",
+    "chapter": "Capítulo"
+  },
+  "a11y": {
+    "progress": "Página @page de @total",
+    "menu": "Alternar menú de contenidos"
+  }
+}

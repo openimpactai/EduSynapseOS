@@ -1,0 +1,75 @@
+{
+  "library": "H5P.SingleChoiceSet 1.11",
+  "name": "Single Choice Set",
+  "category": "assessment",
+  "description": "Rapid-fire single choice questions with instant feedback and auto-progression. Ideal for quick drills, speed quizzes, and review sessions.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate an object with a title and an array of questions. IMPORTANT: The first answer in each question's answers array must ALWAYS be the correct one. H5P shuffles them automatically.",
+    "schema": {
+      "title": "string - Quiz title",
+      "questions": [
+        {
+          "question": "string - The question text",
+          "answers": "array of strings - Answer options (first is ALWAYS correct, 2-4 options). H5P will shuffle them."
+        }
+      ]
+    },
+    "example": {
+      "title": "Quick Cell Biology Quiz",
+      "questions": [
+        {
+          "question": "What organelle is known as the powerhouse of the cell?",
+          "answers": ["Mitochondria", "Nucleus", "Ribosome", "Golgi apparatus"]
+        },
+        {
+          "question": "What is the function of chloroplasts?",
+          "answers": ["Photosynthesis", "Protein synthesis", "Cell division", "Energy storage"]
+        },
+        {
+          "question": "What controls what enters and exits the cell?",
+          "answers": ["Cell membrane", "Cell wall", "Nucleus", "Cytoplasm"]
+        },
+        {
+          "question": "Where is DNA found in a eukaryotic cell?",
+          "answers": ["Nucleus", "Ribosome", "Endoplasmic reticulum", "Lysosome"]
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "choices": [
+      {
+        "question": "<p>What organelle is known as the powerhouse of the cell?</p>",
+        "answers": [
+          "<p>Mitochondria</p>",
+          "<p>Nucleus</p>",
+          "<p>Ribosome</p>",
+          "<p>Golgi apparatus</p>"
+        ]
+      }
+    ],
+    "overallFeedback": [
+      {"from": 0, "to": 50, "feedback": "You need more practice."},
+      {"from": 51, "to": 80, "feedback": "Good job!"},
+      {"from": 81, "to": 100, "feedback": "Excellent!"}
+    ],
+    "behaviour": {
+      "autoContinue": true,
+      "timeoutCorrect": 2000,
+      "timeoutWrong": 3000,
+      "soundEffectsEnabled": true,
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "passPercentage": 100
+    }
+  },
+
+  "conversion_notes": {
+    "first_is_correct": "First answer is ALWAYS the correct one - H5P handles shuffling",
+    "html_wrapping": "Both questions and answers are wrapped in <p> tags",
+    "choices_mapping": "questions array maps to choices array in H5P params"
+  }
+}

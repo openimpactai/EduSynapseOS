@@ -1,0 +1,20 @@
+{
+  "defaultDescription": "Arrange the images in the correct order",
+  "l10n": {
+    "checkAnswer": "Check",
+    "tryAgain": "Retry",
+    "showSolution": "Show solution",
+    "scoreBarLabel": ":num of :total correct",
+    "a11yRetry": "Retry. All images will be returned to their initial positions.",
+    "a11yCheck": "Check the answers",
+    "a11yShowSolution": "Show the correct sequence"
+  },
+  "a11y": {
+    "imageDescription": "Image description",
+    "grabbed": "grabbed",
+    "released": "released",
+    "correct": "correct",
+    "wrong": "wrong",
+    "currentPosition": "Current position"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "library": "H5P.Timeline 1.1",
+  "name": "Timeline",
+  "category": "learning",
+  "description": "Interactive chronological timeline. Ideal for historical events, process steps, and biographical content.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate timeline events with dates",
+    "schema": {
+      "headline": "string - Main timeline title",
+      "events": [
+        {
+          "startDate": "string - Start date (YYYY, YYYY-MM, or YYYY-MM-DD)",
+          "endDate": "string - Optional end date",
+          "headline": "string - Event title",
+          "text": "string - Event description"
+        }
+      ]
+    },
+    "example": {
+      "headline": "History of Cell Discovery",
+      "events": [
+        {
+          "startDate": "1665",
+          "headline": "Robert Hooke discovers cells",
+          "text": "Robert Hooke observed cork under a microscope and coined the term 'cell' to describe the small compartments he saw."
+        },
+        {
+          "startDate": "1838",
+          "headline": "Schleiden's plant cell theory",
+          "text": "Matthias Schleiden proposed that all plants are made of cells."
+        },
+        {
+          "startDate": "1839",
+          "headline": "Schwann's animal cell theory",
+          "text": "Theodor Schwann extended the cell theory to animals, stating all animals are composed of cells."
+        },
+        {
+          "startDate": "1855",
+          "headline": "Virchow's cell division theory",
+          "text": "Rudolf Virchow proposed that all cells come from pre-existing cells (Omnis cellula e cellula)."
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "headline": {
+      "headline": "History of Cell Discovery",
+      "text": ""
+    },
+    "events": [
+      {
+        "startDate": "1665",
+        "headline": "Robert Hooke discovers cells",
+        "text": "Robert Hooke observed cork under a microscope and coined the term 'cell' to describe the small compartments he saw."
+      },
+      {
+        "startDate": "1838",
+        "headline": "Schleiden's plant cell theory",
+        "text": "Matthias Schleiden proposed that all plants are made of cells."
+      },
+      {
+        "startDate": "1839",
+        "headline": "Schwann's animal cell theory",
+        "text": "Theodor Schwann extended the cell theory to animals, stating all animals are composed of cells."
+      },
+      {
+        "startDate": "1855",
+        "headline": "Virchow's cell division theory",
+        "text": "Rudolf Virchow proposed that all cells come from pre-existing cells (Omnis cellula e cellula)."
+      }
+    ],
+    "language": "en",
+    "height": 600
+  },
+
+  "conversion_notes": {
+    "date_formats": "YYYY, YYYY-MM, or YYYY-MM-DD formats accepted",
+    "headline_structure": "H5P headline is an object with headline and text properties",
+    "media_support": "Events can include asset field for images/videos",
+    "language_codes": "Use ISO language codes (en, tr, es, etc.)"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "texts": {
+    "prevButton": "السؤال السابق",
+    "nextButton": "السؤال التالي",
+    "finishButton": "إنهاء",
+    "submitButton": "إرسال",
+    "textualProgress": "السؤال: @current من @total",
+    "jumpToQuestion": "السؤال %d من %total",
+    "questionLabel": "سؤال",
+    "readSpeakerProgress": "السؤال @current من @total",
+    "unansweredText": "لم تتم الإجابة",
+    "answeredText": "تمت الإجابة",
+    "currentQuestionText": "السؤال الحالي",
+    "navigationLabel": "الأسئلة",
+    "questionSetInstruction": ""
+  },
+  "endGame": {
+    "noResultMessage": "لا توجد نتيجة",
+    "message": "نتيجتك:",
+    "scoreBarLabel": "النتيجة: :num / :total",
+    "solutionButtonText": "أظهر الحل",
+    "retryButtonText": "أعد المحاولة",
+    "finishButtonText": "إنهاء",
+    "submitButtonText": "إرسال",
+    "skipButtonText": "تخطي الفيديو",
+    "startButtonText": "ابدأ الاختبار"
+  }
+}

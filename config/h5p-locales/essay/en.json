@@ -1,0 +1,18 @@
+{
+  "checkAnswer": "Check",
+  "tryAgain": "Retry",
+  "showSolution": "Show sample answer",
+  "submitAnswer": "Submit",
+  "remainingChars": "Remaining characters: @chars",
+  "yourAnswer": "Your answer",
+  "feedbackHeader": "Feedback",
+  "solutionTitle": "Sample Answer",
+  "notEnoughChars": "You must enter at least @minLength characters.",
+  "overallFeedback": "Overall feedback",
+  "sampleIntro": "Sample answer should include:",
+  "keywordIncluded": "You correctly included '@keyword'.",
+  "keywordMissed": "Consider including '@keyword'.",
+  "a11yYourScore": "Your score: @score out of @total",
+  "a11yCheckAnnouncement": "Your answer was checked",
+  "a11yRetryAnnouncement": "You are retrying"
+}

@@ -1,0 +1,22 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Mastery Learning Theory Configuration
+# Based on Benjamin Bloom's mastery learning model
+
+enabled: true
+weight: 1.2  # Higher weight as mastery gates progression
+
+parameters:
+  # Mastery criteria
+  mastery_threshold: 0.80  # Required mastery to advance
+  min_attempts: 5          # Minimum attempts before advancement
+  min_accuracy: 0.75       # Minimum accuracy required
+  streak_requirement: 3    # Required consecutive correct
+
+  # Time requirements
+  time_factor: true        # Whether time spent affects decision
+  min_time_seconds: 120    # Minimum time on topic before advancing
+
+  # Prerequisites
+  prerequisite_weight: 0.3  # Weight of prerequisite mastery

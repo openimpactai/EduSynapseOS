@@ -1,0 +1,105 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Diagnostic Recommendations Configuration
+# English-only recommendations for learning difficulty indicators
+
+recommendations:
+  # General recommendations for all concerns
+  general:
+    - "Regular eye examination"
+    - "Quiet study environment"
+    - "Work with short breaks"
+    - "Regular sleep routine"
+
+  # Indicator-specific recommendations
+  dyslexia:
+    concern:
+      for_teacher:
+        - "Apply read-aloud practices"
+        - "Use larger fonts in written materials"
+        - "Allow extra time"
+        - "Use visual supports"
+      for_parent:
+        - "Set aside regular reading time at home"
+        - "Try using colored overlays"
+        - "Specialist educational psychologist evaluation is recommended"
+
+    alert:
+      for_teacher:
+        - "Consult school guidance service urgently"
+        - "Create individual support plan"
+      for_parent:
+        - "Make appointment for professional evaluation"
+        - "Child neuropsychiatric evaluation is recommended"
+
+  dyscalculia:
+    concern:
+      for_teacher:
+        - "Work with concrete materials"
+        - "Use visual math tools"
+        - "Teach step-by-step problem solving strategies"
+      for_parent:
+        - "Use math in daily life"
+        - "Learn math through games"
+        - "Math difficulty specialist evaluation is recommended"
+
+    alert:
+      for_teacher:
+        - "Conduct special education support evaluation"
+        - "Prepare individualized curriculum"
+      for_parent:
+        - "Get professional psychoeducational evaluation"
+
+  attention:
+    concern:
+      for_teacher:
+        - "Create short task segments"
+        - "Give regular breaks"
+        - "Reduce distractions"
+        - "Use visual timer"
+      for_parent:
+        - "Create structured routine at home"
+        - "Limit screen time"
+        - "Child psychiatrist evaluation is recommended"
+
+    alert:
+      for_teacher:
+        - "Urgently implement classroom adjustments"
+        - "Consult school psychological counselor"
+      for_parent:
+        - "Make child and adolescent psychiatry appointment"
+
+  auditory:
+    concern:
+      for_teacher:
+        - "Add visual instructions"
+        - "Speak slowly and clearly"
+        - "Provide key points in writing"
+      for_parent:
+        - "Get hearing test done"
+        - "Audiologist evaluation is recommended"
+
+    alert:
+      for_teacher:
+        - "Arrange individual seating"
+        - "Provide written alternatives for audio materials"
+      for_parent:
+        - "Get comprehensive auditory processing evaluation"
+
+  visual:
+    concern:
+      for_teacher:
+        - "Use large and clear visuals"
+        - "Avoid complex page layouts"
+        - "Ensure adequate contrast"
+      for_parent:
+        - "Get comprehensive eye examination"
+        - "Visual development specialist evaluation is recommended"
+
+    alert:
+      for_teacher:
+        - "Provide all materials in enlarged format"
+        - "Add verbal explanations"
+      for_parent:
+        - "Get pediatric ophthalmologist evaluation"

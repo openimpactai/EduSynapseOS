@@ -1,0 +1,10 @@
+{
+  "defaultInstruction": "Cliquez sur les mots qui doivent être marqués",
+  "checkAnswer": "Vérifier",
+  "tryAgain": "Réessayer",
+  "showSolution": "Afficher la solution",
+  "correct": "Correct !",
+  "wrong": "Incorrect !",
+  "missed": "Réponse non trouvée !",
+  "solutionDescription": "Tâche terminée."
+}

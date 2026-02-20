@@ -1,0 +1,12 @@
+{
+  "checkAnswer": "Kontrol Et",
+  "tryAgain": "Tekrar Dene",
+  "showSolution": "Cevabı Göster",
+  "found": "bulundu",
+  "notFound": "bulunamadı",
+  "solved": "Çözüldü!",
+  "scoreBarLabel": ":num/:total kelime bulundu",
+  "a11yCheck": "Cevaplarınızı kontrol edin",
+  "a11yShowSolution": "Çözümü gösterin",
+  "a11yRetry": "Oyunu yeniden başlatın"
+}

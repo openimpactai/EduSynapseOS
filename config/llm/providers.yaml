@@ -1,0 +1,161 @@
+# ==============================================================================
+# EduSynapseOS - LLM Provider Configuration
+# ==============================================================================
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+#
+# Each provider has a unique CODE that agents reference in their configs.
+#
+# Usage in agent config:
+#   llm:
+#     provider: local
+#     model: qwen2.5:7b  # optional, uses provider default if omitted
+# ==============================================================================
+
+# Default provider code to use when not specified
+default_provider: local
+
+# ==============================================================================
+# PROVIDER DEFINITIONS
+# ==============================================================================
+# Each key is the provider CODE that agents reference
+
+providers:
+  # ============================================================================
+  # LOCAL - Local Ollama Instance
+  # ============================================================================
+  local:
+    enabled: true
+    type: ollama
+    description: "Local Ollama Instance"
+    api_base: "http://localhost:11434"
+    api_key: ""
+    default_model: qwen2.5:7b
+    available_models:
+      - qwen2.5:7b
+      - llama3.2:3b
+      - command-r:35b
+    timeout_seconds: 60
+    max_retries: 3
+    cost_per_1k_input: 0.0
+    cost_per_1k_output: 0.0
+
+  # ============================================================================
+  # DOCKER_OLLAMA - Ollama in Docker network
+  # ============================================================================
+  docker_ollama:
+    enabled: false
+    type: ollama
+    description: "Ollama in Docker Network"
+    api_base: "http://host.docker.internal:11434"
+    api_key: ""
+    default_model: qwen2.5:7b
+    available_models:
+      - qwen2.5:7b
+    timeout_seconds: 60
+    max_retries: 3
+    cost_per_1k_input: 0.0
+    cost_per_1k_output: 0.0
+
+  # ============================================================================
+  # OPENAI - OpenAI GPT Models
+  # ============================================================================
+  openai:
+    enabled: false
+    type: openai
+    description: "OpenAI GPT Models"
+    # api_base not needed for OpenAI (uses default)
+    api_key: ""  # Set your API key here or via OPENAI_API_KEY env var
+    default_model: gpt-4o-mini
+    available_models:
+      - gpt-4o
+      - gpt-4o-mini
+      - gpt-4-turbo
+      - gpt-3.5-turbo
+    timeout_seconds: 60
+    max_retries: 3
+    cost_per_1k_input: 0.0025
+    cost_per_1k_output: 0.01
+
+  # ============================================================================
+  # ANTHROPIC - Anthropic Claude Models
+  # ============================================================================
+  anthropic:
+    enabled: false
+    type: anthropic
+    description: "Anthropic Claude Models"
+    api_key: ""  # Set your API key here or via ANTHROPIC_API_KEY env var
+    default_model: claude-sonnet-4-20250514
+    available_models:
+      - claude-sonnet-4-20250514
+      - claude-haiku-4-5-20251001
+      - claude-opus-4-20250514
+    timeout_seconds: 60
+    max_retries: 3
+    cost_per_1k_input: 0.003
+    cost_per_1k_output: 0.015
+
+  # ============================================================================
+  # GOOGLE - Google Gemini Models
+  # ============================================================================
+  google:
+    enabled: false
+    type: google
+    description: "Google Gemini Models - Fast and cost-effective"
+    api_key: ""  # Set your API key here or via GOOGLE_API_KEY env var
+    default_model: gemini-2.0-flash
+    available_models:
+      - gemini-2.0-flash
+      - gemini-2.0-flash-lite
+      - gemini-1.5-pro
+      - gemini-1.5-flash
+    context_length: 1000000  # 1M token context window
+    max_output_tokens: 8192
+    timeout_seconds: 30
+    max_retries: 3
+    cost_per_1k_input: 0.0001   # $0.10 per 1M tokens
+    cost_per_1k_output: 0.0004  # $0.40 per 1M tokens
+
+# ==============================================================================
+# ROUTING STRATEGIES
+# ==============================================================================
+# Define how requests are routed between providers
+
+routing_strategies:
+  # Privacy First: Only use owned/local instances
+  privacy_first:
+    primary: local
+    fallbacks: []
+    description: "Use only owned LLM instances for data privacy"
+
+  # Hybrid: Start with local, fallback to cloud
+  hybrid:
+    primary: local
+    fallbacks:
+      - google
+      - openai
+      - anthropic
+    description: "Use local first, fallback to cloud on failure"
+
+  # Quality First: Prefer cloud models for best quality
+  quality_first:
+    primary: openai
+    fallbacks:
+      - anthropic
+      - local
+    description: "Use best quality cloud models first"
+
+  # Local Only: Only local instance
+  local_only:
+    primary: local
+    fallbacks: []
+    description: "Use only local Ollama instance"
+
+# ==============================================================================
+# EMBEDDING PROVIDER
+# ==============================================================================
+embedding:
+  provider: google
+  model: text-embedding-004
+  dimension: 768
+  batch_size: 32

@@ -1,0 +1,32 @@
+{
+  "l10n": {
+    "across": "Horizontal",
+    "down": "Vertical",
+    "checkAnswer": "Comprobar",
+    "tryAgain": "Reintentar",
+    "showSolution": "Mostrar solución",
+    "couldNotGenerateCrossword": "No se pudo generar el crucigrama.",
+    "submitAnswer": "Enviar",
+    "extraClue": "Pista extra",
+    "closeWindow": "Cerrar ventana"
+  },
+  "a11y": {
+    "crosswordGrid": "Cuadrícula del crucigrama",
+    "column": "columna",
+    "row": "fila",
+    "across": "horizontal",
+    "down": "vertical",
+    "empty": "Vacío",
+    "resultFor": "Resultado para",
+    "correct": "Correcto",
+    "wrong": "Incorrecto",
+    "point": "punto",
+    "solutionFor": "Solución para",
+    "extraClueFor": "Pista extra para",
+    "letterSeventeen98": "Letra @letter",
+    "lettersWord": "Palabra de @length letras",
+    "check": "Comprobar las respuestas",
+    "showSolution": "Mostrar la solución",
+    "retry": "Reintentar"
+  }
+}

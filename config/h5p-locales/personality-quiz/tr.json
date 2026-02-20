@@ -1,0 +1,13 @@
+{
+  "resultScreen": {
+    "noResultTitle": "Sonuç Yok",
+    "noResultMessage": "Bir sonuç belirlenemedi.",
+    "retakeButtonText": "Testi Tekrarla"
+  },
+  "l10n": {
+    "nextButtonText": "Sonraki",
+    "prevButtonText": "Önceki",
+    "resultsButtonText": "Sonuçları Gör",
+    "progressText": "Soru :current / :total"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "checkAnswerButton": "Vérifier",
+  "submitAnswerButton": "Soumettre",
+  "showSolutionButton": "Afficher la solution",
+  "tryAgainButton": "Réessayer",
+  "tipsLabel": "Afficher l indice",
+  "scoreBarLabel": "Score : :num / :total",
+  "tipAvailable": "Indice disponible",
+  "feedbackAvailable": "Commentaire disponible",
+  "readFeedback": "Lire le commentaire",
+  "wrongAnswer": "Mauvaise réponse",
+  "correctAnswer": "Bonne réponse",
+  "shouldCheck": "Aurait dû être coché",
+  "shouldNotCheck": "N aurait pas dû être coché",
+  "noInput": "Veuillez sélectionner une réponse",
+  "correctFeedback": "Correct !",
+  "incorrectFeedback": "Incorrect. Réessayez."
+}

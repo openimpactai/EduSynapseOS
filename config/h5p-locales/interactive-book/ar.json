@@ -1,0 +1,27 @@
+{
+  "l10n": {
+    "nextPage": "الصفحة التالية",
+    "previousPage": "الصفحة السابقة",
+    "chapterCompleted": "تم إكمال الفصل!",
+    "partCompleted": "تم إكمال @current من @pages لهذا الفصل.",
+    "incompleteChapter": "فصل غير مكتمل",
+    "navigateToTop": "انتقل إلى الأعلى",
+    "markAsFinished": "لقد أنهيت هذا الفصل",
+    "fullscreen": "شاشة كاملة",
+    "exitFullscreen": "الخروج من الشاشة الكاملة",
+    "bookProgressSubtext": "@count من @total",
+    "interactionsProgressSubtext": "@count مكتمل",
+    "submitReport": "إرسال التقرير",
+    "restartLabel": "إعادة البدء",
+    "summaryHeader": "ملخص",
+    "allInteractions": "جميع التفاعلات",
+    "yourAnswersTitle": "إجاباتك",
+    "bookProgress": "تقدم الكتاب",
+    "interactionsProgress": "تقدم التفاعلات",
+    "chapter": "فصل"
+  },
+  "a11y": {
+    "progress": "الصفحة @page من @total",
+    "menu": "تبديل قائمة جدول المحتويات"
+  }
+}

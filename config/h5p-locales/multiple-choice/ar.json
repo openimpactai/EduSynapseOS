@@ -1,0 +1,18 @@
+{
+  "checkAnswerButton": "تحقق",
+  "submitAnswerButton": "إرسال",
+  "showSolutionButton": "أظهر الحل",
+  "tryAgainButton": "أعد المحاولة",
+  "tipsLabel": "أظهر التلميح",
+  "scoreBarLabel": "النتيجة: :num / :total",
+  "tipAvailable": "تلميح متاح",
+  "feedbackAvailable": "ملاحظات متاحة",
+  "readFeedback": "اقرأ الملاحظات",
+  "wrongAnswer": "إجابة خاطئة",
+  "correctAnswer": "إجابة صحيحة",
+  "shouldCheck": "كان يجب اختياره",
+  "shouldNotCheck": "لم يكن يجب اختياره",
+  "noInput": "يرجى اختيار إجابة",
+  "correctFeedback": "صحيح!",
+  "incorrectFeedback": "غير صحيح. حاول مرة أخرى."
+}

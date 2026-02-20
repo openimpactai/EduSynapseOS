@@ -1,0 +1,341 @@
+# ==============================================================================
+# EduSynapseOS Docker Compose - Backend
+# ==============================================================================
+#
+# Architecture:
+#   - Central Database: Platform management (tenants, system users, licenses)
+#   - Tenant Databases: Created dynamically via Docker SDK (one container per tenant)
+#   - Shared Services: Redis, Qdrant (tenant isolation via namespacing)
+#
+# Port Ranges:
+#   - Main services: 34000-35000
+#     - API: 34000
+#     - Central PostgreSQL: 34001
+#     - Redis: 34002
+#     - Qdrant HTTP: 34003
+#     - Qdrant gRPC: 34004
+#     - MCP: 34005
+#   - Tenant PostgreSQL: 35000-35999
+#
+# Usage:
+#   docker compose up -d              # Start all services
+#   docker compose logs -f api        # Follow API logs
+#   docker compose down               # Stop all services
+# ==============================================================================
+
+services:
+  # ===========================================================================
+  # INFRASTRUCTURE TIER
+  # ===========================================================================
+
+  # Central PostgreSQL Database
+  # Contains: tenants, system_users, system_sessions, licenses, feature_flags
+  central-db:
+    image: postgres:16-alpine
+    container_name: edusynapse-central-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${CENTRAL_DB_USER:-edusynapse}
+      POSTGRES_PASSWORD: ${CENTRAL_DB_PASSWORD:-edusynapse_central_password}
+      POSTGRES_DB: edusynapse_central
+    ports:
+      - "34001:5432"
+    volumes:
+      - central_db_data:/var/lib/postgresql/data
+      - ./scripts/init-central-db.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${CENTRAL_DB_USER:-edusynapse} -d edusynapse_central"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - edusynapse-network
+
+  # Redis Cache & Message Broker
+  # Tenant isolation: Key prefix pattern tenant:{tenant_code}:*
+  redis:
+    image: redis:7-alpine
+    container_name: edusynapse-redis
+    restart: unless-stopped
+    command: >
+      redis-server
+      --appendonly yes
+      --maxmemory 512mb
+      --maxmemory-policy allkeys-lru
+      --requirepass ${REDIS_PASSWORD:-edusynapse_redis_password}
+    ports:
+      - "34002:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-edusynapse_redis_password}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - edusynapse-network
+
+  # Qdrant Vector Database
+  # Tenant isolation: Collection name pattern tenant_{tenant_code}_{collection}
+  qdrant:
+    image: qdrant/qdrant:v1.16.3
+    container_name: edusynapse-qdrant
+    restart: unless-stopped
+    ports:
+      - "34003:6333"
+      - "34004:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__GRPC_PORT: 6334
+      QDRANT__SERVICE__HTTP_PORT: 6333
+      QDRANT__LOG_LEVEL: INFO
+    healthcheck:
+      test: ["CMD", "bash", "-c", "echo > /dev/tcp/localhost/6333"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks:
+      - edusynapse-network
+
+  # ===========================================================================
+  # APPLICATION TIER
+  # ===========================================================================
+
+  # API Server
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: edusynapse-api
+    restart: unless-stopped
+    group_add:
+      - "${DOCKER_GID:-981}"  # docker group for socket access (host GID)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: >
+      uvicorn src.api.app:create_app
+      --factory
+      --host 0.0.0.0
+      --port 8000
+      --workers ${API_WORKERS:-2}
+    ports:
+      - "34000:8000"
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - DEBUG=${DEBUG:-true}
+      - LOG_LEVEL=${LOG_LEVEL:-DEBUG}
+      # Central Database (individual settings for Pydantic)
+      - CENTRAL_DB_HOST=central-db
+      - CENTRAL_DB_PORT=5432
+      - CENTRAL_DB_USER=${CENTRAL_DB_USER:-edusynapse}
+      - CENTRAL_DB_PASSWORD=${CENTRAL_DB_PASSWORD:-edusynapse_central_password}
+      - CENTRAL_DB_DATABASE=edusynapse_central
+      # Tenant Database Configuration (for dynamic container creation)
+      - TENANT_DB_USER=${TENANT_DB_USER:-edusynapse}
+      - TENANT_DB_PASSWORD=${TENANT_DB_PASSWORD:-edusynapse_tenant_password}
+      - TENANT_DB_NETWORK=edusynapse-network
+      # Redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-edusynapse_redis_password}
+      # Qdrant
+      - QDRANT_HOST=qdrant
+      - QDRANT_HTTP_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+      # JWT
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-change-this-in-production}
+      - JWT_ALGORITHM=${JWT_ALGORITHM:-HS256}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES:-30}
+      - REFRESH_TOKEN_EXPIRE_DAYS=${REFRESH_TOKEN_EXPIRE_DAYS:-7}
+      # LLM (Vast.ai or local Ollama)
+      - DEFAULT_LLM_PROVIDER=${DEFAULT_LLM_PROVIDER:-ollama}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY:-}
+      - OLLAMA_DEFAULT_MODEL=${OLLAMA_DEFAULT_MODEL:-qwen2.5:7b}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      # Embedding
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-ollama/nomic-embed-text}
+      # CORS
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3000,http://localhost:5173}
+      - CORS_ALLOW_CREDENTIALS=${CORS_ALLOW_CREDENTIALS:-true}
+      # Central Curriculum
+      - CENTRAL_CURRICULUM_BASE_URL=${CENTRAL_CURRICULUM_BASE_URL:-http://localhost:8080/api/v1}
+      - CENTRAL_CURRICULUM_API_KEY=${CENTRAL_CURRICULUM_API_KEY:-}
+      - CENTRAL_CURRICULUM_API_SECRET=${CENTRAL_CURRICULUM_API_SECRET:-}
+      - CENTRAL_CURRICULUM_SYNC_ENABLED=${CENTRAL_CURRICULUM_SYNC_ENABLED:-true}
+      - CENTRAL_CURRICULUM_TRUSTED_SYSTEM_SECRET=${CENTRAL_CURRICULUM_TRUSTED_SYSTEM_SECRET:-}
+      # H5P Server (Creatiq)
+      - H5P_SERVER_URL=${H5P_SERVER_URL:-http://eduagentic-h5p-app:17000}
+      - H5P_API_KEY=${H5P_API_KEY:-}
+      # Docker socket for tenant container management
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      # Host path for tenant database initialization script (Docker SDK needs host paths)
+      - TENANT_INIT_SCRIPT_HOST_PATH=${TENANT_INIT_SCRIPT_HOST_PATH:-/opt/edusynapse/scripts/init-tenant-db.sql}
+    volumes:
+      - ./config:/app/config  # writable for backup functionality
+      - ./scripts:/app/scripts:ro
+      - model_cache:/app/.cache
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      central-db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - edusynapse-network
+
+  # Background Worker (Dramatiq)
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: edusynapse-worker
+    restart: unless-stopped
+    group_add:
+      - "${DOCKER_GID:-981}"  # docker group for socket access (host GID)
+    command: >
+      dramatiq src.infrastructure.background.tasks
+      --processes ${WORKER_PROCESSES:-2}
+      --threads ${WORKER_THREADS:-4}
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - DEBUG=${DEBUG:-true}
+      - LOG_LEVEL=${LOG_LEVEL:-DEBUG}
+      # Central Database (individual settings for Pydantic)
+      - CENTRAL_DB_HOST=central-db
+      - CENTRAL_DB_PORT=5432
+      - CENTRAL_DB_USER=${CENTRAL_DB_USER:-edusynapse}
+      - CENTRAL_DB_PASSWORD=${CENTRAL_DB_PASSWORD:-edusynapse_central_password}
+      - CENTRAL_DB_DATABASE=edusynapse_central
+      # Tenant Database Configuration
+      - TENANT_DB_USER=${TENANT_DB_USER:-edusynapse}
+      - TENANT_DB_PASSWORD=${TENANT_DB_PASSWORD:-edusynapse_tenant_password}
+      - TENANT_DB_NETWORK=edusynapse-network
+      # Redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-edusynapse_redis_password}
+      # Qdrant
+      - QDRANT_HOST=qdrant
+      - QDRANT_HTTP_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+      # JWT (needed for settings validation)
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-change-this-in-production}
+      - JWT_ALGORITHM=${JWT_ALGORITHM:-HS256}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES:-30}
+      - REFRESH_TOKEN_EXPIRE_DAYS=${REFRESH_TOKEN_EXPIRE_DAYS:-7}
+      # LLM (Vast.ai or local Ollama)
+      - DEFAULT_LLM_PROVIDER=${DEFAULT_LLM_PROVIDER:-ollama}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY:-}
+      - OLLAMA_DEFAULT_MODEL=${OLLAMA_DEFAULT_MODEL:-qwen2.5:7b}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      # Embedding
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-ollama/nomic-embed-text}
+      # Central Curriculum
+      - CENTRAL_CURRICULUM_BASE_URL=${CENTRAL_CURRICULUM_BASE_URL:-http://localhost:8080/api/v1}
+      - CENTRAL_CURRICULUM_API_KEY=${CENTRAL_CURRICULUM_API_KEY:-}
+      - CENTRAL_CURRICULUM_API_SECRET=${CENTRAL_CURRICULUM_API_SECRET:-}
+      - CENTRAL_CURRICULUM_SYNC_ENABLED=${CENTRAL_CURRICULUM_SYNC_ENABLED:-true}
+      - CENTRAL_CURRICULUM_TRUSTED_SYSTEM_SECRET=${CENTRAL_CURRICULUM_TRUSTED_SYSTEM_SECRET:-}
+      # Docker socket for tenant container management
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      # Host path for tenant database initialization script (Docker SDK needs host paths)
+      - TENANT_INIT_SCRIPT_HOST_PATH=${TENANT_INIT_SCRIPT_HOST_PATH:-/opt/edusynapse/scripts/init-tenant-db.sql}
+    volumes:
+      - ./config:/app/config:ro
+      - ./scripts:/app/scripts:ro
+      - model_cache:/app/.cache
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import redis; r = redis.Redis(host='redis', port=6379, password='${REDIS_PASSWORD:-edusynapse_redis_password}'); r.ping()\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    depends_on:
+      central-db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    networks:
+      - edusynapse-network
+
+  # MCP Server (Optional - for Claude Desktop integration)
+  mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: edusynapse-mcp
+    restart: unless-stopped
+    command: python -m src.mcp.server
+    profiles:
+      - mcp
+    ports:
+      - "34005:8001"
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      # Central Database (individual settings for Pydantic)
+      - CENTRAL_DB_HOST=central-db
+      - CENTRAL_DB_PORT=5432
+      - CENTRAL_DB_USER=${CENTRAL_DB_USER:-edusynapse}
+      - CENTRAL_DB_PASSWORD=${CENTRAL_DB_PASSWORD:-edusynapse_central_password}
+      - CENTRAL_DB_DATABASE=edusynapse_central
+      # Redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-edusynapse_redis_password}
+      # Qdrant
+      - QDRANT_HOST=qdrant
+      - QDRANT_HTTP_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+    volumes:
+      - ./config:/app/config:ro
+    depends_on:
+      central-db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    networks:
+      - edusynapse-network
+
+# ==============================================================================
+# VOLUMES
+# ==============================================================================
+volumes:
+  central_db_data:
+    name: edusynapse-central-db-data
+  redis_data:
+    name: edusynapse-redis-data
+  qdrant_data:
+    name: edusynapse-qdrant-data
+  model_cache:
+    name: edusynapse-model-cache
+
+# ==============================================================================
+# NETWORKS
+# ==============================================================================
+networks:
+  edusynapse-network:
+    driver: bridge

@@ -1,0 +1,27 @@
+{
+  "l10n": {
+    "nextPage": "Page suivante",
+    "previousPage": "Page précédente",
+    "chapterCompleted": "Chapitre terminé !",
+    "partCompleted": "@current sur @pages terminé(s) pour ce chapitre.",
+    "incompleteChapter": "Chapitre incomplet",
+    "navigateToTop": "Aller en haut",
+    "markAsFinished": "J ai terminé ce chapitre",
+    "fullscreen": "Plein écran",
+    "exitFullscreen": "Quitter le plein écran",
+    "bookProgressSubtext": "@count sur @total",
+    "interactionsProgressSubtext": "@count terminé(s)",
+    "submitReport": "Soumettre le rapport",
+    "restartLabel": "Recommencer",
+    "summaryHeader": "Résumé",
+    "allInteractions": "Toutes les interactions",
+    "yourAnswersTitle": "Vos réponses",
+    "bookProgress": "Progression du livre",
+    "interactionsProgress": "Progression des interactions",
+    "chapter": "Chapitre"
+  },
+  "a11y": {
+    "progress": "Page @page sur @total",
+    "menu": "Basculer le menu de la table des matières"
+  }
+}

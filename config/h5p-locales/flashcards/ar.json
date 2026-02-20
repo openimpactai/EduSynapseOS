@@ -1,0 +1,18 @@
+{
+  "progressText": "البطاقة @card من @total",
+  "next": "التالي",
+  "previous": "السابق",
+  "checkAnswerText": "تحقق",
+  "defaultAnswerText": "إجابتك",
+  "correctAnswerText": "صحيح!",
+  "incorrectAnswerText": "غير صحيح",
+  "showSolutionText": "الإجابة الصحيحة",
+  "results": "النتائج",
+  "ofCorrect": "@score من @total صحيح",
+  "showResults": "عرض النتائج",
+  "answerShortText": "ج:",
+  "retry": "أعد المحاولة",
+  "cardAnnouncement": "إجابة خاطئة. الإجابة الصحيحة كانت: @answer",
+  "correctAnswerAnnouncement": "إجابة صحيحة",
+  "pageAnnouncement": "البطاقة @current من @total"
+}

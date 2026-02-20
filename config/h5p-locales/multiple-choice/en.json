@@ -1,0 +1,18 @@
+{
+  "checkAnswerButton": "Check",
+  "submitAnswerButton": "Submit",
+  "showSolutionButton": "Show solution",
+  "tryAgainButton": "Retry",
+  "tipsLabel": "Show tip",
+  "scoreBarLabel": "Score: :num / :total",
+  "tipAvailable": "Tip available",
+  "feedbackAvailable": "Feedback available",
+  "readFeedback": "Read feedback",
+  "wrongAnswer": "Wrong answer",
+  "correctAnswer": "Correct answer",
+  "shouldCheck": "Should have been checked",
+  "shouldNotCheck": "Should not have been checked",
+  "noInput": "Please select an answer",
+  "correctFeedback": "Correct!",
+  "incorrectFeedback": "Incorrect. Try again."
+}

@@ -1,0 +1,21 @@
+{
+  "defaultInstruction": "Kelimeleri doğru yerlere sürükleyin.",
+  "checkAnswer": "Kontrol Et",
+  "submitAnswer": "Gönder",
+  "tryAgain": "Tekrar Dene",
+  "showSolution": "Cevabı Göster",
+  "dropZoneLabel": "Bırakma alanı @index",
+  "emptyLabel": "Bırakma alanı @index boş",
+  "containsLabel": "Bırakma alanı @index içeriyor",
+  "ariaDraggableLabel": "Sürüklenebilir @index/@count",
+  "tipLabel": "İpucu",
+  "correct": "Doğru!",
+  "incorrect": "Yanlış",
+  "resetDropTitle": "Bırakılanı sıfırla",
+  "resetDropDescription": "Sürüklenebilir öğeyi başlangıç konumuna döndür?",
+  "grabbedLabel": "Sürüklenebilir tutuldu",
+  "cancelledDraggingLabel": "Sürükleme iptal edildi",
+  "correctAnswerLabel": "Doğru cevap:",
+  "feedbackHeader": "Geri Bildirim",
+  "scoreBarLabel": "Skor: :num / :total"
+}

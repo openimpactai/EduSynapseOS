@@ -1,0 +1,32 @@
+{
+  "l10n": {
+    "across": "Horizontal",
+    "down": "Vertical",
+    "checkAnswer": "Vérifier",
+    "tryAgain": "Réessayer",
+    "showSolution": "Afficher la solution",
+    "couldNotGenerateCrossword": "Impossible de générer les mots croisés.",
+    "submitAnswer": "Soumettre",
+    "extraClue": "Indice supplémentaire",
+    "closeWindow": "Fermer la fenêtre"
+  },
+  "a11y": {
+    "crosswordGrid": "Grille de mots croisés",
+    "column": "colonne",
+    "row": "ligne",
+    "across": "horizontal",
+    "down": "vertical",
+    "empty": "Vide",
+    "resultFor": "Résultat pour",
+    "correct": "Correct",
+    "wrong": "Incorrect",
+    "point": "point",
+    "solutionFor": "Solution pour",
+    "extraClueFor": "Indice supplémentaire pour",
+    "letterSeventeen98": "Lettre @letter",
+    "lettersWord": "Mot de @length lettres",
+    "check": "Vérifier les réponses",
+    "showSolution": "Afficher la solution",
+    "retry": "Réessayer"
+  }
+}

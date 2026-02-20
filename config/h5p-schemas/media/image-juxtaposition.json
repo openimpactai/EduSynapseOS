@@ -1,0 +1,64 @@
+{
+  "library": "H5P.ImageJuxtaposition 1.4",
+  "name": "Image Juxtaposition",
+  "category": "media",
+  "description": "Compare two images with a slider. Perfect for before/after comparisons, historical changes, and visual analysis.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate comparison image descriptions",
+    "schema": {
+      "title": "string - Comparison title",
+      "before": {
+        "description": "string - Description of 'before' image (for AI generation)",
+        "label": "string - Label for before image",
+        "alt": "string - Alt text"
+      },
+      "after": {
+        "description": "string - Description of 'after' image (for AI generation)",
+        "label": "string - Label for after image",
+        "alt": "string - Alt text"
+      },
+      "startingPosition": "number - Initial slider position (0-100)"
+    },
+    "example": {
+      "title": "Deforestation Impact",
+      "before": {
+        "description": "A lush green Amazon rainforest with dense tree canopy viewed from above",
+        "label": "1990",
+        "alt": "Amazon rainforest in 1990"
+      },
+      "after": {
+        "description": "Same area with large patches of cleared land and scattered remaining trees",
+        "label": "2020",
+        "alt": "Amazon rainforest in 2020 showing deforestation"
+      },
+      "startingPosition": 50
+    }
+  },
+
+  "h5p_params_format": {
+    "title": "Deforestation Impact",
+    "imageBefore": {
+      "path": "images/before.jpg",
+      "alt": "Amazon rainforest in 1990"
+    },
+    "imageBefore_label": "1990",
+    "imageAfter": {
+      "path": "images/after.jpg",
+      "alt": "Amazon rainforest in 2020 showing deforestation"
+    },
+    "imageAfter_label": "2020",
+    "startingPosition": 50
+  },
+
+  "conversion_notes": {
+    "image_dimensions": "Both images should have the same dimensions",
+    "slider_position": "Starting position is percentage from left (50 = center)",
+    "labels": "Labels appear on each side of the slider"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

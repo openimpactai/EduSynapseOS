@@ -1,0 +1,12 @@
+{
+  "cardTurns": "Turnos de cartas",
+  "timeSpent": "Tiempo empleado",
+  "feedback": "¡Buen trabajo!",
+  "tryAgain": "¿Intentar de nuevo?",
+  "closeLabel": "Cerrar",
+  "label": "Juego de memoria",
+  "done": "¡Hecho!",
+  "cardPrefix": "Carta",
+  "cardUnturned": "Sin voltear",
+  "cardMatched": "Emparejada"
+}

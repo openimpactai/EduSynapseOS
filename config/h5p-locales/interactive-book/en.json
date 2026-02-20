@@ -1,0 +1,27 @@
+{
+  "l10n": {
+    "nextPage": "Next page",
+    "previousPage": "Previous page",
+    "chapterCompleted": "Chapter completed!",
+    "partCompleted": "@current of @pages completed for this chapter.",
+    "incompleteChapter": "Incomplete Chapter",
+    "navigateToTop": "Navigate to the top",
+    "markAsFinished": "I have finished this chapter",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit fullscreen",
+    "bookProgressSubtext": "@count of @total",
+    "interactionsProgressSubtext": "@count completed",
+    "submitReport": "Submit Report",
+    "restartLabel": "Restart",
+    "summaryHeader": "Summary",
+    "allInteractions": "All interactions",
+    "yourAnswersTitle": "Your answers",
+    "bookProgress": "Book progress",
+    "interactionsProgress": "Interactions progress",
+    "chapter": "Chapter"
+  },
+  "a11y": {
+    "progress": "Page @page of @total",
+    "menu": "Toggle table of contents menu"
+  }
+}

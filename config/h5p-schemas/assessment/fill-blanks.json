@@ -1,0 +1,67 @@
+{
+  "library": "H5P.Blanks 1.14",
+  "name": "Fill in the Blanks",
+  "category": "assessment",
+  "description": "Text with missing words to fill in. Ideal for vocabulary practice, process steps, and formula practice.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate an object with a title and an array of exercises, each containing text with *blank* markers and optional hints.",
+    "schema": {
+      "title": "string - Exercise title",
+      "exercises": [
+        {
+          "text": "string - Text with *blank* words marked by asterisks. Use *word/alternative* for multiple accepted answers.",
+          "blanks": "array of strings - The correct words for the blanks (for reference)",
+          "hint": "string - Optional hint for the exercise"
+        }
+      ]
+    },
+    "example": {
+      "title": "Photosynthesis Fill in the Blanks",
+      "exercises": [
+        {
+          "text": "Plants use *sunlight/solar energy* and *water* to perform photosynthesis.",
+          "blanks": ["sunlight", "water"],
+          "hint": "Think about what plants need from their environment"
+        },
+        {
+          "text": "The *chloroplast* is the organelle where photosynthesis takes place, using a pigment called *chlorophyll*.",
+          "blanks": ["chloroplast", "chlorophyll"],
+          "hint": "Both words start with 'chloro' meaning green"
+        },
+        {
+          "text": "Photosynthesis produces *glucose/sugar* and releases *oxygen/O2* into the atmosphere.",
+          "blanks": ["glucose", "oxygen"],
+          "hint": "Think about what comes OUT of photosynthesis"
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "text": "<p>Plants use *sunlight/solar energy* and *water* to perform photosynthesis.</p>\n<p>The *chloroplast* is the organelle where photosynthesis takes place, using a pigment called *chlorophyll*.</p>\n<p>Photosynthesis produces *glucose/sugar* and releases *oxygen/O2* into the atmosphere.</p>",
+    "overallFeedback": [
+      {"from": 0, "to": 50, "feedback": "Keep practicing!"},
+      {"from": 51, "to": 80, "feedback": "Good job!"},
+      {"from": 81, "to": 100, "feedback": "Excellent work!"}
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "caseSensitive": false,
+      "showSolutionsRequiresInput": true,
+      "autoCheck": false,
+      "acceptSpellingErrors": false,
+      "separateLines": false
+    }
+  },
+
+  "conversion_notes": {
+    "blank_syntax": "Use *word* to mark blanks in text - H5P uses the same asterisk format",
+    "alternative_answers": "Use *answer1/answer2* for multiple accepted answers (slash separated)",
+    "exercises_combined": "All exercises are joined into one text block with newlines",
+    "html_wrapping": "Each exercise text is wrapped in <p> tags"
+  }
+}

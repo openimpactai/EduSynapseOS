@@ -1,0 +1,8 @@
+{
+  "checkAnswer": "تحقق",
+  "tryAgain": "أعد المحاولة",
+  "showSolution": "أظهر الحل",
+  "score": "نتيجتك: @score من @total",
+  "matchCorrect": "تطابق صحيح",
+  "matchIncorrect": "تطابق غير صحيح"
+}

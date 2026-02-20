@@ -1,0 +1,28 @@
+{
+  "confirmCheck": {
+    "header": "Terminer ?",
+    "body": "Êtes-vous sûr de vouloir terminer ?",
+    "cancelLabel": "Annuler",
+    "confirmLabel": "Terminer"
+  },
+  "confirmRetry": {
+    "header": "Réessayer ?",
+    "body": "Êtes-vous sûr de vouloir réessayer ?",
+    "cancelLabel": "Annuler",
+    "confirmLabel": "Confirmer"
+  },
+  "overallFeedback": [
+    {"from": 0, "to": 50, "feedback": "Vous avez besoin de plus de pratique."},
+    {"from": 51, "to": 80, "feedback": "Bon travail ! Vous pouvez faire encore mieux."},
+    {"from": 81, "to": 100, "feedback": "Excellent ! Vous maîtrisez ce sujet."}
+  ],
+  "ui": {
+    "checkAnswerButton": "Vérifier",
+    "showSolutionButton": "Afficher la solution",
+    "tryAgainButton": "Réessayer",
+    "submitAnswerButton": "Soumettre",
+    "correctText": "Correct !",
+    "incorrectText": "Incorrect",
+    "tipAvailable": "Indice disponible"
+  }
+}

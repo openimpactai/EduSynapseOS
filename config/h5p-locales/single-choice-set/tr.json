@@ -1,0 +1,17 @@
+{
+  "nextButtonLabel": "Sonraki soru",
+  "showSolutionButtonLabel": "Cevabı göster",
+  "retryButtonLabel": "Tekrar dene",
+  "solutionViewTitle": "Çözüm",
+  "correctText": "Doğru!",
+  "incorrectText": "Yanlış!",
+  "shouldSelect": "Seçmelisiniz",
+  "shouldNotSelect": "Seçmemelisiniz",
+  "muteButtonLabel": "Sesi kapat",
+  "closeButtonLabel": "Kapat",
+  "slideOfTotal": "Slayt :num / :total",
+  "scoreBarLabel": "Skor: :num / :total",
+  "solutionListQuestionNumber": "Soru :num",
+  "a11yShowSolution": "Çözümü göster. Doğru cevaplar gösterilecek.",
+  "a11yRetry": "Yeniden dene. Tüm sorular sıfırlanacak."
+}

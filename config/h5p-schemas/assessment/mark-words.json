@@ -1,0 +1,66 @@
+{
+  "library": "H5P.MarkTheWords 1.11",
+  "name": "Mark the Words",
+  "category": "assessment",
+  "description": "Identify and click on specific words in text. Perfect for word type identification, term recognition, and grammar exercises.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate an object with a title, instruction, and an array of exercises with text containing *markable* word markers.",
+    "schema": {
+      "title": "string - Exercise title",
+      "instruction": "string - What words to mark (e.g., 'Click on all the verbs')",
+      "exercises": [
+        {
+          "text": "string - Text with *markable* words indicated by asterisks",
+          "markables": "array of strings - The words that should be marked (for reference)",
+          "wordType": "string - Optional category of marked words (e.g., 'verbs', 'nouns', 'adjectives')"
+        }
+      ]
+    },
+    "example": {
+      "title": "Identify the Verbs",
+      "instruction": "Click on all the verbs in the following sentences.",
+      "exercises": [
+        {
+          "text": "The scientist *observes* the experiment and carefully *records* the results in her notebook.",
+          "markables": ["observes", "records"],
+          "wordType": "verbs"
+        },
+        {
+          "text": "Plants *absorb* sunlight through their leaves and *convert* it into chemical energy.",
+          "markables": ["absorb", "convert"],
+          "wordType": "verbs"
+        },
+        {
+          "text": "The students *analyzed* the data and *presented* their findings to the class.",
+          "markables": ["analyzed", "presented"],
+          "wordType": "verbs"
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "<p>Click on all the verbs in the following sentences.</p>",
+    "textField": "<p>The scientist *observes* the experiment and carefully *records* the results in her notebook.</p>\n<p>Plants *absorb* sunlight through their leaves and *convert* it into chemical energy.</p>",
+    "overallFeedback": [
+      {"from": 0, "to": 50, "feedback": "Keep trying!"},
+      {"from": 51, "to": 80, "feedback": "Good effort!"},
+      {"from": 81, "to": 100, "feedback": "Excellent!"}
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "showScorePoints": true
+    }
+  },
+
+  "conversion_notes": {
+    "word_marking": "Use *word* to mark words that should be clicked - H5P uses same asterisk format",
+    "instruction_mapping": "instruction maps to taskDescription, wrapped in <p> tags",
+    "exercises_combined": "All exercise texts are joined with newlines into textField",
+    "html_wrapping": "Each exercise text is wrapped in <p> tags"
+  }
+}

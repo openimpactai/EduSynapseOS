@@ -1,0 +1,62 @@
+{
+  "library": "H5P.DialogCards 1.9",
+  "name": "Dialog Cards",
+  "category": "vocabulary",
+  "description": "Flip cards with dialog/conversation format. Great for language learning, concept introduction, and Q&A format content.",
+  "supports_media": true,
+  "media_placement": "card",
+
+  "ai_input_format": {
+    "description": "AI should generate a JSON object with a title and dialogs array",
+    "schema": {
+      "title": "string - Title for the dialog cards deck",
+      "dialogs": [
+        {
+          "front": "string - Question or term on front",
+          "back": "string - Answer or definition on back",
+          "hint": "string - Optional hint for the learner"
+        }
+      ]
+    },
+    "example": {
+      "title": "Cell Biology Cards",
+      "dialogs": [
+        {"front": "What is photosynthesis?", "back": "The process by which plants convert light energy into chemical energy.", "hint": "Think about what plants need to grow."},
+        {"front": "Prokaryotic Cell", "back": "A simple cell without a membrane-bound nucleus (e.g., bacteria).", "hint": "Pro = before, karyon = nucleus"}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "dialogs": [
+      {
+        "text": "<p>What is photosynthesis?</p>",
+        "answer": "<p>The process by which plants convert light energy into chemical energy.</p>",
+        "tips": "<p>Think about what plants need to grow.</p>"
+      },
+      {
+        "text": "<p>Prokaryotic Cell</p>",
+        "answer": "<p>A simple cell without a membrane-bound nucleus (e.g., bacteria).</p>",
+        "tips": "<p>Pro = before, karyon = nucleus</p>"
+      }
+    ],
+    "title": "Study Cards",
+    "description": "Click on the card to flip it and see the answer.",
+    "behaviour": {
+      "enableRetry": true,
+      "disableBackwardsNavigation": false,
+      "scaleTextNotCard": true,
+      "randomCards": false
+    }
+  },
+
+  "conversion_notes": {
+    "field_mapping": {
+      "front": "text",
+      "back": "answer",
+      "hint": "tips"
+    },
+    "html_wrapping": "Wrap all text fields in <p> tags",
+    "html_escaping": "Escape HTML special characters before wrapping"
+  }
+}

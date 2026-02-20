@@ -1,0 +1,24 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Zone of Proximal Development (ZPD) Theory Configuration
+# Based on Lev Vygotsky's developmental theory
+
+enabled: true
+weight: 1.0
+
+parameters:
+  # ZPD range relative to current mastery
+  zpd_lower_bound: 0.1  # Lower edge of ZPD above mastery
+  zpd_upper_bound: 0.3  # Upper edge of ZPD above mastery
+
+  # Streak-based adjustments
+  streak_adjustment: 0.02  # Difficulty change per streak item
+
+  # Difficulty bounds
+  min_difficulty: 0.1  # Floor for difficulty
+  max_difficulty: 0.95  # Ceiling for difficulty
+
+  # Thresholds for zone transitions
+  frustration_threshold: 3  # Consecutive errors before reducing difficulty
+  confidence_threshold: 5   # Consecutive correct before increasing difficulty

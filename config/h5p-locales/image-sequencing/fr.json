@@ -1,0 +1,20 @@
+{
+  "defaultDescription": "Arrangez les images dans le bon ordre",
+  "l10n": {
+    "checkAnswer": "Vérifier",
+    "tryAgain": "Réessayer",
+    "showSolution": "Afficher la solution",
+    "scoreBarLabel": ":num sur :total correct(s)",
+    "a11yRetry": "Réessayer. Toutes les images seront remises à leurs positions initiales.",
+    "a11yCheck": "Vérifier les réponses",
+    "a11yShowSolution": "Afficher la séquence correcte"
+  },
+  "a11y": {
+    "imageDescription": "Description de l image",
+    "grabbed": "saisi",
+    "released": "relâché",
+    "correct": "correct",
+    "wrong": "incorrect",
+    "currentPosition": "Position actuelle"
+  }
+}

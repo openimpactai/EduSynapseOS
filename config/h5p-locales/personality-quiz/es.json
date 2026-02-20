@@ -1,0 +1,13 @@
+{
+  "resultScreen": {
+    "noResultTitle": "Sin resultado",
+    "noResultMessage": "No se pudo determinar un resultado.",
+    "retakeButtonText": "Repetir cuestionario"
+  },
+  "l10n": {
+    "nextButtonText": "Siguiente",
+    "prevButtonText": "Anterior",
+    "resultsButtonText": "Ver resultados",
+    "progressText": "Pregunta :current de :total"
+  }
+}

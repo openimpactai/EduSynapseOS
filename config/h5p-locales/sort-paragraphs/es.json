@@ -1,0 +1,23 @@
+{
+  "defaultDescription": "Pon los párrafos en el orden correcto",
+  "l10n": {
+    "checkAnswer": "Comprobar",
+    "tryAgain": "Reintentar",
+    "showSolution": "Mostrar solución",
+    "up": "Arriba",
+    "down": "Abajo",
+    "disabled": "Desactivado",
+    "correctAnswer": "Respuesta correcta",
+    "wrongAnswer": "Respuesta incorrecta",
+    "feedbackCorrectAnswer": "¡Felicidades! Ordenaste correctamente.",
+    "scoreBarLabel": ":num de :total párrafos correctos"
+  },
+  "a11y": {
+    "paragraph": "Párrafo",
+    "seenSolution": "Solución vista",
+    "resultExplanation": "Resultado",
+    "listDescription": "Párrafos para ordenar",
+    "listReordered": "Lista reordenada",
+    "instructionsSelected": "Usa las teclas de flecha para mover"
+  }
+}

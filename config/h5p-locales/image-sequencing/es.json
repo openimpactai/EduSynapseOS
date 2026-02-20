@@ -1,0 +1,20 @@
+{
+  "defaultDescription": "Ordena las imágenes en el orden correcto",
+  "l10n": {
+    "checkAnswer": "Comprobar",
+    "tryAgain": "Reintentar",
+    "showSolution": "Mostrar solución",
+    "scoreBarLabel": ":num de :total correctos",
+    "a11yRetry": "Reintentar. Todas las imágenes volverán a sus posiciones iniciales.",
+    "a11yCheck": "Comprobar las respuestas",
+    "a11yShowSolution": "Mostrar la secuencia correcta"
+  },
+  "a11y": {
+    "imageDescription": "Descripción de la imagen",
+    "grabbed": "agarrado",
+    "released": "soltado",
+    "correct": "correcto",
+    "wrong": "incorrecto",
+    "currentPosition": "Posición actual"
+  }
+}

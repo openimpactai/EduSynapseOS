@@ -1,0 +1,62 @@
+{
+  "library": "H5P.Accordion 1.0",
+  "name": "Accordion",
+  "category": "learning",
+  "description": "Expandable information panels (FAQ style). Great for FAQs, topic overviews, and reference material.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate a JSON object with a title and panels array",
+    "schema": {
+      "title": "string - Title for the accordion",
+      "panels": [
+        {
+          "title": "string - Panel header/title",
+          "content": "string - Panel content (HTML supported)"
+        }
+      ]
+    },
+    "example": {
+      "title": "Cell Biology FAQ",
+      "panels": [
+        {
+          "title": "What is a cell?",
+          "content": "<p>A cell is the basic structural and functional unit of all living organisms. Cells are often called the \"building blocks of life.\"</p>"
+        },
+        {
+          "title": "What are the main types of cells?",
+          "content": "<p>There are two main types:</p><ul><li><strong>Prokaryotic cells</strong> - Simple cells without a nucleus (bacteria)</li><li><strong>Eukaryotic cells</strong> - Complex cells with a nucleus (plants, animals)</li></ul>"
+        },
+        {
+          "title": "What is the function of the nucleus?",
+          "content": "<p>The nucleus is the control center of the cell. It contains the cell's genetic material (DNA) and controls cell growth, metabolism, and reproduction.</p>"
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "panels": [
+      {
+        "title": "What is a cell?",
+        "content": "<p>A cell is the basic structural and functional unit of all living organisms. Cells are often called the \"building blocks of life.\"</p>"
+      },
+      {
+        "title": "What are the main types of cells?",
+        "content": "<p>There are two main types:</p><ul><li><strong>Prokaryotic cells</strong> - Simple cells without a nucleus (bacteria)</li><li><strong>Eukaryotic cells</strong> - Complex cells with a nucleus (plants, animals)</li></ul>"
+      },
+      {
+        "title": "What is the function of the nucleus?",
+        "content": "<p>The nucleus is the control center of the cell. It contains the cell's genetic material (DNA) and controls cell growth, metabolism, and reproduction.</p>"
+      }
+    ],
+    "hTag": "h3"
+  },
+
+  "conversion_notes": {
+    "content_html": "Content can include HTML tags (p, ul, li, strong, etc.)",
+    "plain_text_wrapping": "If content is plain text, wrap in <p> tags",
+    "h_tag": "hTag controls the heading level (h2, h3, h4)",
+    "no_behaviour": "Accordion has no behaviour settings - it's purely presentational"
+  }
+}

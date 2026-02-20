@@ -1,0 +1,13 @@
+{
+  "defaultIntro": "Doğru ifadeleri seçin",
+  "solved": "Tamamlandı",
+  "scoreLabel": "Puanınız",
+  "result": "Sonuç",
+  "correct": "Doğru",
+  "incorrect": "Yanlış",
+  "altIncorrect": "Yanlış cevap",
+  "correctAnswers": "doğru cevap",
+  "tip": "İpucu",
+  "scoreBarLabel": ":num/:total puan",
+  "progressText": "Panel :num / :total"
+}

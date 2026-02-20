@@ -1,0 +1,17 @@
+{
+  "nextButtonLabel": "Siguiente pregunta",
+  "showSolutionButtonLabel": "Mostrar solución",
+  "retryButtonLabel": "Reintentar",
+  "solutionViewTitle": "Solución",
+  "correctText": "¡Correcto!",
+  "incorrectText": "¡Incorrecto!",
+  "shouldSelect": "Debería haberse seleccionado",
+  "shouldNotSelect": "No debería haberse seleccionado",
+  "muteButtonLabel": "Silenciar sonido",
+  "closeButtonLabel": "Cerrar",
+  "slideOfTotal": "Diapositiva :num de :total",
+  "scoreBarLabel": "Puntuación: :num de :total",
+  "solutionListQuestionNumber": "Pregunta :num",
+  "a11yShowSolution": "Mostrar la solución. Se mostrarán las respuestas correctas.",
+  "a11yRetry": "Reintentar. Se restablecerán todas las preguntas."
+}

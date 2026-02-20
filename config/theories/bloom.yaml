@@ -1,0 +1,26 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Bloom's Taxonomy Theory Configuration
+# Based on Benjamin Bloom's cognitive complexity framework
+
+enabled: true
+weight: 1.0
+
+parameters:
+  # Mastery thresholds for each cognitive level
+  level_thresholds:
+    remember: 0.0      # Basic recall
+    understand: 0.3    # Explain, summarize
+    apply: 0.5         # Use in new situations
+    analyze: 0.65      # Break down, compare
+    evaluate: 0.8      # Judge, critique
+    create: 0.9        # Synthesize, design
+
+  # Streak-based level advancement
+  streak_boost: true   # Enable advancement on success streak
+  streak_count: 3      # Consecutive correct to trigger boost
+
+  # Progression settings
+  allow_skip: false    # Whether to allow skipping levels
+  min_attempts_per_level: 3  # Minimum attempts before advancing

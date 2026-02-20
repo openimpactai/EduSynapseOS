@@ -1,0 +1,10 @@
+{
+  "defaultInstruction": "İşaretlenmesi gereken kelimelere tıklayın",
+  "checkAnswer": "Kontrol Et",
+  "tryAgain": "Tekrar Dene",
+  "showSolution": "Cevabı Göster",
+  "correct": "Doğru!",
+  "wrong": "Yanlış!",
+  "missed": "Cevap bulunamadı!",
+  "solutionDescription": "Görev tamamlandı."
+}
