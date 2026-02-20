@@ -1,0 +1,12 @@
+{
+  "checkAnswer": "تحقق",
+  "tryAgain": "أعد المحاولة",
+  "showSolution": "أظهر الحل",
+  "found": "تم العثور",
+  "notFound": "لم يتم العثور",
+  "solved": "تم الحل!",
+  "scoreBarLabel": ":num من :total كلمة تم العثور عليها",
+  "a11yCheck": "تحقق من إجاباتك",
+  "a11yShowSolution": "أظهر الحل",
+  "a11yRetry": "أعد بدء اللعبة"
+}

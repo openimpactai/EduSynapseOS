@@ -1,0 +1,155 @@
+{
+  "library": "H5P.QuestionSet 1.20",
+  "name": "Question Set",
+  "category": "assessment",
+  "description": "Composite quiz with multiple question types. Perfect for comprehensive quizzes, chapter tests, and final assessments.",
+  "supports_media": true,
+  "media_placement": "question",
+
+  "ai_input_format": {
+    "description": "AI should generate a quiz with mixed question types. Each question has a type and params that match the specific question type format.",
+    "schema": {
+      "title": "string - Quiz title",
+      "introPage": {
+        "showIntroPage": "boolean - Whether to show an intro page (default: true)",
+        "title": "string - Intro page title",
+        "introduction": "string - Intro page description text"
+      },
+      "questions": [
+        {
+          "type": "string - 'multiple_choice' | 'true_false' | 'fill_blanks' | 'drag_words' | 'mark_words'",
+          "params": "object - Parameters specific to the question type (see below)"
+        }
+      ],
+      "passPercentage": "number - Minimum score percentage to pass (default: 50)",
+      "randomQuestions": "boolean - Randomize question order (default: false)"
+    },
+    "question_type_params": {
+      "multiple_choice": {
+        "question": "string - The question text",
+        "answers": "array of strings - Answer options",
+        "correctIndex": "number - Index of correct answer",
+        "explanation": "string - Explanation for correct answer",
+        "image_prompt": "string (optional) - Description of an image to illustrate this question"
+      },
+      "true_false": {
+        "statement": "string - The statement to evaluate",
+        "isTrue": "boolean - Whether the statement is true",
+        "explanation": "string - Explanation text",
+        "image_prompt": "string (optional) - Description of an image to illustrate this statement"
+      },
+      "fill_blanks": {
+        "text": "string - Text with *blank* markers",
+        "instruction": "string - Optional instruction",
+        "image_prompt": "string (optional) - Description of an image to illustrate this question"
+      },
+      "drag_words": {
+        "text": "string - Text with *draggable* markers",
+        "instruction": "string - Optional instruction",
+        "image_prompt": "string (optional) - Description of an image to illustrate this question"
+      },
+      "mark_words": {
+        "text": "string - Text with *markable* markers",
+        "instruction": "string - Optional instruction",
+        "image_prompt": "string (optional) - Description of an image to illustrate this question"
+      }
+    },
+    "example": {
+      "title": "Cell Biology Comprehensive Quiz",
+      "introPage": {
+        "showIntroPage": true,
+        "title": "Cell Biology Quiz",
+        "introduction": "Test your knowledge of cell biology concepts. This quiz covers organelles, functions, and cell processes."
+      },
+      "questions": [
+        {
+          "type": "multiple_choice",
+          "params": {
+            "question": "What organelle is known as the powerhouse of the cell?",
+            "answers": ["Mitochondria", "Nucleus", "Ribosome", "Golgi apparatus"],
+            "correctIndex": 0,
+            "explanation": "Mitochondria produce ATP through cellular respiration.",
+            "image_prompt": "A colorful educational illustration of a mitochondria inside an animal cell, showing the inner membrane folds (cristae) and ATP molecules being produced"
+          }
+        },
+        {
+          "type": "true_false",
+          "params": {
+            "statement": "Plant cells have cell walls made of cellulose.",
+            "isTrue": true,
+            "explanation": "Plant cells have a rigid cell wall made of cellulose, unlike animal cells."
+          }
+        },
+        {
+          "type": "fill_blanks",
+          "params": {
+            "text": "The *nucleus* contains the cell's genetic material in the form of *DNA*."
+          }
+        },
+        {
+          "type": "drag_words",
+          "params": {
+            "text": "The *cell membrane* controls what enters and exits the cell through *selective permeability*."
+          }
+        },
+        {
+          "type": "mark_words",
+          "params": {
+            "text": "The *ribosome* and *endoplasmic reticulum* work together to *synthesize* proteins.",
+            "instruction": "Click on the organelles and their function."
+          }
+        }
+      ],
+      "passPercentage": 70,
+      "randomQuestions": false
+    }
+  },
+
+  "h5p_params_format": {
+    "introPage": {
+      "showIntroPage": true,
+      "title": "Cell Biology Quiz",
+      "introduction": "Test your knowledge of cell biology concepts.",
+      "startButtonText": "Start Quiz"
+    },
+    "progressType": "dots",
+    "passPercentage": 70,
+    "questions": [
+      {
+        "library": "H5P.MultiChoice 1.16",
+        "params": {
+          "question": "<p>What organelle is known as the powerhouse of the cell?</p>",
+          "answers": [
+            {"text": "<div>Mitochondria</div>", "correct": true},
+            {"text": "<div>Nucleus</div>", "correct": false}
+          ],
+          "behaviour": {"enableRetry": true, "enableSolutionsButton": true}
+        },
+        "subContentId": "uuid"
+      }
+    ],
+    "endGame": {
+      "showResultPage": true,
+      "showSolutionButton": true,
+      "showRetryButton": true,
+      "overallFeedback": [
+        {"from": 0, "to": 50, "feedback": "Keep studying!"},
+        {"from": 51, "to": 80, "feedback": "Good job!"},
+        {"from": 81, "to": 100, "feedback": "Excellent!"}
+      ]
+    }
+  },
+
+  "conversion_notes": {
+    "type_mapping": {
+      "multiple_choice": "H5P.MultiChoice 1.16",
+      "true_false": "H5P.TrueFalse 1.8",
+      "fill_blanks": "H5P.Blanks 1.14",
+      "drag_words": "H5P.DragText 1.10",
+      "mark_words": "H5P.MarkTheWords 1.11"
+    },
+    "nested_conversion": "Each question is converted individually using its type-specific converter logic",
+    "sub_content_id": "Generate unique UUID subContentId for each question",
+    "note": "Use underscore type names (multiple_choice), NOT hyphenated (multiple-choice)"
+  }
+}

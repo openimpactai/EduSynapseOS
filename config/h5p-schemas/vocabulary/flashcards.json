@@ -1,0 +1,60 @@
+{
+  "library": "H5P.Flashcards 1.7",
+  "name": "Flashcards",
+  "category": "vocabulary",
+  "description": "Flip cards for term-definition memorization. Perfect for vocabulary learning, term memorization, and quick review.",
+  "supports_media": true,
+  "media_placement": "card",
+
+  "ai_input_format": {
+    "description": "AI should generate a JSON object with a title and cards array",
+    "schema": {
+      "title": "string - Title for the flashcard deck",
+      "cards": [
+        {
+          "front": "string - Term or question on front of card",
+          "back": "string - Definition or answer on back of card"
+        }
+      ]
+    },
+    "example": {
+      "title": "Cell Organelles",
+      "cards": [
+        {"front": "Mitochondria", "back": "The powerhouse of the cell that produces ATP through cellular respiration."},
+        {"front": "Nucleus", "back": "The control center of the cell containing genetic material (DNA)."},
+        {"front": "Chloroplast", "back": "Organelle in plant cells where photosynthesis occurs."}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "description": "Study the flashcards below",
+    "cards": [
+      {"text": "Mitochondria", "answer": "The powerhouse of the cell that produces ATP through cellular respiration.", "tip": ""},
+      {"text": "Nucleus", "answer": "The control center of the cell containing genetic material (DNA).", "tip": ""},
+      {"text": "Chloroplast", "answer": "Organelle in plant cells where photosynthesis occurs.", "tip": ""}
+    ],
+    "progressText": "Card @card of @total",
+    "next": "Next",
+    "previous": "Previous",
+    "checkAnswerText": "Check",
+    "showSolutionsRequiresInput": true,
+    "defaultAnswerText": "Your answer",
+    "correctAnswerText": "Correct!",
+    "incorrectAnswerText": "Incorrect",
+    "showSolutionText": "Show answer",
+    "results": "Results",
+    "ofCorrect": "@score of @total correct",
+    "showSolutionsButton": true,
+    "caseSensitive": false
+  },
+
+  "conversion_notes": {
+    "field_mapping": {
+      "front": "text",
+      "back": "answer"
+    },
+    "html_escaping": "Escape HTML special characters in text fields",
+    "tips": "Optional tip field can be added for hints"
+  }
+}

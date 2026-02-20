@@ -1,0 +1,17 @@
+{
+  "nextButtonLabel": "Next question",
+  "showSolutionButtonLabel": "Show solution",
+  "retryButtonLabel": "Retry",
+  "solutionViewTitle": "Solution",
+  "correctText": "Correct!",
+  "incorrectText": "Incorrect!",
+  "shouldSelect": "Should have been selected",
+  "shouldNotSelect": "Should not have been selected",
+  "muteButtonLabel": "Mute feedback sound",
+  "closeButtonLabel": "Close",
+  "slideOfTotal": "Slide :num of :total",
+  "scoreBarLabel": "Score: :num of :total",
+  "solutionListQuestionNumber": "Question :num",
+  "a11yShowSolution": "Show the solution. Correct answers will be shown.",
+  "a11yRetry": "Retry. All questions will be reset."
+}

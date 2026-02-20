@@ -1,0 +1,17 @@
+{
+  "trueText": "Verdadero",
+  "falseText": "Falso",
+  "score": "Obtuviste @score de @total puntos",
+  "checkAnswer": "Comprobar",
+  "submitAnswer": "Enviar",
+  "showSolutionButton": "Mostrar solución",
+  "tryAgain": "Reintentar",
+  "wrongAnswerMessage": "Respuesta incorrecta",
+  "correctAnswerMessage": "Respuesta correcta",
+  "scoreBarLabel": "Obtuviste :num de :total puntos",
+  "a11yCheck": "Comprueba las respuestas.",
+  "a11yShowSolution": "Muestra la solución.",
+  "a11yRetry": "Reintenta la tarea.",
+  "correctFeedback": "¡Correcto!",
+  "wrongFeedbackPrefix": "Incorrecto. La respuesta correcta era"
+}

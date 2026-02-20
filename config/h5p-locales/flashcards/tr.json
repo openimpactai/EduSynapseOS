@@ -1,0 +1,18 @@
+{
+  "progressText": "Kart @card / @total",
+  "next": "Sonraki",
+  "previous": "Önceki",
+  "checkAnswerText": "Kontrol Et",
+  "defaultAnswerText": "Cevabınız",
+  "correctAnswerText": "Doğru!",
+  "incorrectAnswerText": "Yanlış",
+  "showSolutionText": "Doğru cevap(lar)",
+  "results": "Sonuçlar",
+  "ofCorrect": "@score / @total doğru",
+  "showResults": "Sonuçları göster",
+  "answerShortText": "C:",
+  "retry": "Tekrar dene",
+  "cardAnnouncement": "Yanlış. Doğru cevap: @answer",
+  "correctAnswerAnnouncement": "Doğru cevap",
+  "pageAnnouncement": "Kart @current / @total"
+}

@@ -1,0 +1,17 @@
+{
+  "trueText": "Doğru",
+  "falseText": "Yanlış",
+  "score": "@score / @total puan aldınız",
+  "checkAnswer": "Kontrol Et",
+  "submitAnswer": "Gönder",
+  "showSolutionButton": "Çözümü Göster",
+  "tryAgain": "Tekrar Dene",
+  "wrongAnswerMessage": "Yanlış cevap",
+  "correctAnswerMessage": "Doğru cevap",
+  "scoreBarLabel": ":num / :total puan aldınız",
+  "a11yCheck": "Cevapları kontrol edin.",
+  "a11yShowSolution": "Çözümü gösterin.",
+  "a11yRetry": "Görevi tekrar deneyin.",
+  "correctFeedback": "Doğru cevap!",
+  "wrongFeedbackPrefix": "Yanlış. Doğru cevap"
+}

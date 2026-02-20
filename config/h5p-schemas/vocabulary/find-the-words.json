@@ -1,0 +1,40 @@
+{
+  "library": "H5P.FindTheWords 1.4",
+  "name": "Word Search",
+  "category": "vocabulary",
+  "description": "Find hidden words in a letter grid. Perfect for vocabulary review, spelling practice, and engagement.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate a list of words to hide in the grid",
+    "schema": {
+      "words": "array of strings - Words to find in the grid"
+    },
+    "example": {
+      "words": ["CELL", "NUCLEUS", "MEMBRANE", "CYTOPLASM", "ORGANELLE", "MITOCHONDRIA", "RIBOSOME"]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "<p>Find and mark all the hidden words in the grid.</p>",
+    "wordList": "CELL,NUCLEUS,MEMBRANE,CYTOPLASM,ORGANELLE,MITOCHONDRIA,RIBOSOME",
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "showVocabulary": true
+    },
+    "l10n": {
+      "check": "Check",
+      "tryAgain": "Retry",
+      "showSolution": "Show solution",
+      "found": "Found!"
+    }
+  },
+
+  "conversion_notes": {
+    "word_list_format": "Join words with commas (no spaces)",
+    "word_constraints": "Words should be uppercase, no spaces or special characters",
+    "show_vocabulary": "Set showVocabulary: true to show word list to students",
+    "grid_size": "H5P auto-generates grid based on words"
+  }
+}

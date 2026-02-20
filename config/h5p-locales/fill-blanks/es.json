@@ -1,0 +1,16 @@
+{
+  "showSolutions": "Mostrar solución",
+  "tryAgain": "Reintentar",
+  "checkAnswer": "Comprobar",
+  "submitAnswer": "Enviar",
+  "notFilledOut": "Por favor complete todos los espacios en blanco",
+  "correct": "¡Correcto!",
+  "wrong": "Incorrecto",
+  "answeredCorrectly": "respondido correctamente",
+  "answeredIncorrectly": "respondido incorrectamente",
+  "solutionLabel": "Respuesta correcta:",
+  "inputLabel": "Espacio en blanco",
+  "inputHasTip": "Pista disponible",
+  "tipLabel": "Pista",
+  "taskDescription": "Complete las palabras que faltan"
+}

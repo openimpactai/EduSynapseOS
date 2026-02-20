@@ -1,0 +1,8 @@
+{
+  "checkAnswer": "Check",
+  "tryAgain": "Retry",
+  "showSolution": "Show solution",
+  "score": "Your score: @score of @total",
+  "matchCorrect": "Correct match",
+  "matchIncorrect": "Incorrect match"
+}

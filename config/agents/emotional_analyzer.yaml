@@ -1,0 +1,50 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Emotional Analyzer Agent Configuration
+# This agent analyzes student messages to detect intent and emotional state.
+# Uses privacy_first routing since emotional data is sensitive.
+
+agent:
+  id: emotional_analyzer
+  name: "Emotional Intelligence Analyzer"
+  description: >
+    Specialized agent for analyzing student messages to understand their
+    emotional state and communication intent. Detects frustration, anxiety,
+    confusion, and other emotional signals to enable appropriate support.
+    Uses privacy-first routing due to sensitive nature of emotional data.
+  version: "1.0"
+
+  # Capabilities this agent can perform
+  capabilities:
+    - message_analysis
+
+  # LLM Configuration - Gemini 2.0 Flash
+  llm:
+    provider: google
+    routing_strategy: hybrid
+
+    # LLM parameters - lower temperature for consistent analysis
+    temperature: 0.3
+    max_tokens: 512
+    timeout_seconds: 30
+
+  # Domain-specific configuration
+  domain:
+    supported_languages:
+      - tr
+      - en
+    settings:
+      # Emotional analysis thresholds
+      high_intensity_threshold: 0.7
+      support_trigger_states:
+        - frustrated
+        - anxious
+        - confused
+      # How many recent messages to include for context
+      conversation_history_limit: 5
+      # Whether to include analysis notes in response
+      include_analysis_notes: true
+
+  # Uses tutor persona for consistent analysis tone
+  default_persona: tutor

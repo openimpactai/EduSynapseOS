@@ -1,0 +1,32 @@
+{
+  "l10n": {
+    "across": "Yatay",
+    "down": "Dikey",
+    "checkAnswer": "Kontrol Et",
+    "tryAgain": "Tekrar Dene",
+    "showSolution": "Cevabı Göster",
+    "couldNotGenerateCrossword": "Bulmaca oluşturulamadı.",
+    "submitAnswer": "Gönder",
+    "extraClue": "Ekstra ipucu",
+    "closeWindow": "Pencereyi kapat"
+  },
+  "a11y": {
+    "crosswordGrid": "Bulmaca ızgarası",
+    "column": "sütun",
+    "row": "satır",
+    "across": "yatay",
+    "down": "dikey",
+    "empty": "Boş",
+    "resultFor": "Sonuç:",
+    "correct": "Doğru",
+    "wrong": "Yanlış",
+    "point": "puan",
+    "solutionFor": "Cevap:",
+    "extraClueFor": "İpucu:",
+    "letterSeventeen98": "Harf @letter",
+    "lettersWord": "@length harfli kelime",
+    "check": "Cevapları kontrol et",
+    "showSolution": "Cevabı göster",
+    "retry": "Tekrar dene"
+  }
+}

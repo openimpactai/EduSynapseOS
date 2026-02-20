@@ -1,0 +1,129 @@
+{
+  "library": "H5P.BranchingScenario 1.8",
+  "name": "Branching Scenario",
+  "category": "learning",
+  "description": "Decision-based learning with branching paths. Ideal for case studies, decision making, and scenario training.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate branching scenario with decision points",
+    "schema": {
+      "title": "string - Scenario title",
+      "startScreen": {
+        "title": "string - Start screen title",
+        "subtitle": "string - Start screen subtitle"
+      },
+      "nodes": [
+        {
+          "id": "string - Unique node identifier",
+          "type": "string - 'content' | 'question' | 'ending'",
+          "content": "string - Main content text (HTML supported)",
+          "image_prompt": "string - Optional image description for AI generation",
+          "nextNodes": [
+            {
+              "label": "string - Button label for this choice",
+              "targetId": "string - ID of the target node"
+            }
+          ]
+        }
+      ],
+      "endings": [
+        {
+          "id": "string - Ending node ID",
+          "type": "string - 'good' | 'neutral' | 'bad'",
+          "title": "string - Ending title",
+          "content": "string - Ending description"
+        }
+      ]
+    },
+    "example": {
+      "title": "First Aid: Choking Response",
+      "startScreen": {
+        "title": "Emergency Response Training",
+        "subtitle": "Learn how to help someone who is choking"
+      },
+      "nodes": [
+        {
+          "id": "start",
+          "type": "content",
+          "content": "<p>You're at a restaurant when you notice someone at the next table grabbing their throat and unable to speak or breathe.</p>",
+          "image_prompt": "Person in restaurant grabbing their throat, showing signs of choking",
+          "nextNodes": [
+            {"label": "Call for help immediately", "targetId": "call-help"},
+            {"label": "Ask if they're choking", "targetId": "ask-choking"},
+            {"label": "Wait and see what happens", "targetId": "wait-bad"}
+          ]
+        },
+        {
+          "id": "ask-choking",
+          "type": "content",
+          "content": "<p>The person nods frantically but cannot speak. They are definitely choking. What do you do next?</p>",
+          "nextNodes": [
+            {"label": "Perform Heimlich maneuver", "targetId": "heimlich"},
+            {"label": "Give them water", "targetId": "water-bad"}
+          ]
+        },
+        {
+          "id": "heimlich",
+          "type": "content",
+          "content": "<p>You stand behind the person, place your fist above their navel, and perform abdominal thrusts. After several thrusts, they cough up the obstruction!</p>",
+          "nextNodes": [
+            {"label": "Continue", "targetId": "ending-good"}
+          ]
+        }
+      ],
+      "endings": [
+        {"id": "ending-good", "type": "good", "title": "Well Done!", "content": "You correctly identified the emergency and performed the Heimlich maneuver, potentially saving a life."},
+        {"id": "wait-bad", "type": "bad", "title": "Critical Delay", "content": "Waiting in a choking emergency can be fatal. Always act quickly when someone shows signs of choking."},
+        {"id": "water-bad", "type": "bad", "title": "Incorrect Response", "content": "Never give water or food to someone who is choking. This can worsen the obstruction."}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "startScreen": {
+      "startScreenTitle": "Emergency Response Training",
+      "startScreenSubtitle": "Learn how to help someone who is choking"
+    },
+    "endScreens": [
+      {
+        "endScreenTitle": "Well Done!",
+        "endScreenSubtitle": "You correctly identified the emergency and performed the Heimlich maneuver.",
+        "contentId": -1,
+        "score": 100
+      }
+    ],
+    "scoringOptionGroup": {
+      "scoringOption": "static-end-score"
+    },
+    "content": [
+      {
+        "type": {
+          "library": "H5P.BranchingQuestion 1.0",
+          "params": {
+            "branchingQuestion": {
+              "question": "<p>The person nods frantically but cannot speak. They are definitely choking. What do you do next?</p>",
+              "alternatives": [
+                {"text": "Perform Heimlich maneuver", "nextContentId": 2},
+                {"text": "Give them water", "nextContentId": -1}
+              ]
+            }
+          }
+        },
+        "showContentTitle": true,
+        "contentTitle": "Decision Point"
+      }
+    ]
+  },
+
+  "conversion_notes": {
+    "node_mapping": "Convert AI nodes to H5P content array",
+    "branching_question": "Use H5P.BranchingQuestion for decision points",
+    "content_types": "Can embed various H5P types in nodes",
+    "endings": "Map endings to endScreens with scores"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

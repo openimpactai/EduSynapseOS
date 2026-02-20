@@ -1,0 +1,32 @@
+{
+  "l10n": {
+    "across": "Across",
+    "down": "Down",
+    "checkAnswer": "Check",
+    "tryAgain": "Retry",
+    "showSolution": "Show solution",
+    "couldNotGenerateCrossword": "Could not generate a crossword.",
+    "submitAnswer": "Submit",
+    "extraClue": "Extra clue",
+    "closeWindow": "Close window"
+  },
+  "a11y": {
+    "crosswordGrid": "Crossword grid",
+    "column": "column",
+    "row": "row",
+    "across": "across",
+    "down": "down",
+    "empty": "Empty",
+    "resultFor": "Result for",
+    "correct": "Correct",
+    "wrong": "Wrong",
+    "point": "point",
+    "solutionFor": "Solution for",
+    "extraClueFor": "Extra clue for",
+    "letterSeventeen98": "Letter @letter",
+    "lettersWord": "@length letter word",
+    "check": "Check the answers",
+    "showSolution": "Show the solution",
+    "retry": "Retry"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "defaultInstruction": "اسحب الكلمات إلى الفراغات الصحيحة.",
+  "checkAnswer": "تحقق",
+  "submitAnswer": "إرسال",
+  "tryAgain": "أعد المحاولة",
+  "showSolution": "أظهر الحل",
+  "dropZoneLabel": "منطقة الإفلات @index",
+  "emptyLabel": "منطقة الإفلات @index فارغة",
+  "containsLabel": "منطقة الإفلات @index تحتوي على",
+  "ariaDraggableLabel": "عنصر قابل للسحب @index من @count",
+  "tipLabel": "تلميح",
+  "correct": "صحيح!",
+  "incorrect": "غير صحيح",
+  "resetDropTitle": "إعادة تعيين",
+  "resetDropDescription": "إعادة تعيين العنصر إلى موضعه الأصلي؟",
+  "grabbedLabel": "تم الإمساك بالعنصر",
+  "cancelledDraggingLabel": "تم إلغاء السحب",
+  "correctAnswerLabel": "الإجابة الصحيحة:",
+  "feedbackHeader": "ملاحظات",
+  "scoreBarLabel": "النتيجة: :num من :total"
+}

@@ -1,0 +1,62 @@
+{
+  "library": "H5P.DragText 1.10",
+  "name": "Drag the Words",
+  "category": "assessment",
+  "description": "Drag words into correct positions in text. Great for sentence completion and terminology practice.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate an object with a title, instruction, and an array of exercises with text containing *draggable* word markers.",
+    "schema": {
+      "title": "string - Exercise title",
+      "instruction": "string - Instruction text for the student",
+      "exercises": [
+        {
+          "text": "string - Text with *draggable* words marked by asterisks",
+          "draggables": "array of strings - The draggable words (for reference)"
+        }
+      ]
+    },
+    "example": {
+      "title": "Cell Biology Drag the Words",
+      "instruction": "Drag the correct words into the blanks to complete the sentences about cell biology.",
+      "exercises": [
+        {
+          "text": "The *nucleus* is the control center of the cell that contains *DNA* and directs cell activities.",
+          "draggables": ["nucleus", "DNA"]
+        },
+        {
+          "text": "The *mitochondria* are known as the powerhouse of the cell because they produce *ATP* through cellular respiration.",
+          "draggables": ["mitochondria", "ATP"]
+        },
+        {
+          "text": "The *cell membrane* controls what enters and exits the cell, acting as a selective *barrier*.",
+          "draggables": ["cell membrane", "barrier"]
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "<p>Drag the correct words into the blanks to complete the sentences about cell biology.</p>",
+    "textField": "<p>The *nucleus* is the control center of the cell that contains *DNA* and directs cell activities.</p>\n<p>The *mitochondria* are known as the powerhouse of the cell because they produce *ATP* through cellular respiration.</p>",
+    "overallFeedback": [
+      {"from": 0, "to": 50, "feedback": "Try again!"},
+      {"from": 51, "to": 80, "feedback": "Good progress!"},
+      {"from": 81, "to": 100, "feedback": "Well done!"}
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "instantFeedback": false
+    }
+  },
+
+  "conversion_notes": {
+    "word_marking": "Use *word* to mark draggable words - H5P uses the same asterisk format",
+    "instruction_mapping": "instruction maps to taskDescription, wrapped in <p> tags",
+    "exercises_combined": "All exercise texts are joined with newlines into textField",
+    "html_wrapping": "Each exercise text is wrapped in <p> tags"
+  }
+}

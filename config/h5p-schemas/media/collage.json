@@ -1,0 +1,71 @@
+{
+  "library": "H5P.Collage 0.3",
+  "name": "Collage",
+  "category": "media",
+  "description": "Create image collages with multiple layouts. Good for visual storytelling and image collections.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate image descriptions for collage",
+    "schema": {
+      "layout": "string - Layout pattern (e.g., '1-2', '2-1', '1-1-1', '2-2')",
+      "images": [
+        {
+          "description": "string - Description of image (for AI generation)",
+          "alt": "string - Alt text"
+        }
+      ]
+    },
+    "example": {
+      "layout": "1-2",
+      "images": [
+        {"description": "A wide panoramic view of the Grand Canyon at sunset", "alt": "Grand Canyon panorama"},
+        {"description": "Close-up of layered rock formations in red and orange colors", "alt": "Canyon rock layers"},
+        {"description": "Colorado River flowing at the bottom of the canyon", "alt": "Colorado River"}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "collage": {
+      "template": "1-2",
+      "clips": [
+        {
+          "image": {
+            "path": "images/panorama.jpg",
+            "alt": "Grand Canyon panorama"
+          }
+        },
+        {
+          "image": {
+            "path": "images/rocks.jpg",
+            "alt": "Canyon rock layers"
+          }
+        },
+        {
+          "image": {
+            "path": "images/river.jpg",
+            "alt": "Colorado River"
+          }
+        }
+      ],
+      "spacing": 0,
+      "frame": false
+    }
+  },
+
+  "conversion_notes": {
+    "layout_patterns": {
+      "1-1": "Two equal images side by side",
+      "1-2": "One large on left, two stacked on right",
+      "2-1": "Two stacked on left, one large on right",
+      "1-1-1": "Three equal images in a row",
+      "2-2": "Four images in 2x2 grid"
+    },
+    "image_count": "Number of images must match layout requirements"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

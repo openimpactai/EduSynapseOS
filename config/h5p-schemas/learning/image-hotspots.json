@@ -1,0 +1,70 @@
+{
+  "library": "H5P.ImageHotspots 1.10",
+  "name": "Image Hotspots",
+  "category": "learning",
+  "description": "Interactive image with clickable information points. Great for diagram labeling, map exploration, and visual teaching.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate hotspot descriptions for an image",
+    "schema": {
+      "image_description": "string - Description of the main image (for AI image generation)",
+      "hotspots": [
+        {
+          "label": "string - Short label for the hotspot",
+          "description": "string - Detailed description shown when clicked",
+          "position": {
+            "x": "number - X position as percentage (0-100)",
+            "y": "number - Y position as percentage (0-100)"
+          }
+        }
+      ]
+    },
+    "example": {
+      "image_description": "A detailed diagram of an animal cell showing all major organelles",
+      "hotspots": [
+        {"label": "Nucleus", "description": "The control center of the cell that contains genetic material (DNA). It regulates gene expression and cell division.", "position": {"x": 50, "y": 50}},
+        {"label": "Mitochondria", "description": "The powerhouse of the cell that produces ATP through cellular respiration.", "position": {"x": 30, "y": 40}},
+        {"label": "Endoplasmic Reticulum", "description": "A network of membranes involved in protein and lipid synthesis.", "position": {"x": 60, "y": 35}},
+        {"label": "Cell Membrane", "description": "The outer boundary that controls what enters and exits the cell.", "position": {"x": 85, "y": 50}}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "image": {
+      "path": "images/image.jpg",
+      "alt": "Diagram of an animal cell",
+      "width": 800,
+      "height": 600
+    },
+    "hotspots": [
+      {
+        "position": {"x": 50, "y": 50},
+        "label": "Nucleus",
+        "content": [
+          {
+            "library": "H5P.Text 1.1",
+            "params": {
+              "text": "<p><strong>Nucleus</strong></p><p>The control center of the cell that contains genetic material (DNA). It regulates gene expression and cell division.</p>"
+            }
+          }
+        ]
+      }
+    ],
+    "iconType": "icon",
+    "icon": "plus",
+    "color": "#981d99"
+  },
+
+  "conversion_notes": {
+    "image_required": "Requires an image to be uploaded or generated first",
+    "position_format": "Positions are percentages from top-left corner",
+    "content_types": "Hotspot content can include H5P.Text, H5P.Image, H5P.Video",
+    "ai_image_generation": "Use image_description for AI image generation prompt"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

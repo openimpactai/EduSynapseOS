@@ -1,0 +1,18 @@
+{
+  "checkAnswer": "تحقق",
+  "tryAgain": "أعد المحاولة",
+  "showSolution": "أظهر الإجابة النموذجية",
+  "submitAnswer": "إرسال",
+  "remainingChars": "الأحرف المتبقية: @chars",
+  "yourAnswer": "إجابتك",
+  "feedbackHeader": "ملاحظات",
+  "solutionTitle": "الإجابة النموذجية",
+  "notEnoughChars": "يجب إدخال @minLength حرفًا على الأقل.",
+  "overallFeedback": "ملاحظات عامة",
+  "sampleIntro": "يجب أن تتضمن الإجابة النموذجية:",
+  "keywordIncluded": "لقد ضمّنت '@keyword' بشكل صحيح.",
+  "keywordMissed": "فكر في تضمين '@keyword'.",
+  "a11yYourScore": "نتيجتك: @score من @total",
+  "a11yCheckAnnouncement": "تم فحص إجابتك",
+  "a11yRetryAnnouncement": "أنت تعيد المحاولة"
+}

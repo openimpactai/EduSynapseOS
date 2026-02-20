@@ -1,0 +1,74 @@
+{
+  "library": "H5P.ImagePair 1.4",
+  "name": "Image Pairing",
+  "category": "game",
+  "description": "Match pairs of images together. Great for visual matching, concept association, and vocabulary with images.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate image pairs to be matched",
+    "schema": {
+      "taskDescription": "string - Instructions for the pairing task",
+      "pairs": [
+        {
+          "left": {
+            "description": "string - Description of left image (for AI generation)",
+            "alt": "string - Alt text"
+          },
+          "right": {
+            "description": "string - Description of right image (for AI generation)",
+            "alt": "string - Alt text"
+          }
+        }
+      ]
+    },
+    "example": {
+      "taskDescription": "Match each animal with its habitat.",
+      "pairs": [
+        {
+          "left": {"description": "A polar bear", "alt": "Polar bear"},
+          "right": {"description": "Arctic ice landscape", "alt": "Arctic/Tundra"}
+        },
+        {
+          "left": {"description": "A camel", "alt": "Camel"},
+          "right": {"description": "Desert with sand dunes", "alt": "Desert"}
+        },
+        {
+          "left": {"description": "A monkey in a tree", "alt": "Monkey"},
+          "right": {"description": "Dense tropical rainforest", "alt": "Rainforest"}
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "<p>Match each animal with its habitat.</p>",
+    "cards": [
+      {
+        "image": {"path": "images/polar-bear.jpg", "alt": "Polar bear"},
+        "match": {"path": "images/arctic.jpg", "alt": "Arctic/Tundra"}
+      },
+      {
+        "image": {"path": "images/camel.jpg", "alt": "Camel"},
+        "match": {"path": "images/desert.jpg", "alt": "Desert"}
+      },
+      {
+        "image": {"path": "images/monkey.jpg", "alt": "Monkey"},
+        "match": {"path": "images/rainforest.jpg", "alt": "Rainforest"}
+      }
+    ],
+    "behaviour": {
+      "enableRetry": true
+    }
+  },
+
+  "conversion_notes": {
+    "image_generation": "Generate two related images per pair",
+    "matching_logic": "Left images shown together, right images to match with",
+    "accessibility": "Always include alt text"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

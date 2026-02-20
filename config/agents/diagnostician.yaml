@@ -1,0 +1,57 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Diagnostician Agent Configuration
+# This agent is responsible for learning diagnostics: analyzing patterns,
+# detecting potential learning difficulties, and generating recommendations.
+# IMPORTANT: This agent does NOT diagnose - it only flags for professional evaluation.
+
+agent:
+  id: diagnostician
+  name: "Diagnostic Agent"
+  description: >
+    Specialized agent for analyzing learning patterns and identifying
+    potential areas of concern. Generates recommendations for educators
+    and suggests when professional evaluation may be beneficial.
+    This agent does NOT provide medical or psychological diagnoses.
+  version: "1.0"
+
+  # Capabilities this agent can perform
+  capabilities:
+    - diagnostic_analysis
+    - feedback_generation
+
+  # LLM Configuration - Gemini 2.0 Flash
+  llm:
+    provider: google
+    routing_strategy: hybrid
+
+    # LLM parameters - low temperature for consistent analysis
+    temperature: 0.3
+    max_tokens: 4096
+    timeout_seconds: 60
+
+  # Domain-specific configuration
+  domain:
+    supported_subjects:
+      - mathematics
+      - language
+      - reading
+      - writing
+    max_retries: 2
+    settings:
+      # Diagnostic behavior settings
+      include_disclaimers: true
+      confidence_threshold: 0.7
+      min_data_points: 10
+      analysis_depth: comprehensive
+      # Categories to analyze
+      categories:
+        - attention_patterns
+        - reading_patterns
+        - math_processing
+        - working_memory
+        - processing_speed
+
+  # Default persona for this agent
+  default_persona: mentor

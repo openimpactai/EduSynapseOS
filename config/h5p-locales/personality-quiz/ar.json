@@ -1,0 +1,13 @@
+{
+  "resultScreen": {
+    "noResultTitle": "لا توجد نتيجة",
+    "noResultMessage": "تعذر تحديد النتيجة.",
+    "retakeButtonText": "إعادة الاختبار"
+  },
+  "l10n": {
+    "nextButtonText": "التالي",
+    "prevButtonText": "السابق",
+    "resultsButtonText": "عرض النتائج",
+    "progressText": "السؤال :current من :total"
+  }
+}

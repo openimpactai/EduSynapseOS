@@ -1,0 +1,16 @@
+{
+  "showSolutions": "Afficher la solution",
+  "tryAgain": "Réessayer",
+  "checkAnswer": "Vérifier",
+  "submitAnswer": "Soumettre",
+  "notFilledOut": "Veuillez remplir tous les espaces vides",
+  "correct": "Correct !",
+  "wrong": "Incorrect",
+  "answeredCorrectly": "répondu correctement",
+  "answeredIncorrectly": "répondu incorrectement",
+  "solutionLabel": "Bonne réponse :",
+  "inputLabel": "Espace vide",
+  "inputHasTip": "Indice disponible",
+  "tipLabel": "Indice",
+  "taskDescription": "Complétez les mots manquants"
+}

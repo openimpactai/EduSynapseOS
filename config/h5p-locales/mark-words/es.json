@@ -1,0 +1,10 @@
+{
+  "defaultInstruction": "Haga clic en las palabras que deben marcarse",
+  "checkAnswer": "Comprobar",
+  "tryAgain": "Reintentar",
+  "showSolution": "Mostrar solución",
+  "correct": "¡Correcto!",
+  "wrong": "¡Incorrecto!",
+  "missed": "¡Respuesta no encontrada!",
+  "solutionDescription": "Tarea completada."
+}

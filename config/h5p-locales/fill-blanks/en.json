@@ -1,0 +1,16 @@
+{
+  "showSolutions": "Show solution",
+  "tryAgain": "Retry",
+  "checkAnswer": "Check",
+  "submitAnswer": "Submit",
+  "notFilledOut": "Please fill in all blanks",
+  "correct": "Correct!",
+  "wrong": "Wrong",
+  "answeredCorrectly": "answered correctly",
+  "answeredIncorrectly": "answered incorrectly",
+  "solutionLabel": "Correct answer:",
+  "inputLabel": "Blank",
+  "inputHasTip": "Tip available",
+  "tipLabel": "Tip",
+  "taskDescription": "Fill in the missing words"
+}

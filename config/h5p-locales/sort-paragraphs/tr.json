@@ -1,0 +1,23 @@
+{
+  "defaultDescription": "Paragrafları doğru sıraya koyun",
+  "l10n": {
+    "checkAnswer": "Kontrol Et",
+    "tryAgain": "Tekrar Dene",
+    "showSolution": "Cevabı Göster",
+    "up": "Yukarı",
+    "down": "Aşağı",
+    "disabled": "Devre dışı",
+    "correctAnswer": "Doğru cevap",
+    "wrongAnswer": "Yanlış cevap",
+    "feedbackCorrectAnswer": "Tebrikler! Doğru sıraladınız.",
+    "scoreBarLabel": ":num/:total paragraf doğru"
+  },
+  "a11y": {
+    "paragraph": "Paragraf",
+    "seenSolution": "Çözüm görüntülendi",
+    "resultExplanation": "Sonuç",
+    "listDescription": "Sıralanacak paragraflar",
+    "listReordered": "Liste yeniden sıralandı",
+    "instructionsSelected": "Hareket ettirmek için ok tuşlarını kullanın"
+  }
+}

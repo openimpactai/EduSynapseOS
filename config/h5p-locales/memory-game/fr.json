@@ -1,0 +1,12 @@
+{
+  "cardTurns": "Tours de cartes",
+  "timeSpent": "Temps écoulé",
+  "feedback": "Bon travail !",
+  "tryAgain": "Réessayer ?",
+  "closeLabel": "Fermer",
+  "label": "Jeu de mémoire",
+  "done": "Terminé !",
+  "cardPrefix": "Carte",
+  "cardUnturned": "Non retournée",
+  "cardMatched": "Associée"
+}

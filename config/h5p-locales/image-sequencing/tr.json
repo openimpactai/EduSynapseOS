@@ -1,0 +1,20 @@
+{
+  "defaultDescription": "Görselleri doğru sıraya koyun",
+  "l10n": {
+    "checkAnswer": "Kontrol Et",
+    "tryAgain": "Tekrar Dene",
+    "showSolution": "Cevabı Göster",
+    "scoreBarLabel": ":num/:total doğru",
+    "a11yRetry": "Tekrar dene. Tüm görseller başlangıç konumuna döndürülecek.",
+    "a11yCheck": "Cevapları kontrol et",
+    "a11yShowSolution": "Doğru sıralamayı göster"
+  },
+  "a11y": {
+    "imageDescription": "Görsel açıklaması",
+    "grabbed": "tutuldu",
+    "released": "bırakıldı",
+    "correct": "doğru",
+    "wrong": "yanlış",
+    "currentPosition": "Mevcut konum"
+  }
+}

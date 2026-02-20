@@ -1,0 +1,62 @@
+{
+  "library": "H5P.Crossword 0.5",
+  "name": "Crossword",
+  "category": "vocabulary",
+  "description": "Interactive crossword puzzle. Ideal for vocabulary review, term practice, and engaging learning activities.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate a JSON object with a title and words array",
+    "schema": {
+      "title": "string - Title for the crossword puzzle",
+      "words": [
+        {
+          "word": "string - The answer word (no spaces)",
+          "clue": "string - The clue/hint for the word"
+        }
+      ]
+    },
+    "example": {
+      "title": "Photosynthesis Crossword",
+      "words": [
+        {"word": "PHOTOSYNTHESIS", "clue": "Process by which plants make food using sunlight"},
+        {"word": "CHLOROPHYLL", "clue": "Green pigment in leaves that captures light"},
+        {"word": "GLUCOSE", "clue": "Sugar produced by plants during food-making"},
+        {"word": "OXYGEN", "clue": "Gas released by plants as a byproduct"},
+        {"word": "CARBON", "clue": "Element plants absorb from CO2"}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "words": [
+      {"clue": "Process by which plants make food using sunlight", "answer": "PHOTOSYNTHESIS", "fixWord": false},
+      {"clue": "Green pigment in leaves that captures light", "answer": "CHLOROPHYLL", "fixWord": false},
+      {"clue": "Sugar produced by plants during food-making", "answer": "GLUCOSE", "fixWord": false},
+      {"clue": "Gas released by plants as a byproduct", "answer": "OXYGEN", "fixWord": false},
+      {"clue": "Element plants absorb from CO2", "answer": "CARBON", "fixWord": false}
+    ],
+    "taskDescription": "<p>Fill in the crossword puzzle.</p>",
+    "overallFeedback": [
+      {"from": 0, "to": 50, "feedback": "Keep trying!"},
+      {"from": 51, "to": 80, "feedback": "Good progress!"},
+      {"from": 81, "to": 100, "feedback": "Well done!"}
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "scoreWords": true,
+      "applyPenalties": false
+    }
+  },
+
+  "conversion_notes": {
+    "word_uppercase": "Convert word to UPPERCASE",
+    "field_mapping": {
+      "word": "answer",
+      "clue": "clue"
+    },
+    "minimum_words": "Recommend 5-15 words for a good crossword",
+    "word_constraints": "Words should be at least 3 characters, no spaces or special characters"
+  }
+}

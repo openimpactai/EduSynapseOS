@@ -1,0 +1,18 @@
+{
+  "checkAnswer": "Kontrol Et",
+  "tryAgain": "Tekrar Dene",
+  "showSolution": "Örnek Cevabı Göster",
+  "submitAnswer": "Gönder",
+  "remainingChars": "Kalan karakter: @chars",
+  "yourAnswer": "Cevabınız",
+  "feedbackHeader": "Geri Bildirim",
+  "solutionTitle": "Örnek Cevap",
+  "notEnoughChars": "En az @minLength karakter girmelisiniz.",
+  "overallFeedback": "Genel değerlendirme",
+  "sampleIntro": "Örnek yanıt şunları içermelidir:",
+  "keywordIncluded": "'@keyword' kavramını doğru kullandınız.",
+  "keywordMissed": "'@keyword' kavramını eklemeyi düşünün.",
+  "a11yYourScore": "Puanınız: @score / @total",
+  "a11yCheckAnnouncement": "Cevabınız kontrol edildi",
+  "a11yRetryAnnouncement": "Tekrar deniyorsunuz"
+}

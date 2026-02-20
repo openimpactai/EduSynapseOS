@@ -1,0 +1,42 @@
+{
+  "library": "H5P.ArithmeticQuiz 1.1",
+  "name": "Arithmetic Quiz",
+  "category": "assessment",
+  "description": "Timed math calculation practice. Ideal for math drills and calculation practice.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should specify arithmetic quiz parameters",
+    "schema": {
+      "quizType": "string - Type of quiz: 'addition', 'subtraction', 'multiplication', 'division', 'arithmetic'",
+      "operations": "array of strings - Operations to include if quizType is 'arithmetic'",
+      "maxNumber": "number - Maximum number to use in problems",
+      "questionCount": "number - Number of questions to generate"
+    },
+    "example": {
+      "quizType": "arithmetic",
+      "operations": ["addition", "subtraction"],
+      "maxNumber": 20,
+      "questionCount": 10
+    }
+  },
+
+  "h5p_params_format": {
+    "quizType": "arithmetic",
+    "arithmeticType": "arithmetic",
+    "maxQuestions": 10,
+    "useFractions": false
+  },
+
+  "conversion_notes": {
+    "quiz_type_mapping": {
+      "addition": "addition",
+      "subtraction": "subtraction",
+      "multiplication": "multiplication",
+      "division": "division",
+      "arithmetic": "arithmetic (mixed operations)"
+    },
+    "max_questions": "Map questionCount to maxQuestions",
+    "fractions": "Set useFractions based on grade level"
+  }
+}

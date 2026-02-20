@@ -1,0 +1,178 @@
+{
+  "library": "H5P.CoursePresentation 1.25",
+  "name": "Course Presentation",
+  "category": "learning",
+  "description": "Interactive slideshow with embedded activities for teaching. Perfect for step-by-step lessons.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate structured slide content with embedded interactions",
+    "schema": {
+      "title": "string - Presentation title",
+      "description": "string - Brief description",
+      "slides": [
+        {
+          "type": "string - 'title' | 'content' | 'quiz' | 'image' | 'summary'",
+          "title": "string - Slide title",
+          "content": "string - Main content (HTML supported)",
+          "image_prompt": "string - Description for AI image generation (optional)",
+          "quiz": {
+            "type": "string - 'multiple-choice' | 'true-false' | 'fill-blanks'",
+            "question": "string",
+            "answers": "array",
+            "correct_index": "number"
+          },
+          "notes": "string - Speaker notes (optional)"
+        }
+      ]
+    },
+    "example": {
+      "title": "Introduction to Photosynthesis",
+      "description": "Learn about how plants make their own food",
+      "slides": [
+        {
+          "type": "title",
+          "title": "Photosynthesis",
+          "content": "The process by which plants convert light energy into chemical energy"
+        },
+        {
+          "type": "content",
+          "title": "What is Photosynthesis?",
+          "content": "Photosynthesis is the process by which green plants use sunlight to synthesize nutrients from carbon dioxide and water.",
+          "image_prompt": "Educational diagram showing a green leaf absorbing sunlight, with arrows showing CO2 entering and O2 leaving"
+        },
+        {
+          "type": "content",
+          "title": "The Process Steps",
+          "content": "<ol><li>Light absorption by chlorophyll</li><li>Water molecules split</li><li>CO2 is fixed</li><li>Glucose is produced</li></ol>"
+        },
+        {
+          "type": "quiz",
+          "title": "Check Your Understanding",
+          "quiz": {
+            "type": "multiple-choice",
+            "question": "Where does photosynthesis mainly occur in plants?",
+            "answers": ["Leaves", "Roots", "Stems", "Flowers"],
+            "correct_index": 0
+          }
+        },
+        {
+          "type": "summary",
+          "title": "Key Takeaways",
+          "content": "<ul><li>Photosynthesis converts light to chemical energy</li><li>Occurs mainly in leaves</li><li>Produces oxygen as byproduct</li></ul>"
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "presentation": {
+      "slides": [
+        {
+          "elements": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 100,
+              "height": 100,
+              "action": {
+                "library": "H5P.AdvancedText 1.1",
+                "params": {
+                  "text": "<h2>Slide Title</h2><p>Slide content here</p>"
+                },
+                "subContentId": "element-0"
+              }
+            }
+          ],
+          "slideBackgroundSelector": {}
+        }
+      ],
+      "keywordListEnabled": true,
+      "keywordListAlwaysShow": false,
+      "keywordListAutoHide": false,
+      "keywordListOpacity": 75,
+      "globalBackgroundSelector": {},
+      "l10n": {
+        "slide": "Slide",
+        "yourScore": "Your score",
+        "maxScore": "Max score",
+        "total": "Total",
+        "title": "Title",
+        "showSolutions": "Show solutions",
+        "retry": "Retry",
+        "exportAnswers": "Export text",
+        "hideKeywords": "Hide keywords list",
+        "showKeywords": "Show keywords list",
+        "fullscreen": "Fullscreen",
+        "exitFullscreen": "Exit fullscreen",
+        "prevSlide": "Previous slide",
+        "nextSlide": "Next slide",
+        "currentSlide": "Current slide",
+        "lastSlide": "Last slide",
+        "solutionModeTitle": "Exit solution mode",
+        "solutionModeText": "Solution Mode",
+        "summaryMultipleTaskText": "Multiple tasks",
+        "scoreMessage": "You achieved:",
+        "shareFacebook": "Share on Facebook",
+        "shareTwitter": "Share on Twitter",
+        "summary": "Summary",
+        "solutionsButtonTitle": "Show comments",
+        "printTitle": "Print",
+        "printIng498": "Preparing for printing...",
+        "printAllSlides": "Print all slides",
+        "printCurrentSlide": "Print current slide",
+        "noTitle": "No title",
+        "accessibilitySlideNavigationExplanation": "Use left and right arrow to change slide in that direction whenever canvas is selected.",
+        "accessibilityCanvasLabel": "Presentation canvas. Use left and right arrow to move between slides.",
+        "containsNotCompleted": "@slideName contains not completed interaction",
+        "containsCompleted": "@slideName contains completed interaction",
+        "slideCount": "Slide @index of @total",
+        "containsOnlyCorrect": "@slideName only has correct answers",
+        "containsIncorrectAnswers": "@slideName has incorrect answers",
+        "shareResult": "Share Result",
+        "accessibilityTotalScore": "You got @score of @maxScore points in total",
+        "accessibilityEnteredFullscreen": "Entered fullscreen",
+        "accessibilityExitedFullscreen": "Exited fullscreen"
+      }
+    },
+    "override": {
+      "activeSurface": false,
+      "hideSummarySlide": false,
+      "summarySlideSolutionButton": true,
+      "summarySlideRetryButton": true,
+      "enablePrintButton": false,
+      "social": {
+        "showFacebookShare": false,
+        "showTwitterShare": false
+      }
+    }
+  },
+
+  "conversion_notes": {
+    "slide_types": {
+      "title": "Use H5P.AdvancedText with large heading",
+      "content": "Use H5P.AdvancedText for text, optionally add H5P.Image",
+      "quiz": "Embed appropriate question type (MultiChoice, TrueFalse, etc.)",
+      "image": "Use H5P.Image with caption",
+      "summary": "Use H5P.AdvancedText with bulleted list"
+    },
+    "element_positioning": {
+      "x": "Percentage from left (0-100)",
+      "y": "Percentage from top (0-100)",
+      "width": "Width percentage",
+      "height": "Height percentage"
+    },
+    "embedded_content_types": [
+      "H5P.AdvancedText 1.1",
+      "H5P.Image 1.1",
+      "H5P.MultiChoice 1.16",
+      "H5P.TrueFalse 1.8",
+      "H5P.Blanks 1.14",
+      "H5P.DragText 1.10",
+      "H5P.Video 1.6",
+      "H5P.Audio 1.5",
+      "H5P.Link 1.3"
+    ]
+  }
+}

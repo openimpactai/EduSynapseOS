@@ -1,0 +1,105 @@
+{
+  "library": "H5P.PersonalityQuiz 1.0",
+  "name": "Personality Quiz",
+  "category": "game",
+  "description": "Assessment quiz with personality-type results. Ideal for learning style assessments, self-discovery, and interest profiling.",
+  "supports_media": true,
+  "media_placement": "question",
+
+  "ai_input_format": {
+    "description": "AI should generate personality quiz with results and questions",
+    "schema": {
+      "title": "string - Quiz title",
+      "results": [
+        {
+          "id": "string - Unique identifier for this result",
+          "title": "string - Result/personality type name",
+          "description": "string - Description of this personality type"
+        }
+      ],
+      "questions": [
+        {
+          "question": "string - The question text",
+          "answers": [
+            {
+              "text": "string - Answer option text",
+              "resultId": "string - ID of the result this answer points to"
+            }
+          ]
+        }
+      ]
+    },
+    "example": {
+      "title": "What's Your Learning Style?",
+      "results": [
+        {"id": "visual", "title": "Visual Learner", "description": "You learn best through images, diagrams, and visual representations. Try using mind maps and color-coded notes!"},
+        {"id": "auditory", "title": "Auditory Learner", "description": "You learn best through listening and discussion. Try recording lectures and participating in study groups!"},
+        {"id": "kinesthetic", "title": "Kinesthetic Learner", "description": "You learn best through hands-on experience. Try experiments, role-playing, and building models!"},
+        {"id": "reading", "title": "Reading/Writing Learner", "description": "You learn best through reading and writing. Try taking detailed notes and reading textbooks!"}
+      ],
+      "questions": [
+        {
+          "question": "When learning something new, you prefer to:",
+          "answers": [
+            {"text": "Watch a video or look at diagrams", "resultId": "visual"},
+            {"text": "Listen to a podcast or lecture", "resultId": "auditory"},
+            {"text": "Try it out hands-on", "resultId": "kinesthetic"},
+            {"text": "Read instructions or articles", "resultId": "reading"}
+          ]
+        },
+        {
+          "question": "When studying for a test, you usually:",
+          "answers": [
+            {"text": "Create colorful charts and diagrams", "resultId": "visual"},
+            {"text": "Discuss the material with others", "resultId": "auditory"},
+            {"text": "Practice with physical activities or examples", "resultId": "kinesthetic"},
+            {"text": "Review your written notes", "resultId": "reading"}
+          ]
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "title": {
+      "text": "What's Your Learning Style?"
+    },
+    "resultScreen": {
+      "animation": "fade",
+      "displayResults": "all"
+    },
+    "personalities": [
+      {"name": "Visual Learner", "description": "<p>You learn best through images, diagrams, and visual representations. Try using mind maps and color-coded notes!</p>"},
+      {"name": "Auditory Learner", "description": "<p>You learn best through listening and discussion. Try recording lectures and participating in study groups!</p>"},
+      {"name": "Kinesthetic Learner", "description": "<p>You learn best through hands-on experience. Try experiments, role-playing, and building models!</p>"},
+      {"name": "Reading/Writing Learner", "description": "<p>You learn best through reading and writing. Try taking detailed notes and reading textbooks!</p>"}
+    ],
+    "questions": [
+      {
+        "text": "<p>When learning something new, you prefer to:</p>",
+        "answers": [
+          {"text": "<p>Watch a video or look at diagrams</p>", "personality": 0},
+          {"text": "<p>Listen to a podcast or lecture</p>", "personality": 1},
+          {"text": "<p>Try it out hands-on</p>", "personality": 2},
+          {"text": "<p>Read instructions or articles</p>", "personality": 3}
+        ]
+      },
+      {
+        "text": "<p>When studying for a test, you usually:</p>",
+        "answers": [
+          {"text": "<p>Create colorful charts and diagrams</p>", "personality": 0},
+          {"text": "<p>Discuss the material with others</p>", "personality": 1},
+          {"text": "<p>Practice with physical activities or examples</p>", "personality": 2},
+          {"text": "<p>Review your written notes</p>", "personality": 3}
+        ]
+      }
+    ]
+  },
+
+  "conversion_notes": {
+    "result_id_mapping": "Map resultId strings to zero-based personality indices",
+    "html_wrapping": "Wrap text fields in <p> tags",
+    "description_wrapping": "Wrap personality descriptions in <p> tags",
+    "personality_index": "Use numeric index (0, 1, 2...) based on results array order"
+  }
+}

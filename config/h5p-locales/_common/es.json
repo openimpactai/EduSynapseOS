@@ -1,0 +1,28 @@
+{
+  "confirmCheck": {
+    "header": "¿Finalizar?",
+    "body": "¿Está seguro de que desea finalizar?",
+    "cancelLabel": "Cancelar",
+    "confirmLabel": "Finalizar"
+  },
+  "confirmRetry": {
+    "header": "¿Reintentar?",
+    "body": "¿Está seguro de que desea reintentar?",
+    "cancelLabel": "Cancelar",
+    "confirmLabel": "Confirmar"
+  },
+  "overallFeedback": [
+    {"from": 0, "to": 50, "feedback": "Necesitas más práctica."},
+    {"from": 51, "to": 80, "feedback": "¡Buen trabajo! Puedes hacerlo aún mejor."},
+    {"from": 81, "to": 100, "feedback": "¡Excelente! Has dominado este tema."}
+  ],
+  "ui": {
+    "checkAnswerButton": "Comprobar",
+    "showSolutionButton": "Mostrar solución",
+    "tryAgainButton": "Reintentar",
+    "submitAnswerButton": "Enviar",
+    "correctText": "¡Correcto!",
+    "incorrectText": "Incorrecto",
+    "tipAvailable": "Pista disponible"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "library": "H5P.Chart 1.2",
+  "name": "Chart",
+  "category": "media",
+  "description": "Bar and pie charts for data visualization. Perfect for data presentation, statistics, and comparisons.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate chart data with labels and values",
+    "schema": {
+      "chartType": "string - 'bar' | 'pie' | 'line'",
+      "title": "string - Chart title",
+      "data": [
+        {
+          "label": "string - Data point label",
+          "value": "number - Data point value"
+        }
+      ]
+    },
+    "example": {
+      "chartType": "bar",
+      "title": "World Population by Continent",
+      "data": [
+        {"label": "Asia", "value": 4700},
+        {"label": "Africa", "value": 1400},
+        {"label": "Europe", "value": 750},
+        {"label": "North America", "value": 580},
+        {"label": "South America", "value": 430},
+        {"label": "Oceania", "value": 45}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "chartType": "bar",
+    "listOfTypes": [
+      {"text": "Asia", "value": 4700, "color": "#4285F4"},
+      {"text": "Africa", "value": 1400, "color": "#34A853"},
+      {"text": "Europe", "value": 750, "color": "#FBBC05"},
+      {"text": "North America", "value": 580, "color": "#EA4335"},
+      {"text": "South America", "value": 430, "color": "#8E24AA"},
+      {"text": "Oceania", "value": 45, "color": "#00ACC1"}
+    ],
+    "graphMode": null
+  },
+
+  "conversion_notes": {
+    "field_mapping": {
+      "label": "text",
+      "value": "value"
+    },
+    "color_generation": "Auto-assign colors from a predefined palette",
+    "default_colors": ["#4285F4", "#34A853", "#FBBC05", "#EA4335", "#8E24AA", "#00ACC1", "#43A047", "#FB8C00"],
+    "graph_mode": "Set graphMode: 'lines' for line charts, null for others"
+  }
+}

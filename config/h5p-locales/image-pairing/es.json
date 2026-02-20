@@ -1,0 +1,8 @@
+{
+  "checkAnswer": "Comprobar",
+  "tryAgain": "Reintentar",
+  "showSolution": "Mostrar solución",
+  "score": "Tu puntuación: @score de @total",
+  "matchCorrect": "Coincidencia correcta",
+  "matchIncorrect": "Coincidencia incorrecta"
+}

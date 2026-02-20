@@ -1,0 +1,12 @@
+{
+  "cardTurns": "Card turns",
+  "timeSpent": "Time spent",
+  "feedback": "Good job!",
+  "tryAgain": "Try again?",
+  "closeLabel": "Close",
+  "label": "Memory Game",
+  "done": "Done!",
+  "cardPrefix": "Card",
+  "cardUnturned": "Unturned",
+  "cardMatched": "Matched"
+}

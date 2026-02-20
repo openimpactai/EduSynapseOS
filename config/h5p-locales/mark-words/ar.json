@@ -1,0 +1,10 @@
+{
+  "defaultInstruction": "انقر على الكلمات التي يجب تحديدها",
+  "checkAnswer": "تحقق",
+  "tryAgain": "أعد المحاولة",
+  "showSolution": "أظهر الحل",
+  "correct": "صحيح!",
+  "wrong": "غير صحيح!",
+  "missed": "لم يتم العثور على الإجابة!",
+  "solutionDescription": "تم إكمال المهمة."
+}

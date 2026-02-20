@@ -1,0 +1,12 @@
+{
+  "checkAnswer": "Vérifier",
+  "tryAgain": "Réessayer",
+  "showSolution": "Afficher la solution",
+  "found": "trouvé",
+  "notFound": "non trouvé",
+  "solved": "Résolu !",
+  "scoreBarLabel": ":num sur :total mots trouvés",
+  "a11yCheck": "Vérifiez vos réponses",
+  "a11yShowSolution": "Affichez la solution",
+  "a11yRetry": "Redémarrer le jeu"
+}

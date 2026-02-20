@@ -1,0 +1,16 @@
+{
+  "showSolutions": "أظهر الحل",
+  "tryAgain": "أعد المحاولة",
+  "checkAnswer": "تحقق",
+  "submitAnswer": "إرسال",
+  "notFilledOut": "يرجى ملء جميع الفراغات",
+  "correct": "صحيح!",
+  "wrong": "خطأ",
+  "answeredCorrectly": "إجابة صحيحة",
+  "answeredIncorrectly": "إجابة خاطئة",
+  "solutionLabel": "الإجابة الصحيحة:",
+  "inputLabel": "فراغ",
+  "inputHasTip": "تلميح متاح",
+  "tipLabel": "تلميح",
+  "taskDescription": "املأ الكلمات المفقودة"
+}

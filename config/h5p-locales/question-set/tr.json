@@ -1,0 +1,28 @@
+{
+  "texts": {
+    "prevButton": "Önceki soru",
+    "nextButton": "Sonraki soru",
+    "finishButton": "Bitir",
+    "submitButton": "Gönder",
+    "textualProgress": "Soru: @current / @total",
+    "jumpToQuestion": "Soru %d / %total",
+    "questionLabel": "Soru",
+    "readSpeakerProgress": "Soru @current / @total",
+    "unansweredText": "Cevaplanmamış",
+    "answeredText": "Cevaplandı",
+    "currentQuestionText": "Mevcut soru",
+    "navigationLabel": "Sorular",
+    "questionSetInstruction": ""
+  },
+  "endGame": {
+    "noResultMessage": "Sonuç yok",
+    "message": "Sonuçlarınız:",
+    "scoreBarLabel": "Skor: :num / :total",
+    "solutionButtonText": "Cevabı Göster",
+    "retryButtonText": "Tekrar Dene",
+    "finishButtonText": "Bitir",
+    "submitButtonText": "Gönder",
+    "skipButtonText": "Videoyu Atla",
+    "startButtonText": "Teste Başla"
+  }
+}

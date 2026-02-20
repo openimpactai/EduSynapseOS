@@ -1,0 +1,13 @@
+{
+  "defaultIntro": "اختر العبارات الصحيحة",
+  "solved": "مكتمل",
+  "scoreLabel": "نتيجتك",
+  "result": "النتيجة",
+  "correct": "صحيح",
+  "incorrect": "غير صحيح",
+  "altIncorrect": "إجابة خاطئة",
+  "correctAnswers": "إجابة صحيحة",
+  "tip": "تلميح",
+  "scoreBarLabel": ":num من :total",
+  "progressText": "اللوحة :num من :total"
+}

@@ -1,0 +1,112 @@
+{
+  "library": "H5P.DocumentationTool 1.8",
+  "name": "Documentation Tool",
+  "category": "learning",
+  "description": "Guide students through documentation processes with structured forms. Great for lab reports, project documentation, and reflective writing.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate a structured documentation template",
+    "schema": {
+      "title": "string - Document title",
+      "pages": [
+        {
+          "title": "string - Page/section title",
+          "introduction": "string - Instructions for this section",
+          "fields": [
+            {
+              "type": "string - 'text' | 'textarea' | 'goal' | 'assessment'",
+              "label": "string - Field label",
+              "description": "string - Help text for the field",
+              "required": "boolean - Whether field is required"
+            }
+          ]
+        }
+      ]
+    },
+    "example": {
+      "title": "Science Lab Report Template",
+      "pages": [
+        {
+          "title": "Hypothesis",
+          "introduction": "State your prediction about what will happen in this experiment.",
+          "fields": [
+            {"type": "textarea", "label": "Your Hypothesis", "description": "Write a clear, testable hypothesis statement.", "required": true}
+          ]
+        },
+        {
+          "title": "Materials and Methods",
+          "introduction": "List all materials used and describe your procedure.",
+          "fields": [
+            {"type": "textarea", "label": "Materials", "description": "List all materials and equipment used.", "required": true},
+            {"type": "textarea", "label": "Procedure", "description": "Describe the steps you followed in order.", "required": true}
+          ]
+        },
+        {
+          "title": "Results",
+          "introduction": "Record your observations and data.",
+          "fields": [
+            {"type": "textarea", "label": "Observations", "description": "What did you observe during the experiment?", "required": true},
+            {"type": "textarea", "label": "Data", "description": "Record any measurements or numerical data.", "required": false}
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "introduction": "Analyze your results and draw conclusions.",
+          "fields": [
+            {"type": "textarea", "label": "Analysis", "description": "Did your results support your hypothesis? Why or why not?", "required": true},
+            {"type": "textarea", "label": "Sources of Error", "description": "What could have affected your results?", "required": false}
+          ]
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "Complete this lab report by filling in each section.",
+    "pagesList": [
+      {
+        "library": "H5P.StandardPage 1.5",
+        "params": {
+          "elementList": [
+            {
+              "library": "H5P.Text 1.1",
+              "params": {"text": "<h2>Hypothesis</h2><p>State your prediction about what will happen in this experiment.</p>"}
+            },
+            {
+              "library": "H5P.TextInputField 1.2",
+              "params": {
+                "taskDescription": "Your Hypothesis",
+                "placeholderText": "Write a clear, testable hypothesis statement.",
+                "inputFieldSize": 10
+              }
+            }
+          ],
+          "helpTextLabel": "Help",
+          "helpText": ""
+        }
+      }
+    ],
+    "enableDocumentExport": true,
+    "l10n": {
+      "previousLabel": "Previous",
+      "nextLabel": "Next",
+      "submitLabel": "Submit",
+      "exportLabel": "Export as document"
+    }
+  },
+
+  "conversion_notes": {
+    "page_structure": "Each page contains elementList with various H5P components",
+    "field_types_mapping": {
+      "text": "H5P.Text for display only",
+      "textarea": "H5P.TextInputField for input",
+      "goal": "H5P.GoalsPage for goal setting",
+      "assessment": "H5P.GoalsAssessmentPage for self-assessment"
+    },
+    "export_support": "Enable document export for saving work"
+  },
+
+  "requires_media": false,
+  "ai_support": "full"
+}

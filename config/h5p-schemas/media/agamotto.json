@@ -1,0 +1,86 @@
+{
+  "library": "H5P.Agamotto 1.6",
+  "name": "Agamotto (Image Sequence)",
+  "category": "media",
+  "description": "Slider-based image sequence viewer. Ideal for showing processes, transformations, and gradual changes.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate a sequence of related images with descriptions",
+    "schema": {
+      "title": "string - Sequence title",
+      "images": [
+        {
+          "description": "string - Description of this image (for AI generation)",
+          "label": "string - Label for this step",
+          "alt": "string - Alt text",
+          "text": "string - Explanatory text for this step"
+        }
+      ]
+    },
+    "example": {
+      "title": "Plant Growth Stages",
+      "images": [
+        {
+          "description": "A seed just planted in soil with a small sprout emerging",
+          "label": "Week 1",
+          "alt": "Seed germination",
+          "text": "The seed absorbs water and begins to germinate. A small root emerges first."
+        },
+        {
+          "description": "A small seedling with two leaves above the soil",
+          "label": "Week 2",
+          "alt": "Seedling emerges",
+          "text": "The stem pushes through the soil and the first leaves (cotyledons) appear."
+        },
+        {
+          "description": "A young plant with several leaves and a visible stem",
+          "label": "Week 4",
+          "alt": "Young plant",
+          "text": "True leaves develop and the plant begins photosynthesis more actively."
+        },
+        {
+          "description": "A mature flowering plant with blossoms",
+          "label": "Week 8",
+          "alt": "Mature flowering plant",
+          "text": "The plant reaches maturity and produces flowers for reproduction."
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "items": [
+      {
+        "image": {
+          "path": "images/stage1.jpg",
+          "alt": "Seed germination"
+        },
+        "labelText": "Week 1",
+        "description": "<p>The seed absorbs water and begins to germinate. A small root emerges first.</p>"
+      },
+      {
+        "image": {
+          "path": "images/stage2.jpg",
+          "alt": "Seedling emerges"
+        },
+        "labelText": "Week 2",
+        "description": "<p>The stem pushes through the soil and the first leaves (cotyledons) appear.</p>"
+      }
+    ],
+    "behaviour": {
+      "snap": true,
+      "ticks": true
+    }
+  },
+
+  "conversion_notes": {
+    "sequence_order": "Images should be in logical sequence order",
+    "image_consistency": "All images should have similar framing/perspective",
+    "description_wrapping": "Wrap description text in <p> tags"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

@@ -1,0 +1,18 @@
+{
+  "checkAnswer": "Comprobar",
+  "tryAgain": "Reintentar",
+  "showSolution": "Mostrar respuesta de ejemplo",
+  "submitAnswer": "Enviar",
+  "remainingChars": "Caracteres restantes: @chars",
+  "yourAnswer": "Tu respuesta",
+  "feedbackHeader": "Retroalimentación",
+  "solutionTitle": "Respuesta de ejemplo",
+  "notEnoughChars": "Debe ingresar al menos @minLength caracteres.",
+  "overallFeedback": "Retroalimentación general",
+  "sampleIntro": "La respuesta de ejemplo debe incluir:",
+  "keywordIncluded": "Incluyó correctamente '@keyword'.",
+  "keywordMissed": "Considere incluir '@keyword'.",
+  "a11yYourScore": "Tu puntuación: @score de @total",
+  "a11yCheckAnnouncement": "Tu respuesta fue verificada",
+  "a11yRetryAnnouncement": "Estás reintentando"
+}

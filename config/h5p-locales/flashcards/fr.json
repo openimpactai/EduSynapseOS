@@ -1,0 +1,18 @@
+{
+  "progressText": "Carte @card sur @total",
+  "next": "Suivant",
+  "previous": "Précédent",
+  "checkAnswerText": "Vérifier",
+  "defaultAnswerText": "Votre réponse",
+  "correctAnswerText": "Correct !",
+  "incorrectAnswerText": "Incorrect",
+  "showSolutionText": "Bonne(s) réponse(s)",
+  "results": "Résultats",
+  "ofCorrect": "@score sur @total correct(s)",
+  "showResults": "Afficher les résultats",
+  "answerShortText": "R :",
+  "retry": "Réessayer",
+  "cardAnnouncement": "Réponse incorrecte. La bonne réponse était : @answer",
+  "correctAnswerAnnouncement": "Bonne réponse",
+  "pageAnnouncement": "Carte @current sur @total"
+}

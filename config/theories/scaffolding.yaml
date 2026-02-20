@@ -1,0 +1,24 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Scaffolding Theory Configuration
+# Based on instructional scaffolding principles
+
+enabled: true
+weight: 1.0
+
+parameters:
+  # Default scaffold level for new topics (1-5)
+  base_scaffold: 3
+
+  # Support adjustment rates
+  fade_rate: 0.15      # How quickly to reduce support with success
+  increase_rate: 0.25  # How quickly to increase support with failure
+
+  # Hint dependency influence
+  hint_dependency_weight: 0.3  # Weight of hint usage in calculations
+
+  # Thresholds
+  min_attempts_for_fade: 3     # Minimum attempts before support fading
+  struggle_threshold: 2        # Consecutive errors to increase support
+  success_threshold: 3         # Consecutive correct to decrease support

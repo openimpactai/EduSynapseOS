@@ -1,0 +1,21 @@
+{
+  "defaultInstruction": "Drag the words into the correct blanks.",
+  "checkAnswer": "Check",
+  "submitAnswer": "Submit",
+  "tryAgain": "Retry",
+  "showSolution": "Show solution",
+  "dropZoneLabel": "Drop zone @index",
+  "emptyLabel": "Drop zone @index is empty",
+  "containsLabel": "Drop zone @index contains",
+  "ariaDraggableLabel": "Draggable @index of @count",
+  "tipLabel": "Tip",
+  "correct": "Correct!",
+  "incorrect": "Incorrect",
+  "resetDropTitle": "Reset drop",
+  "resetDropDescription": "Reset the draggable to its initial position?",
+  "grabbedLabel": "Draggable is grabbed",
+  "cancelledDraggingLabel": "Cancelled dragging",
+  "correctAnswerLabel": "Correct answer:",
+  "feedbackHeader": "Feedback",
+  "scoreBarLabel": "Score: :num of :total"
+}

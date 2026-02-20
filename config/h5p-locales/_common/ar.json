@@ -1,0 +1,28 @@
+{
+  "confirmCheck": {
+    "header": "إنهاء؟",
+    "body": "هل أنت متأكد أنك تريد الإنهاء؟",
+    "cancelLabel": "إلغاء",
+    "confirmLabel": "إنهاء"
+  },
+  "confirmRetry": {
+    "header": "إعادة المحاولة؟",
+    "body": "هل أنت متأكد أنك تريد إعادة المحاولة؟",
+    "cancelLabel": "إلغاء",
+    "confirmLabel": "تأكيد"
+  },
+  "overallFeedback": [
+    {"from": 0, "to": 50, "feedback": "تحتاج إلى مزيد من التدريب."},
+    {"from": 51, "to": 80, "feedback": "عمل جيد! يمكنك التحسن أكثر."},
+    {"from": 81, "to": 100, "feedback": "ممتاز! لقد أتقنت هذا الموضوع."}
+  ],
+  "ui": {
+    "checkAnswerButton": "تحقق",
+    "showSolutionButton": "أظهر الحل",
+    "tryAgainButton": "أعد المحاولة",
+    "submitAnswerButton": "إرسال",
+    "correctText": "صحيح!",
+    "incorrectText": "غير صحيح",
+    "tipAvailable": "تلميح متاح"
+  }
+}

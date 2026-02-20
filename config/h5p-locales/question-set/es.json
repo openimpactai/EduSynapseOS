@@ -1,0 +1,28 @@
+{
+  "texts": {
+    "prevButton": "Pregunta anterior",
+    "nextButton": "Siguiente pregunta",
+    "finishButton": "Finalizar",
+    "submitButton": "Enviar",
+    "textualProgress": "Pregunta: @current de @total",
+    "jumpToQuestion": "Pregunta %d de %total",
+    "questionLabel": "Pregunta",
+    "readSpeakerProgress": "Pregunta @current de @total",
+    "unansweredText": "Sin responder",
+    "answeredText": "Respondida",
+    "currentQuestionText": "Pregunta actual",
+    "navigationLabel": "Preguntas",
+    "questionSetInstruction": ""
+  },
+  "endGame": {
+    "noResultMessage": "Sin resultado",
+    "message": "Tu resultado:",
+    "scoreBarLabel": "Puntuación: :num / :total",
+    "solutionButtonText": "Mostrar solución",
+    "retryButtonText": "Reintentar",
+    "finishButtonText": "Finalizar",
+    "submitButtonText": "Enviar",
+    "skipButtonText": "Saltar video",
+    "startButtonText": "Iniciar cuestionario"
+  }
+}

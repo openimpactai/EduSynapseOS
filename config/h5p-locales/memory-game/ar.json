@@ -1,0 +1,12 @@
+{
+  "cardTurns": "عدد التقليبات",
+  "timeSpent": "الوقت المستغرق",
+  "feedback": "أحسنت!",
+  "tryAgain": "حاول مرة أخرى؟",
+  "closeLabel": "إغلاق",
+  "label": "لعبة الذاكرة",
+  "done": "تم!",
+  "cardPrefix": "بطاقة",
+  "cardUnturned": "غير مقلوبة",
+  "cardMatched": "متطابقة"
+}

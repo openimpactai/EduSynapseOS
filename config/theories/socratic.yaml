@@ -1,0 +1,21 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Socratic Method Theory Configuration
+# Based on Socratic questioning principles
+
+enabled: true
+weight: 0.9
+
+parameters:
+  # Default guide vs tell ratio (0-1, higher = more questioning)
+  base_guide_ratio: 0.7
+
+  # Thresholds for mode switching
+  frustration_threshold: 3  # Errors before reducing questioning
+  mastery_threshold: 0.6    # Mastery level for challenging questions
+  confidence_boost: 2       # Successes before increasing questioning
+
+  # Ratio bounds
+  min_guide_ratio: 0.3   # Never go below this ratio
+  max_guide_ratio: 0.95  # Never exceed this ratio

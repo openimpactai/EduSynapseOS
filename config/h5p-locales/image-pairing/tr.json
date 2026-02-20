@@ -1,0 +1,8 @@
+{
+  "checkAnswer": "Kontrol Et",
+  "tryAgain": "Tekrar Dene",
+  "showSolution": "Cevabı Göster",
+  "score": "Puanınız: @score / @total",
+  "matchCorrect": "Doğru eşleşme",
+  "matchIncorrect": "Yanlış eşleşme"
+}

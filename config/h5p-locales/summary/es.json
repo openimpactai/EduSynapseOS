@@ -1,0 +1,13 @@
+{
+  "defaultIntro": "Seleccione las afirmaciones correctas",
+  "solved": "Completado",
+  "scoreLabel": "Tu puntuación",
+  "result": "Resultado",
+  "correct": "Correcto",
+  "incorrect": "Incorrecto",
+  "altIncorrect": "Respuesta incorrecta",
+  "correctAnswers": "respuesta correcta",
+  "tip": "Pista",
+  "scoreBarLabel": ":num de :total",
+  "progressText": "Panel :num de :total"
+}

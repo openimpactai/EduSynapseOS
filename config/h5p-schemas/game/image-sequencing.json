@@ -1,0 +1,78 @@
+{
+  "library": "H5P.ImageSequencing 1.1",
+  "name": "Image Sequencing",
+  "category": "game",
+  "description": "Arrange images in correct order. Great for process visualization, story order, and timeline activities.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate ordered images with descriptions",
+    "schema": {
+      "taskDescription": "string - Instructions for the sequencing task",
+      "images": [
+        {
+          "description": "string - What the image should show (for AI generation)",
+          "alt": "string - Alt text for accessibility",
+          "audioDescription": "string - Optional audio description"
+        }
+      ]
+    },
+    "example": {
+      "taskDescription": "Arrange the stages of a butterfly's life cycle in the correct order.",
+      "images": [
+        {"description": "A small egg on a leaf", "alt": "Butterfly egg on a leaf"},
+        {"description": "A caterpillar eating a leaf", "alt": "Caterpillar (larva) eating"},
+        {"description": "A chrysalis hanging from a branch", "alt": "Chrysalis (pupa) stage"},
+        {"description": "A beautiful butterfly with spread wings", "alt": "Adult butterfly"}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "<p>Arrange the stages of a butterfly's life cycle in the correct order.</p>",
+    "sequenceImages": [
+      {
+        "image": {
+          "path": "images/egg.jpg",
+          "alt": "Butterfly egg on a leaf"
+        },
+        "imageDescription": "Stage 1: Egg"
+      },
+      {
+        "image": {
+          "path": "images/caterpillar.jpg",
+          "alt": "Caterpillar (larva) eating"
+        },
+        "imageDescription": "Stage 2: Larva (Caterpillar)"
+      },
+      {
+        "image": {
+          "path": "images/chrysalis.jpg",
+          "alt": "Chrysalis (pupa) stage"
+        },
+        "imageDescription": "Stage 3: Pupa (Chrysalis)"
+      },
+      {
+        "image": {
+          "path": "images/butterfly.jpg",
+          "alt": "Adult butterfly"
+        },
+        "imageDescription": "Stage 4: Adult Butterfly"
+      }
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true
+    }
+  },
+
+  "conversion_notes": {
+    "order_preservation": "AI provides images in CORRECT order - system shuffles for display",
+    "image_generation": "Use description field for AI image generation prompt",
+    "accessibility": "Always provide alt text for screen readers"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

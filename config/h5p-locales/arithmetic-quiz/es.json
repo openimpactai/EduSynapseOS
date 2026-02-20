@@ -1,0 +1,6 @@
+{
+  "startButton": "Iniciar",
+  "submitButton": "Enviar",
+  "score": "Puntuación: @score",
+  "time": "Tiempo: @time"
+}

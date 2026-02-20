@@ -1,0 +1,20 @@
+{
+  "defaultDescription": "رتب الصور بالترتيب الصحيح",
+  "l10n": {
+    "checkAnswer": "تحقق",
+    "tryAgain": "أعد المحاولة",
+    "showSolution": "أظهر الحل",
+    "scoreBarLabel": ":num من :total صحيح",
+    "a11yRetry": "أعد المحاولة. ستعود جميع الصور إلى مواضعها الأولية.",
+    "a11yCheck": "تحقق من الإجابات",
+    "a11yShowSolution": "أظهر التسلسل الصحيح"
+  },
+  "a11y": {
+    "imageDescription": "وصف الصورة",
+    "grabbed": "ممسوك",
+    "released": "محرر",
+    "correct": "صحيح",
+    "wrong": "خطأ",
+    "currentPosition": "الموضع الحالي"
+  }
+}

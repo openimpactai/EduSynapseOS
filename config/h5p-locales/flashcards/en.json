@@ -1,0 +1,18 @@
+{
+  "progressText": "Card @card of @total",
+  "next": "Next",
+  "previous": "Previous",
+  "checkAnswerText": "Check",
+  "defaultAnswerText": "Your answer",
+  "correctAnswerText": "Correct!",
+  "incorrectAnswerText": "Incorrect",
+  "showSolutionText": "Correct answer(s)",
+  "results": "Results",
+  "ofCorrect": "@score of @total correct",
+  "showResults": "Show results",
+  "answerShortText": "A:",
+  "retry": "Retry",
+  "cardAnnouncement": "Incorrect answer. Correct answer was: @answer",
+  "correctAnswerAnnouncement": "Correct answer",
+  "pageAnnouncement": "Card @current of @total"
+}

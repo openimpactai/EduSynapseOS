@@ -1,0 +1,23 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# VARK Learning Styles Theory Configuration
+# Based on Neil Fleming's VARK model
+
+enabled: true
+weight: 0.8  # Slightly lower weight as learning styles are complementary
+
+parameters:
+  # Threshold for multimodal classification
+  multimodal_threshold: 0.35  # Max dominant score to be considered multimodal
+
+  # Adaptation strength
+  adaptation_strength: 0.8  # How strongly to weight VARK preferences
+
+  # Fallback format for new students
+  fallback_format: "multimodal"
+
+  # Topic-specific overrides (optional)
+  # topic_overrides:
+  #   "geometry_topic_id": "visual"
+  #   "literature_topic_id": "reading"

@@ -1,0 +1,10 @@
+{
+  "defaultInstruction": "Click on the words that should be marked",
+  "checkAnswer": "Check",
+  "tryAgain": "Retry",
+  "showSolution": "Show solution",
+  "correct": "Correct!",
+  "wrong": "Incorrect!",
+  "missed": "Answer not found!",
+  "solutionDescription": "Task is completed."
+}

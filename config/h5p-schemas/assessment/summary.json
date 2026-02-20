@@ -1,0 +1,82 @@
+{
+  "library": "H5P.Summary 1.10",
+  "name": "Summary",
+  "category": "assessment",
+  "description": "Select correct statements from options. Ideal for comprehension checks and key point identification.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate an object with a title, introduction, an array of panels (each with statements where exactly one is correct), and an optional summary text.",
+    "schema": {
+      "title": "string - Summary activity title",
+      "introduction": "string - Instruction text for the student",
+      "panels": [
+        {
+          "statements": [
+            {
+              "text": "string - Statement text",
+              "correct": "boolean - Whether this statement is correct (exactly one per panel must be true)"
+            }
+          ],
+          "tip": "string - Optional hint for the panel"
+        }
+      ],
+      "summary": "string - Optional overall summary text shown at completion"
+    },
+    "example": {
+      "title": "Photosynthesis Key Points",
+      "introduction": "Select the correct statement in each group to identify the key points about photosynthesis.",
+      "panels": [
+        {
+          "statements": [
+            {"text": "Photosynthesis converts light energy into chemical energy in the form of glucose.", "correct": true},
+            {"text": "Photosynthesis converts chemical energy into light energy.", "correct": false},
+            {"text": "Photosynthesis only occurs at night when plants rest.", "correct": false}
+          ],
+          "tip": "Think about what photosynthesis produces."
+        },
+        {
+          "statements": [
+            {"text": "Chloroplasts are the organelles where photosynthesis occurs.", "correct": true},
+            {"text": "Mitochondria are the organelles where photosynthesis occurs.", "correct": false},
+            {"text": "The nucleus is where photosynthesis occurs.", "correct": false}
+          ],
+          "tip": "Which organelle contains chlorophyll?"
+        },
+        {
+          "statements": [
+            {"text": "The inputs of photosynthesis are carbon dioxide, water, and sunlight.", "correct": true},
+            {"text": "The inputs of photosynthesis are oxygen and glucose.", "correct": false},
+            {"text": "The inputs of photosynthesis are only water and sunlight.", "correct": false}
+          ],
+          "tip": "Plants absorb a gas from the air too."
+        }
+      ],
+      "summary": "Great work! You've identified the key concepts of photosynthesis: it converts light to chemical energy, occurs in chloroplasts, and uses CO2, water, and sunlight."
+    }
+  },
+
+  "h5p_params_format": {
+    "intro": "Select the correct statement in each group.",
+    "summaries": [
+      {
+        "summary": [
+          "Photosynthesis converts light energy into chemical energy in the form of glucose.",
+          "Photosynthesis converts chemical energy into light energy.",
+          "Photosynthesis only occurs at night when plants rest."
+        ],
+        "tip": "Think about what photosynthesis produces."
+      }
+    ],
+    "overallFeedback": [
+      {"from": 0, "to": 100, "feedback": "Great work! You've identified the key concepts."}
+    ]
+  },
+
+  "conversion_notes": {
+    "correct_first": "H5P expects the correct statement as the FIRST item in the summary array",
+    "introduction_mapping": "introduction maps to intro field",
+    "summary_override": "If summary text is provided, it overrides overallFeedback with a single 0-100 entry",
+    "panel_validation": "Each panel must have exactly one correct statement and at least 2 total statements"
+  }
+}

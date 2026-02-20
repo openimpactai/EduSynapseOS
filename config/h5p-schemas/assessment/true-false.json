@@ -1,0 +1,94 @@
+{
+  "library": "H5P.TrueFalse 1.8",
+  "name": "True/False",
+  "category": "assessment",
+  "description": "True or false questions with feedback. Perfect for quick knowledge checks and misconception testing.",
+  "supports_media": true,
+  "media_placement": "question",
+
+  "ai_input_format": {
+    "description": "AI should generate an object with a title and an array of statements, each with correctness, explanation, and wrong feedback.",
+    "schema": {
+      "title": "string - Quiz title",
+      "statements": [
+        {
+          "statement": "string - The statement to evaluate",
+          "isTrue": "boolean - Whether the statement is true or false",
+          "explanation": "string - Explanation shown when the user answers correctly",
+          "wrongFeedback": "string - Feedback shown when the user answers incorrectly",
+          "image_prompt": "string (optional) - Description of an image to illustrate this statement",
+          "video_prompt": "string (optional) - Description of a short video clip to illustrate this statement",
+          "audio_prompt": "string (optional) - Text to narrate as audio for this statement"
+        }
+      ]
+    },
+    "example": {
+      "title": "Photosynthesis True or False",
+      "statements": [
+        {
+          "statement": "Photosynthesis occurs in the mitochondria of plant cells.",
+          "isTrue": false,
+          "explanation": "Photosynthesis occurs in the chloroplasts, not the mitochondria. Mitochondria are responsible for cellular respiration.",
+          "wrongFeedback": "Think again. Mitochondria are responsible for cellular respiration, not photosynthesis. The correct organelle is the chloroplast.",
+          "image_prompt": "An educational diagram showing a plant cell with chloroplasts and mitochondria clearly labeled"
+        },
+        {
+          "statement": "Plants release oxygen as a byproduct of photosynthesis.",
+          "isTrue": true,
+          "explanation": "Correct! Oxygen is released during the light reactions of photosynthesis when water molecules are split.",
+          "wrongFeedback": "Actually, oxygen IS released during photosynthesis through the splitting of water molecules in the light-dependent reactions."
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "question": "<p>Photosynthesis occurs in the mitochondria of plant cells.</p>",
+    "correct": "false",
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "feedbackOnCorrect": "Photosynthesis occurs in the chloroplasts, not the mitochondria.",
+      "feedbackOnWrong": "Think again. Mitochondria are responsible for cellular respiration, not photosynthesis."
+    },
+    "l10n": {
+      "trueText": "True",
+      "falseText": "False",
+      "score": "You got @score of @total points",
+      "checkAnswer": "Check",
+      "submitAnswer": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgain": "Retry",
+      "wrongAnswerMessage": "Wrong answer",
+      "correctAnswerMessage": "Correct answer",
+      "scoreBarLabel": "You got :num out of :total points",
+      "a11yCheck": "Check the answers.",
+      "a11yShowSolution": "Show the solution.",
+      "a11yRetry": "Retry the task."
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    }
+  },
+
+  "conversion_notes": {
+    "correct_value": "Use string 'true' or 'false' (not boolean) for H5P",
+    "feedback_mapping": "explanation → behaviour.feedbackOnCorrect, wrongFeedback → behaviour.feedbackOnWrong",
+    "single_statement": "H5P.TrueFalse handles one statement. For multiple, use QuestionSet with type: true_false per question",
+    "media_support": "Media is only included when image_url is present — no empty placeholder",
+    "html_wrapping": "statement is wrapped in <p> tags for question field"
+  }
+}

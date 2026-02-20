@@ -1,0 +1,125 @@
+{
+  "library": "H5P.Essay 1.5",
+  "name": "Essay",
+  "category": "assessment",
+  "description": "Open-ended writing with keyword-based evaluation. Perfect for written responses, critical thinking, and explanations.",
+  "supports_media": false,
+
+  "ai_input_format": {
+    "description": "AI should generate an essay prompt with keywords for automatic evaluation, sample outline, minimum length, and feedback ranges.",
+    "schema": {
+      "title": "string - Essay title",
+      "prompt": "string - The essay question/prompt for the student",
+      "sampleOutline": "string - A sample answer outline for reference",
+      "keywords": [
+        {
+          "keyword": "string - Key term that should appear in the essay",
+          "alternatives": "array of strings - Alternative forms of the keyword",
+          "points": "number - Points awarded for including this keyword",
+          "importance": "string - 'required' or 'optional' (required keywords get feedback)"
+        }
+      ],
+      "minimumLength": "number - Minimum character count for the essay (default: 100)",
+      "feedbackRanges": [
+        {
+          "from": "number - Score percentage start (0-100)",
+          "to": "number - Score percentage end (0-100)",
+          "feedback": "string - Feedback text for this score range"
+        }
+      ]
+    },
+    "example": {
+      "title": "Explain Photosynthesis",
+      "prompt": "Explain the process of photosynthesis and its importance to life on Earth. Include the inputs, outputs, and where it occurs.",
+      "sampleOutline": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen. It occurs in the chloroplasts of plant cells. The chlorophyll pigment captures light energy, which powers the conversion of CO2 and water into sugar. This process is vital because it produces oxygen for animals and provides the base of most food chains.",
+      "keywords": [
+        {
+          "keyword": "sunlight",
+          "alternatives": ["light", "solar energy", "light energy"],
+          "points": 2,
+          "importance": "required"
+        },
+        {
+          "keyword": "chloroplast",
+          "alternatives": ["chloroplasts"],
+          "points": 2,
+          "importance": "required"
+        },
+        {
+          "keyword": "chlorophyll",
+          "alternatives": ["green pigment"],
+          "points": 1,
+          "importance": "optional"
+        },
+        {
+          "keyword": "glucose",
+          "alternatives": ["sugar", "food"],
+          "points": 2,
+          "importance": "required"
+        },
+        {
+          "keyword": "oxygen",
+          "alternatives": ["O2"],
+          "points": 2,
+          "importance": "required"
+        },
+        {
+          "keyword": "carbon dioxide",
+          "alternatives": ["CO2"],
+          "points": 1,
+          "importance": "optional"
+        }
+      ],
+      "minimumLength": 150,
+      "feedbackRanges": [
+        {"from": 0, "to": 40, "feedback": "Your essay needs more detail. Try to include the key concepts of photosynthesis."},
+        {"from": 41, "to": 70, "feedback": "Good start! You covered some key concepts. Consider adding more details about the process."},
+        {"from": 71, "to": 90, "feedback": "Well done! You covered most of the important concepts."},
+        {"from": 91, "to": 100, "feedback": "Excellent! Comprehensive and well-explained answer."}
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "taskDescription": "<p>Explain the process of photosynthesis and its importance to life on Earth.</p>",
+    "keywords": [
+      {
+        "keyword": "sunlight|light|solar energy",
+        "options": {
+          "points": 2,
+          "forgiveMistakes": true,
+          "caseSensitive": false,
+          "feedbackIncluded": "You correctly included 'sunlight'.",
+          "feedbackMissed": "Consider including 'sunlight'."
+        }
+      }
+    ],
+    "solution": {
+      "introduction": "Sample answer should include:",
+      "sample": "<p>Photosynthesis is the process by which plants use sunlight...</p>"
+    },
+    "overallFeedback": [
+      {"from": 0, "to": 40, "feedback": "Your essay needs more detail."},
+      {"from": 41, "to": 70, "feedback": "Good start!"},
+      {"from": 71, "to": 100, "feedback": "Well done!"}
+    ],
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "ignoreScoring": false,
+      "pointsHost": 10,
+      "minimumLength": 150,
+      "inputFieldSize": "medium",
+      "showPopup": true
+    }
+  },
+
+  "conversion_notes": {
+    "prompt_mapping": "prompt maps to taskDescription, wrapped in <p> tags",
+    "keyword_alternatives": "Alternatives are joined with pipe character: keyword|alt1|alt2",
+    "importance_feedback": "Required keywords get feedbackIncluded and feedbackMissed in H5P",
+    "sample_mapping": "sampleOutline maps to solution.sample, wrapped in <p> tags",
+    "points_host": "Sum of all keyword points determines total score"
+  }
+}

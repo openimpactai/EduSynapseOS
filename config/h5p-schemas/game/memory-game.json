@@ -1,0 +1,89 @@
+{
+  "library": "H5P.MemoryGame 1.3",
+  "name": "Memory Game",
+  "category": "game",
+  "description": "Card matching memory game. Great for vocabulary matching, visual association, and fun review activities.",
+  "supports_media": true,
+  "requires_media": true,
+
+  "ai_input_format": {
+    "description": "AI should generate matching pairs for memory game",
+    "schema": {
+      "pairs": [
+        {
+          "first": {
+            "type": "string - 'text' | 'image'",
+            "content": "string - Text content or image description for AI generation"
+          },
+          "second": {
+            "type": "string - 'text' | 'image'",
+            "content": "string - Text content or image description for AI generation"
+          },
+          "description": "string - Optional description shown when matched"
+        }
+      ]
+    },
+    "example": {
+      "pairs": [
+        {
+          "first": {"type": "text", "content": "H₂O"},
+          "second": {"type": "text", "content": "Water"},
+          "description": "H₂O is the chemical formula for water, consisting of two hydrogen atoms and one oxygen atom."
+        },
+        {
+          "first": {"type": "text", "content": "NaCl"},
+          "second": {"type": "text", "content": "Salt"},
+          "description": "NaCl is the chemical formula for table salt (sodium chloride)."
+        },
+        {
+          "first": {"type": "text", "content": "CO₂"},
+          "second": {"type": "text", "content": "Carbon Dioxide"},
+          "description": "CO₂ is the chemical formula for carbon dioxide, a greenhouse gas."
+        },
+        {
+          "first": {"type": "image", "content": "Simple drawing of a leaf"},
+          "second": {"type": "text", "content": "Photosynthesis"},
+          "description": "Leaves are where photosynthesis primarily occurs in plants."
+        }
+      ]
+    }
+  },
+
+  "h5p_params_format": {
+    "cards": [
+      {
+        "image": {
+          "path": "images/card1.jpg",
+          "alt": "H₂O"
+        },
+        "match": {
+          "path": "images/card2.jpg",
+          "alt": "Water"
+        },
+        "description": "H₂O is the chemical formula for water."
+      }
+    ],
+    "behaviour": {
+      "useGrid": true,
+      "allowRetry": true
+    },
+    "l10n": {
+      "cardTurns": "Card turns",
+      "timeSpent": "Time spent",
+      "feedback": "Good work!",
+      "tryAgain": "Try again?",
+      "closeLabel": "Close",
+      "label": "Memory Game. Find the matching cards."
+    }
+  },
+
+  "conversion_notes": {
+    "text_to_image": "For text-based pairs, generate simple text images",
+    "image_generation": "Use AI image generation for visual pairs",
+    "pair_structure": "Each card needs image and match image",
+    "description_popup": "Description shows when pair is matched"
+  },
+
+  "requires_media": true,
+  "ai_support": "partial"
+}

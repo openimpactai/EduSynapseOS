@@ -1,0 +1,17 @@
+{
+  "nextButtonLabel": "السؤال التالي",
+  "showSolutionButtonLabel": "أظهر الحل",
+  "retryButtonLabel": "أعد المحاولة",
+  "solutionViewTitle": "الحل",
+  "correctText": "صحيح!",
+  "incorrectText": "غير صحيح!",
+  "shouldSelect": "كان يجب اختياره",
+  "shouldNotSelect": "لم يكن يجب اختياره",
+  "muteButtonLabel": "كتم صوت الملاحظات",
+  "closeButtonLabel": "إغلاق",
+  "slideOfTotal": "الشريحة :num من :total",
+  "scoreBarLabel": "النتيجة: :num من :total",
+  "solutionListQuestionNumber": "السؤال :num",
+  "a11yShowSolution": "أظهر الحل. ستظهر الإجابات الصحيحة.",
+  "a11yRetry": "أعد المحاولة. ستتم إعادة تعيين جميع الأسئلة."
+}

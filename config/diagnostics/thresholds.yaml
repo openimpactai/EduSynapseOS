@@ -1,0 +1,162 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# Diagnostic Thresholds Configuration
+# IMPORTANT: This system does NOT diagnose - only identifies indicators
+
+diagnostics:
+  # Professional disclaimer - must be shown with all reports
+  disclaimer:
+    tr: |
+      Bu sistem tanı koymaz. Sadece profesyonel değerlendirme için
+      göstergeler tespit eder. Endişe verici göstergeler için mutlaka
+      uzman değerlendirmesi önerilir.
+    en: |
+      This system does not diagnose. It only identifies indicators for
+      professional evaluation. Expert assessment is always recommended
+      for concerning indicators.
+
+  # Global settings
+  global_settings:
+    min_data_points: 30
+    confidence_threshold: 0.6
+    scan_frequency_days: 7
+    require_parental_consent: true
+
+  # Detector-specific thresholds
+  thresholds:
+    dyslexia:
+      name:
+        tr: "Disleksi Göstergeleri"
+        en: "Dyslexia Indicators"
+      alert_threshold: 0.6
+      concern_threshold: 0.4
+      min_data_points: 50
+      scan_frequency_days: 7
+      indicators:
+        spelling_errors:
+          weight: 0.3
+          threshold: 0.15
+        letter_reversal:
+          weight: 0.25
+          threshold: 0.10
+        reading_speed_variance:
+          weight: 0.2
+          threshold: 0.3
+        phonetic_confusion:
+          weight: 0.15
+          threshold: 0.12
+        word_omission:
+          weight: 0.1
+          threshold: 0.08
+
+    dyscalculia:
+      name:
+        tr: "Diskalkuli Göstergeleri"
+        en: "Dyscalculia Indicators"
+      alert_threshold: 0.6
+      concern_threshold: 0.4
+      min_data_points: 30
+      scan_frequency_days: 7
+      indicators:
+        number_reversal:
+          weight: 0.25
+          threshold: 0.12
+        operation_confusion:
+          weight: 0.25
+          threshold: 0.15
+        place_value_errors:
+          weight: 0.2
+          threshold: 0.18
+        symbol_confusion:
+          weight: 0.15
+          threshold: 0.10
+        counting_errors:
+          weight: 0.15
+          threshold: 0.12
+
+    attention:
+      name:
+        tr: "Dikkat Eksikliği Göstergeleri"
+        en: "Attention Deficit Indicators"
+      alert_threshold: 0.5
+      concern_threshold: 0.3
+      min_data_points: 20
+      scan_frequency_days: 3
+      indicators:
+        attention_span:
+          weight: 0.3
+          threshold: 0.5
+        task_completion:
+          weight: 0.25
+          threshold: 0.6
+        impulsive_responses:
+          weight: 0.2
+          threshold: 0.2
+        distraction_patterns:
+          weight: 0.15
+          threshold: 0.25
+        response_variance:
+          weight: 0.1
+          threshold: 0.4
+
+    auditory:
+      name:
+        tr: "İşitsel İşleme Göstergeleri"
+        en: "Auditory Processing Indicators"
+      alert_threshold: 0.55
+      concern_threshold: 0.35
+      min_data_points: 25
+      scan_frequency_days: 7
+      indicators:
+        instruction_errors:
+          weight: 0.35
+          threshold: 0.20
+        phonetic_errors:
+          weight: 0.30
+          threshold: 0.15
+        sequence_errors:
+          weight: 0.20
+          threshold: 0.18
+        response_delay:
+          weight: 0.15
+          threshold: 0.25
+
+    visual:
+      name:
+        tr: "Görsel İşleme Göstergeleri"
+        en: "Visual Processing Indicators"
+      alert_threshold: 0.55
+      concern_threshold: 0.35
+      min_data_points: 25
+      scan_frequency_days: 7
+      indicators:
+        visual_tracking_errors:
+          weight: 0.30
+          threshold: 0.18
+        spatial_confusion:
+          weight: 0.25
+          threshold: 0.15
+        pattern_errors:
+          weight: 0.25
+          threshold: 0.20
+        visual_fatigue:
+          weight: 0.20
+          threshold: 0.30
+
+  # Notification thresholds
+  notifications:
+    parent:
+      threshold: 0.5
+      message_type: concern_gentle
+      include_recommendations: true
+
+    teacher:
+      threshold: 0.4
+      message_type: professional
+      include_evidence: true
+
+    professional_referral:
+      threshold: 0.7
+      message_type: formal
+      include_full_report: true

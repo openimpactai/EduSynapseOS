@@ -1,0 +1,27 @@
+{
+  "l10n": {
+    "nextPage": "Sonraki sayfa",
+    "previousPage": "Önceki sayfa",
+    "chapterCompleted": "Bölüm tamamlandı!",
+    "partCompleted": "Bölümün @pages sayfasından @current tamamlandı.",
+    "incompleteChapter": "Tamamlanmamış Bölüm",
+    "navigateToTop": "En üste git",
+    "markAsFinished": "Tamamlandı olarak işaretle",
+    "fullscreen": "Tam Ekran",
+    "exitFullscreen": "Tam Ekrandan Çık",
+    "bookProgressSubtext": "@count / @total",
+    "interactionsProgressSubtext": "@count tamamlandı",
+    "submitReport": "Raporu Gönder",
+    "restartLabel": "Yeniden Başlat",
+    "summaryHeader": "Özet",
+    "allInteractions": "Tüm etkileşimler",
+    "yourAnswersTitle": "Cevaplarınız",
+    "bookProgress": "Kitap ilerlemeniz",
+    "interactionsProgress": "Etkileşimler",
+    "chapter": "Bölüm"
+  },
+  "a11y": {
+    "progress": "Sayfa @page / @total",
+    "menu": "İçindekiler menüsünü değiştir"
+  }
+}

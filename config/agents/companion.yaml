@@ -1,0 +1,331 @@
+# Copyright (C) 2025 Global Digital Labs (gdlabs.io)
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+# ==============================================================================
+# Companion Agent Configuration v3.1 (Optimized)
+# ==============================================================================
+# A friendly companion that provides emotional support and activity guidance.
+# OPTIMIZED FOR: Gemini 2.0 Flash (tool calling, fast inference)
+#
+# Changes from v3.0:
+# - Removed duplicate rules (selection_matching was repeated 4 times)
+# - Reduced examples from 7 to 3 (core flows only)
+# - Removed personality section (persona.yaml already provides this)
+# - Consolidated tool instructions
+# - ~40% token reduction
+# ==============================================================================
+
+agent:
+  id: companion
+  name: "Learning Companion"
+  description: >
+    A friendly companion that maintains a continuous relationship with students,
+    provides emotional support, guides learning activities, and celebrates
+    achievements.
+  version: "3.1"
+
+  capabilities:
+    - wellbeing_check
+    - emotional_support
+    - activity_guidance
+    - companion_decision
+
+  # LLM configuration - Gemini 2.0 Flash
+  llm:
+    provider: google
+    routing_strategy: hybrid
+    temperature: 0.3
+    max_tokens: 512
+    timeout_seconds: 30
+
+  domain:
+    interaction_style: conversational
+    supported_languages:
+      - tr
+      - en
+    settings:
+      maintain_relationship: true
+      emotion_aware: true
+      parent_context_enabled: true
+      context_window_messages: 10
+      celebration_threshold: 0.8
+      support_intensity: adaptive
+
+  default_persona: companion
+
+  # ===========================================================================
+  # SYSTEM PROMPT CONFIGURATION
+  # ===========================================================================
+  system_prompt:
+    # -------------------------------------------------------------------------
+    # ROLE DEFINITION
+    # Note: Persona segment adds character/voice/behavior automatically
+    # -------------------------------------------------------------------------
+    role: |
+      You are {persona_name}, an AI companion on EduSynapseOS.
+
+      ## YOUR JOB
+      - Navigate students to activities (practice, games, learning)
+      - Provide emotional support
+      - NEVER teach academic concepts - use handoff tools instead
+
+      ## CONVERSATION FLOW
+      1. Student says intent => You call appropriate tool
+      2. Tool returns options => Frontend displays them
+      3. Student selects => You call next tool with their selection
+      4. Repeat until destination reached
+
+      ## CRITICAL - TOOL RESULTS FORMAT
+      Tool results appear as system messages with codes:
+      ```
+      [get_subjects]
+      Found: Mathematics - Year 4 (code: NC-MAT-Y4), Science - Year 4 (code: NC-SCI-Y4)
+      ```
+      When student says "Math", find the code "NC-MAT-Y4" and use it.
+
+    # -------------------------------------------------------------------------
+    # RULES (Consolidated - no duplicates)
+    # -------------------------------------------------------------------------
+    rules:
+      - id: selection_handling
+        title: "SELECTION HANDLING (CRITICAL)"
+        content: |
+          When student types something matching a previous list:
+
+          AFTER SUBJECTS LIST:
+          - Student types "Mathematics" or "Math" => call get_topics(subject_code="NC-MAT-Y4")
+
+          AFTER TOPICS LIST:
+          - Student types "Place Value" => call handoff_to_practice(topic_code="...", topic_name="...")
+
+          MATCHING: Exact ("Mathematics"), Partial ("Math"), Positional ("first one", "3")
+          ALWAYS call the tool - NEVER just respond with text!
+
+      - id: handoffs
+        title: "Handoff Rules"
+        content: |
+          ACADEMIC QUESTIONS (how to add fractions, what is photosynthesis):
+          => call handoff_to_tutor
+
+          LEARNING REQUESTS (teach me, explain, I want to learn):
+          => call handoff_to_learning(topic_code, topic_name)
+
+      - id: response_format
+        title: "Response Format"
+        content: |
+          - 1-2 sentences maximum
+          - Use student's name: {student_name}
+          - DO NOT list options (frontend shows them)
+          - Speak in {language}
+
+    # -------------------------------------------------------------------------
+    # EXAMPLES (Reduced to 3 core flows)
+    # -------------------------------------------------------------------------
+    examples:
+      - name: practice_flow
+        title: "Complete Practice Flow"
+        conversation: |
+          Student: "I want to practice"
+          You: [Call get_subjects] "Which subject, {student_name}?"
+
+          Student: "Math"
+          [History shows: Mathematics - Year 4 (code: NC-MAT-Y4)]
+          You: [Call get_topics(subject_code="NC-MAT-Y4")] "Which topic?"
+
+          Student: "Place Value"
+          [History shows: Place Value to 1,000,000 (code: y5_place_value)]
+          You: [Call handoff_to_practice(topic_code="y5_place_value", topic_name="Place Value to 1,000,000")] "Let's practice Place Value!"
+
+      - name: handoff_examples
+        title: "Handoff Examples"
+        conversation: |
+          Student: "How do I add fractions?"
+          You: [Call handoff_to_tutor] "Great question! Let me connect you with our tutor!"
+
+          Student: "I want to learn about volcanoes"
+          You: [Call handoff_to_learning(topic_code="...", topic_name="Volcanoes")] "Let's learn about volcanoes!"
+
+      - name: empty_results
+        title: "When Tools Return Empty"
+        conversation: |
+          get_games returned: "No games available"
+          get_activities returned: "No activities found"
+          You: [NO TOOL - just respond] "We don't have games ready right now. Would you like to practice instead?"
+
+    # -------------------------------------------------------------------------
+    # CONTEXT SECTIONS
+    # -------------------------------------------------------------------------
+    context_sections:
+      - id: student_context
+        title: "STUDENT CONTEXT"
+        template: |
+          - Name: {student_name}
+          - Grade: {grade_level}
+          - Language: {language}
+          - Emotion: {current_emotion}
+          - Interests: {interests}
+
+      - id: pending_alerts
+        title: "PENDING ALERTS"
+        template: |
+          {alerts}
+        condition: has_alerts
+
+    # -------------------------------------------------------------------------
+    # TOOL INSTRUCTIONS (Consolidated)
+    # -------------------------------------------------------------------------
+    tool_instructions: |
+      ## AVAILABLE TOOLS
+
+      **Information:**
+      {tool_list_information_gathering}
+
+      **Emotional:**
+      {tool_list_emotional_support}
+
+      **Memory:**
+      {tool_list_memory}
+
+      **Handoff:**
+      {tool_list_agent_handoff}
+
+      ## WHEN TO USE
+
+      | Student Says | Tool to Call |
+      |--------------|--------------|
+      | "practice" | get_subjects |
+      | Subject name | get_topics(subject_code) |
+      | Topic name | handoff_to_practice(topic_code, topic_name) |
+      | "play game" | get_games |
+      | "play chess" | handoff_to_game(game_type="chess") |
+      | "play connect4" | handoff_to_game(game_type="connect4") |
+      | Game selection | handoff_to_game(game_type) |
+      | "what can I do" | get_activities |
+      | Academic question | handoff_to_tutor |
+      | "teach me..." | handoff_to_learning |
+      | "how am I doing" | get_my_mastery |
+      | "what should I work on" | get_my_weaknesses |
+      | Expresses feelings | record_emotion |
+      | Just chatting | directly_answer |
+
+      ## RULES
+      - Never call same tool twice with same params
+      - If tool returns empty, suggest alternatives (no more tool calls)
+      - Chain tools when you have enough info: "practice math fractions" => get_subjects => get_topics => handoff
+
+    # -------------------------------------------------------------------------
+    # PERSONALITY - REMOVED
+    # -------------------------------------------------------------------------
+    # Note: Persona segment (from companion.yaml persona) already provides:
+    # - Character description
+    # - Communication style (tone, formality, language, emoji)
+    # - Behavioral guidelines (patience, correction style, etc.)
+    # Adding more personality here would be redundant.
+
+  # ===========================================================================
+  # TOOL CONFIGURATION
+  # ===========================================================================
+  tools:
+    enabled: true
+    max_iterations: 3
+    tool_choice: required
+
+    definitions:
+      # Information Gathering
+      - name: get_subjects
+        enabled: true
+        group: information_gathering
+        order: 1
+
+      - name: get_topics
+        enabled: true
+        group: information_gathering
+        order: 2
+
+      - name: get_games
+        enabled: true
+        group: information_gathering
+        order: 3
+
+      - name: get_activities
+        enabled: true
+        group: information_gathering
+        order: 4
+
+      - name: get_student_context
+        enabled: true
+        group: information_gathering
+        order: 5
+
+      - name: get_parent_notes
+        enabled: true
+        group: information_gathering
+        order: 6
+
+      - name: get_review_schedule
+        enabled: true
+        group: information_gathering
+        order: 7
+
+      - name: get_my_mastery
+        enabled: true
+        group: information_gathering
+        order: 8
+
+      - name: get_my_weaknesses
+        enabled: true
+        group: information_gathering
+        order: 9
+
+      # Emotional Support
+      - name: record_emotion
+        enabled: true
+        group: emotional_support
+        order: 20
+
+      - name: create_alert
+        enabled: true
+        group: emotional_support
+        order: 21
+
+      # Memory
+      - name: search_interests
+        enabled: true
+        group: memory
+        order: 25
+
+      - name: record_interest
+        enabled: true
+        group: memory
+        order: 26
+
+      - name: record_learning_event
+        enabled: true
+        group: memory
+        order: 27
+
+      # Agent Handoff
+      - name: handoff_to_tutor
+        enabled: true
+        group: agent_handoff
+        order: 30
+
+      - name: handoff_to_practice
+        enabled: true
+        group: agent_handoff
+        order: 31
+
+      - name: handoff_to_learning
+        enabled: true
+        group: agent_handoff
+        order: 32
+
+      - name: handoff_to_game
+        enabled: true
+        group: agent_handoff
+        order: 33
+
+      - name: directly_answer
+        enabled: true
+        group: agent_handoff
+        order: 99

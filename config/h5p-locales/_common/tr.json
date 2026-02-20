@@ -1,0 +1,28 @@
+{
+  "confirmCheck": {
+    "header": "Bitir?",
+    "body": "Bitirmek istediğinizden emin misiniz?",
+    "cancelLabel": "İptal",
+    "confirmLabel": "Bitir"
+  },
+  "confirmRetry": {
+    "header": "Tekrar Dene?",
+    "body": "Tekrar denemek istediğinizden emin misiniz?",
+    "cancelLabel": "İptal",
+    "confirmLabel": "Onayla"
+  },
+  "overallFeedback": [
+    {"from": 0, "to": 50, "feedback": "Daha fazla pratik yapmanız gerekiyor."},
+    {"from": 51, "to": 80, "feedback": "İyi iş! Biraz daha çalışabilirsiniz."},
+    {"from": 81, "to": 100, "feedback": "Mükemmel! Konuyu çok iyi anlamışsınız."}
+  ],
+  "ui": {
+    "checkAnswerButton": "Kontrol Et",
+    "showSolutionButton": "Cevabı Göster",
+    "tryAgainButton": "Tekrar Dene",
+    "submitAnswerButton": "Gönder",
+    "correctText": "Doğru!",
+    "incorrectText": "Yanlış",
+    "tipAvailable": "İpucu mevcut"
+  }
+}

@@ -1,0 +1,212 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "edusynapseos"
+version = "1.0.0"
+description = "AI-native educational platform backend with personalized learning, intelligent tutoring, and proactive engagement"
+readme = "README.md"
+license = "LGPL-3.0-or-later"
+requires-python = ">=3.10"
+authors = [
+    {name = "Global Digital Labs", email = "opensource@gdlabs.io"}
+]
+keywords = [
+    "education",
+    "ai",
+    "tutoring",
+    "personalized-learning",
+    "edtech",
+    "fastapi",
+    "langgraph",
+    "multi-tenant",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: FastAPI",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/gdlabs-io/EduSynapseOS"
+Documentation = "https://github.com/gdlabs-io/EduSynapseOS/tree/main/docs"
+Repository = "https://github.com/gdlabs-io/EduSynapseOS"
+Issues = "https://github.com/gdlabs-io/EduSynapseOS/issues"
+Changelog = "https://github.com/gdlabs-io/EduSynapseOS/blob/main/CHANGELOG.md"
+
+dependencies = [
+    # Web Framework
+    "fastapi>=0.127.0",
+    "uvicorn[standard]>=0.40.0",
+    "websockets>=14.0",
+    "python-multipart>=0.0.18",
+
+    # Database - PostgreSQL
+    "sqlalchemy[asyncio]>=2.0.45",
+    "asyncpg>=0.31.0",
+    "psycopg2-binary>=2.9.9",  # Sync driver for LangGraph workflow nodes
+    "alembic>=1.17.2",
+
+    # Cache - Redis (capped at <7.0 due to dramatiq compatibility)
+    "redis>=5.0.0,<7.0",
+
+    # Vector Database - Qdrant
+    "qdrant-client>=1.16.1",
+
+    # LLM Integration
+    "litellm>=1.80.0",
+
+    # Workflow Orchestration
+    "langgraph>=1.0.5",
+    "langgraph-checkpoint-postgres>=3.0.2",
+
+    # Background Tasks
+    "dramatiq[redis]>=2.0.0",
+    "apscheduler>=3.11.2",
+
+    # Spaced Repetition (FSRS-6)
+    "fsrs>=6.3.0",
+
+    # MCP (Model Context Protocol)
+    "mcp>=1.25.0",
+
+    # Configuration & Validation
+    "pydantic[email]>=2.12.5",
+    "pydantic-settings>=2.12.0",
+    "pyyaml>=6.0.2",
+
+    # Observability
+    "opentelemetry-api>=1.39.1",
+    "opentelemetry-sdk>=1.39.1",
+    "opentelemetry-instrumentation-fastapi>=0.60b1",
+    "opentelemetry-instrumentation-sqlalchemy>=0.60b1",
+    "opentelemetry-instrumentation-redis>=0.60b1",
+    "opentelemetry-exporter-otlp>=1.39.1",
+    "prometheus-client>=0.21.0",
+    "structlog>=25.5.0",
+
+    # Security
+    "python-jose[cryptography]>=3.5.0",
+    "passlib[bcrypt]>=1.7.4",
+    "slowapi>=0.1.9",
+
+    # HTTP Client
+    "httpx>=0.28.1",
+
+    # Docker SDK (for tenant container management)
+    "docker>=7.1.0",
+
+    # Gaming - Chess Engine
+    "chess>=1.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    # Testing
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.2",
+    "pytest-cov>=6.1.0",
+    "pytest-mock>=3.14.0",
+    "httpx>=0.28.1",
+    "faker>=33.2.0",
+    "factory-boy>=3.3.1",
+
+    # Code Quality
+    "mypy>=1.14.1",
+    "ruff>=0.9.2",
+
+    # Type Stubs
+    "types-redis>=4.6.0",
+    "types-passlib>=1.7.7",
+    "types-python-jose>=3.5.0",
+    "types-pyyaml>=6.0.12",
+    "types-docker>=7.1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "src/__init__.py",
+    "*/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]
+fail_under = 80
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "UP",   # pyupgrade
+    "ARG",  # flake8-unused-arguments
+    "SIM",  # flake8-simplify
+]
+ignore = [
+    "E501",   # line too long (handled by formatter)
+    "B008",   # do not perform function calls in argument defaults
+    "B904",   # raise without from inside except
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = [
+    "dramatiq.*",
+    "langgraph.*",
+    "langgraph_checkpoint_postgres.*",
+    "litellm.*",
+    "mcp.*",
+    "fsrs.*",
+    "sentence_transformers.*",
+    "qdrant_client.*",
+    "docker.*",
+    "apscheduler.*",
+]
+ignore_missing_imports = true

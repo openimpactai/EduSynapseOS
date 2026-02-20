@@ -1,0 +1,28 @@
+{
+  "confirmCheck": {
+    "header": "Finish ?",
+    "body": "Are you sure you wish to finish ?",
+    "cancelLabel": "Cancel",
+    "confirmLabel": "Finish"
+  },
+  "confirmRetry": {
+    "header": "Retry ?",
+    "body": "Are you sure you wish to retry ?",
+    "cancelLabel": "Cancel",
+    "confirmLabel": "Confirm"
+  },
+  "overallFeedback": [
+    {"from": 0, "to": 50, "feedback": "You need more practice."},
+    {"from": 51, "to": 80, "feedback": "Good job! You can do even better."},
+    {"from": 81, "to": 100, "feedback": "Excellent! You've mastered this topic."}
+  ],
+  "ui": {
+    "checkAnswerButton": "Check",
+    "showSolutionButton": "Show solution",
+    "tryAgainButton": "Retry",
+    "submitAnswerButton": "Submit",
+    "correctText": "Correct!",
+    "incorrectText": "Incorrect",
+    "tipAvailable": "Tip available"
+  }
+}
