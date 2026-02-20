@@ -1,6 +1,6 @@
 """EduSynapseOS Backend.
 
-AI-native educational platform providing personalized learning experiences
+The complete AI education operating system providing personalized learning experiences
 through dynamic AI tutoring, intelligent practice, and proactive engagement.
 
 Copyright (C) 2025 Global Digital Labs (gdlabs.io)

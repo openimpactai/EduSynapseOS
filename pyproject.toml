@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "edusynapseos"
 version = "1.0.0"
-description = "AI-native educational platform backend with personalized learning, intelligent tutoring, and proactive engagement"
+description = "The complete AI education operating system with personalized learning, intelligent tutoring, and proactive engagement"
 readme = "README.md"
 license = "LGPL-3.0-or-later"
 requires-python = ">=3.10"

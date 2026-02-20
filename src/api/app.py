@@ -226,7 +226,7 @@ def create_app() -> FastAPI:
 
     app = FastAPI(
         title="EduSynapseOS API",
-        description="AI-native educational platform backend",
+        description="The complete AI education operating system",
         version="1.0.0",
         docs_url="/docs" if settings.debug else None,
         redoc_url="/redoc" if settings.debug else None,
