@@ -230,6 +230,24 @@ You are free to:
 
 Under the condition that:
 - Modifications to EduSynapseOS itself must be released under LGPL-3.0
-- You must provide attribution to Global Digital Labs
+- You must preserve the original copyright and licence notices
 
 See the [GNU LGPL v3.0](https://www.gnu.org/licenses/lgpl-3.0.html) for full terms.
+
+## LGPL-3.0 Compliance Notes
+
+EduSynapseOS is licensed under the GNU Lesser General Public License v3.0 or later (LGPL-3.0-or-later). The following points summarise how the project is intended to comply with, and be used under, the LGPL:
+
+- **Library vs Application**
+  EduSynapseOS is intended to be used as a Library in the sense of LGPL-3.0 §0, with external systems (e.g. LMS platforms or custom services) acting as Applications that make use of its interfaces while remaining under their own licences.
+
+- **Rights for modified versions**
+  Users are free to fork, modify, and redistribute EduSynapseOS under the terms of LGPL-3.0-or-later. Deployments (including container images) should allow replacing EduSynapseOS with a modified version by rebuilding or overriding the provided source, in line with LGPL-3.0 §4.
+
+- **Use in proprietary or differently licensed software**
+  Applications that use EduSynapseOS as a Library (for example, by calling its APIs or importing it as a dependency) may be licensed under their own terms, provided they comply with the LGPL obligations for EduSynapseOS itself, including preservation of copyright and licence notices.
+
+- **Third-party components**
+  Any third-party libraries used by EduSynapseOS, and their licences, are (or will be) documented in a "Third-Party Licences" section or file. Where such components are LGPL-licensed, they are used in a manner consistent with their weak-copyleft terms (e.g. as dynamically-linked or standard interpreter-level dependencies).
+
+For the full legal terms, see the included [LICENSE](LICENSE) file (LGPL-3.0-or-later) and the official text at: https://www.gnu.org/licenses/lgpl-3.0.en.html
